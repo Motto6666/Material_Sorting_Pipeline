@@ -1,0 +1,5 @@
+-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I..\USER -I..\Libraries\src -I..\Libraries\inc -I..\Startup -I..\CMSIS\CM3\CoreSupport -I..\CMSIS\CM3\DeviceSupport\ST\STM32F10x -I..\BSP\servo_gpio -I..\USER\servo_control -I..\BSP\systick -I..\BSP\usart1 -I..\BSP\tim2 
+-I H:\Keil4\ARM\RV31\INC 
+-I H:\Keil4\ARM\CMSIS\Include 
+-I H:\Keil4\ARM\Inc\ST\STM32F10x 
+-DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD -o "..\Output\servo_control.o" --omf_browse "..\Output\servo_control.crf" --depend "..\Output\servo_control.d" "..\USER\servo_control\servo_control.c"
