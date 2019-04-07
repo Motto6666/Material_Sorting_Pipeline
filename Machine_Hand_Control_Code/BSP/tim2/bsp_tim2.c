@@ -49,32 +49,17 @@ void TIM2_Config_Init(void)
 }
 
 
-extern Servo  Servo_Action[SERVO_NUM];
 /*TIM2定时中断服务函数*/
+volatile uint8_t Flag = 0;
 void TIM2_IRQHandler(void) 
 {
-	static uint8_t Flag = 0;
-	static uint8_t Servo_Num = 1;//待修改
+	
 	if (TIM_GetITStatus(TIM2, TIM_IT_Update) != RESET) //检查 TIM2 更新中断发生与否
 	{
 		TIM_ClearITPendingBit(TIM2, TIM_IT_Update ); //清除 TIM2 更新中断标志
-				
-		if(Servo_Num == 7) 
-		{
-			Servo_Num = 1;
-		}
-		
-		if(!Flag) 
-		{
-			TIM2->ARR = ( (uint32_t)Servo_Action[Servo_Num].Current_Pulse_Width );
-			Servo_IO_Set(Servo_Num, HIGH);
-		}
-		else 
-	  {
-			TIM2->ARR = 2500 - ((uint32_t)Servo_Action[Servo_Num].Current_Pulse_Width);
-			Servo_IO_Set(Servo_Num, LOW);
-			Servo_Num ++;
-		}
+		Servo_Pulse_Width_Control();
 		Flag = !Flag;
 	}
-} 
+}
+
+

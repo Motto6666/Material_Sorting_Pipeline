@@ -350,7 +350,7 @@
               <MiscControls></MiscControls>
               <Define>USE_STDPERIPH_DRIVER,STM32F10X_HD</Define>
               <Undefine></Undefine>
-              <IncludePath>..\USER;..\Libraries\src;..\Libraries\inc;..\Startup;..\CMSIS\CM3\CoreSupport;..\CMSIS\CM3\DeviceSupport\ST\STM32F10x;..\BSP\servo_gpio</IncludePath>
+              <IncludePath>..\USER;..\Libraries\src;..\Libraries\inc;..\Startup;..\CMSIS\CM3\CoreSupport;..\CMSIS\CM3\DeviceSupport\ST\STM32F10x;..\BSP\servo_gpio;..\USER\servo_control;..\BSP\systick;..\BSP\usart1;..\BSP\tim2</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -400,6 +400,16 @@
               <FileName>main.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\USER\main.c</FilePath>
+            </File>
+            <File>
+              <FileName>servo_control.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\USER\servo_control\servo_control.c</FilePath>
+            </File>
+            <File>
+              <FileName>servo_control.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\USER\servo_control\servo_control.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -495,6 +505,36 @@
               <FileName>bsp_servo_gpio.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\BSP\servo_gpio\bsp_servo_gpio.h</FilePath>
+            </File>
+            <File>
+              <FileName>bsp_systick.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\BSP\systick\bsp_systick.c</FilePath>
+            </File>
+            <File>
+              <FileName>bsp_systick.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\BSP\systick\bsp_systick.h</FilePath>
+            </File>
+            <File>
+              <FileName>bsp_usart1.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\BSP\usart1\bsp_usart1.c</FilePath>
+            </File>
+            <File>
+              <FileName>bsp_usart1.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\BSP\usart1\bsp_usart1.h</FilePath>
+            </File>
+            <File>
+              <FileName>bsp_tim2.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\BSP\tim2\bsp_tim2.c</FilePath>
+            </File>
+            <File>
+              <FileName>bsp_tim2.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\BSP\tim2\bsp_tim2.h</FilePath>
             </File>
           </Files>
         </Group>
