@@ -4,7 +4,7 @@
 #include "stm32f10x.h"
 #include "bsp_servo_gpio.h"
 
-#define SERVO_NUM               6
+#define SERVO_NUM               5
 #define HIGH                    1
 #define LOW                     0
 #define TIM2_INTERRUPT_TIME     TIM2->ARR

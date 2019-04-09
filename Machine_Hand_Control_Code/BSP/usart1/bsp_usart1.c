@@ -96,7 +96,7 @@ void DEBUG_USART1_IRQHandler(void)
 }
 
 /*模拟重定向后的printf函数*/
-void Printf(char *String)
+void Printf(uint8_t *String)
 {
 	uint16_t String_Num = 0;
 	uint16_t i;

@@ -30,7 +30,6 @@ void Servo_IO_Set(uint8_t Index, uint8_t Level)
 		case 3:Servo_Pin_Set(SERVO_PORT_2, SERVO_3_PIN, Level);break;
 		case 4:Servo_Pin_Set(SERVO_PORT_2, SERVO_4_PIN, Level);break;
 		case 5:Servo_Pin_Set(SERVO_PORT_2, SERVO_5_PIN, Level);break;
-		case 6:Servo_Pin_Set(SERVO_PORT_1, SERVO_6_PIN, Level);break;
 		default:break;
 	}
 }
@@ -63,7 +62,7 @@ extern volatile uint8_t Flag;
 volatile uint8_t Servo_Num = 1;
 void Servo_Pulse_Width_Control(void)
 {
-	if(Servo_Num == 7) 
+	if(Servo_Num == 6) 
 		{
 			Servo_Num = 1;
 		}

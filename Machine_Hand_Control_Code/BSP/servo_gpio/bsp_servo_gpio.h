@@ -8,7 +8,6 @@
 #define SERVO_3_PIN  GPIO_Pin_5
 #define SERVO_4_PIN  GPIO_Pin_4
 #define SERVO_5_PIN  GPIO_Pin_3
-#define SERVO_6_PIN  GPIO_Pin_15
 
 #define SERVO_PORT_1 GPIOA
 #define SERVO_PORT_2 GPIOB

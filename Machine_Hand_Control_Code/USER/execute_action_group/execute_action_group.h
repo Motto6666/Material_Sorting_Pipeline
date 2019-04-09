@@ -1,8 +1,8 @@
-#ifndef __ANALYZE_ACTION_GROUP_H
-#define __ANALYZE_ACTION_GROUP_H
+#ifndef __EXECUTE_ACTION_GROUP_H
+#define __EXECUTE_ACTION_GROUP_H
 
 #include "stm32f10x.h"
-#include "servo_control.h"
+#include "analyze_action_group.h"
 
 extern uint8_t Curl_Up[7][15];
 extern uint8_t Grab_Material_1[9][15];
@@ -13,7 +13,10 @@ extern uint8_t Left_Place_2[17][15];
 extern uint8_t Right_Place_1[19][15];
 extern uint8_t Right_Place_2[10][15];
 
+void Curl_Up_Action(void);
+void Grab_Material_Action(void);
+void Left_Place_Action(void);
+void Right_Place_Action(void);
 
-void Analyze_Action_Group(uint8_t (*Action_Group)[15]);
 
-#endif /*__ANALYZE_ACTION_GROUP_H*/
+#endif /*__EXECUTE_ACTION_GROUP_H*/
