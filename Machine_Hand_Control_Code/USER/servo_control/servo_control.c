@@ -1,6 +1,6 @@
 #include "servo_control.h"
 
-Servo  Servo_Action[SERVO_NUM];
+Servo_Struct  Servo[SERVO_NUM];
 
 /**
 	* @brief  舵机脉冲宽度值初始化 
@@ -11,8 +11,8 @@ void Servo_Pulse_Width_Init(void)
 	uint8_t i;
 	for(i=1;i<=SERVO_NUM;i++)
 	{
-		Servo_Action[i].Current_Pulse_Width = 2400;
-		Servo_Action[i].Pulse_Width_Increment = 0;
+		Servo[i].Current_PWM = 1500;
+		Servo[i].Increment_PWM = 0;
   }
 }
 
@@ -38,7 +38,7 @@ void Servo_IO_Set(uint8_t Index, uint8_t Level)
 
 
 /**
-	* @brief  舵机I/O引脚电平控制 
+	* @brief  舵机引脚电平控制 
 	* @retval 无
 	*/
 void Servo_Pin_Set(GPIO_TypeDef* GPIOx, uint16_t Pin, uint8_t Level) 
@@ -55,7 +55,8 @@ void Servo_Pin_Set(GPIO_TypeDef* GPIOx, uint16_t Pin, uint8_t Level)
 
 
 /**
-	* @brief  舵机脉冲宽度控制 
+	* @brief  舵机脉冲宽度控制 ，运用定时器控制舵机引脚高低电平的时间，
+						让舵机引脚产生具有脉冲宽度的方波，达到控制舵机转动的目的
 	* @retval 无
 	*/
 extern volatile uint8_t Flag;
@@ -69,13 +70,13 @@ void Servo_Pulse_Width_Control(void)
 		
 		if(!Flag) 
 		{
-			Servo_Pulse_Width_Increment_Control(Servo_Num);
-			TIM2_INTERRUPT_TIME = ( (uint32_t)Servo_Action[Servo_Num].Current_Pulse_Width );//设定TIM2定时中断时间，单位为us
+			Servo_Pulse_Width_Increment_Apply(Servo_Num);
+			TIM2_INTERRUPT_TIME = ( (uint32_t)Servo[Servo_Num].Current_PWM );//设定TIM2定时中断时间，单位为us
 			Servo_IO_Set(Servo_Num, HIGH);		 
 		}
 		else 
 	  {
-			TIM2_INTERRUPT_TIME = 2500 - ((uint32_t)Servo_Action[Servo_Num].Current_Pulse_Width);//设定TIM2定时中断时间，单位为us
+			TIM2_INTERRUPT_TIME = 2500 - ((uint32_t)Servo[Servo_Num].Current_PWM);//设定TIM2定时中断时间，单位为us
 			Servo_IO_Set(Servo_Num, LOW);
 			Servo_Num ++;
 		}
@@ -83,21 +84,22 @@ void Servo_Pulse_Width_Control(void)
 
 
 /**
-	* @brief  舵机脉冲宽度增量值控制，达到控制舵机转动速度的目的 
+	* @brief  舵机脉冲宽度增量值的运用，让舵机在单位时间内转动一定的
+						角度，达到控制舵机转动速度的目的 
 	* @retval 无
 	*/
-void Servo_Pulse_Width_Increment_Control(uint8_t Servo_Num) 
+void Servo_Pulse_Width_Increment_Apply(uint8_t Servo_Num) 
 {	
-	if(Servo_Action[Servo_Num].Pulse_Width_Increment != 0) 
+	if(Servo[Servo_Num].Increment_PWM != 0) 
 	{
-		if(Abs_Float( Servo_Action[Servo_Num].Pulse_Width_Aim - Servo_Action[Servo_Num].Current_Pulse_Width) <= Abs_Float( 2*Servo_Action[Servo_Num].Pulse_Width_Increment ))          
+		if(Abs_Float( Servo[Servo_Num].Aim_PWM - Servo[Servo_Num].Current_PWM) <= Abs_Float( 2*Servo[Servo_Num].Increment_PWM ))          
 		{
-			Servo_Action[Servo_Num].Current_Pulse_Width   =  Servo_Action[Servo_Num].Pulse_Width_Aim;
-			Servo_Action[Servo_Num].Pulse_Width_Increment =  0;
+			Servo[Servo_Num].Current_PWM   =  Servo[Servo_Num].Aim_PWM;
+			Servo[Servo_Num].Increment_PWM =  0;
 		} 
 		else 
 		{
-			Servo_Action[Servo_Num].Current_Pulse_Width += Servo_Action[Servo_Num].Pulse_Width_Increment;
+			Servo[Servo_Num].Current_PWM += Servo[Servo_Num].Increment_PWM;
 		}
 	}
 }

@@ -1,6 +1,11 @@
 #include "bsp_tim2.h"
 #include "servo_control.h"
 
+ /**
+  * @brief  配置嵌套向量中断控制器NVIC
+  * @param  无
+  * @retval 无
+  */
 void TIM2_NVIC_Init(void)
 {
 	NVIC_InitTypeDef NVIC_InitStructure;
@@ -19,6 +24,11 @@ void TIM2_NVIC_Init(void)
 	NVIC_Init(&NVIC_InitStructure);  
 }
 
+ /**
+  * @brief  配置TIM2定时器
+  * @param  无
+  * @retval 无
+  */
 void TIM2_Init(void) 
 {
 	TIM_TimeBaseInitTypeDef TIM_TimeBaseStructure;
@@ -42,6 +52,11 @@ void TIM2_Init(void)
 	TIM_Cmd(TIM2, ENABLE);  
 }
 
+ /**
+  * @brief  初始化定时器TIM2
+  * @param  无
+  * @retval 无
+  */
 void TIM2_Config_Init(void)
 {
 	TIM2_NVIC_Init();
@@ -49,14 +64,18 @@ void TIM2_Config_Init(void)
 }
 
 
-/*TIM2定时中断服务函数*/
+ /**
+  * @brief  TIM2定时中断服务函数
+  * @param  无
+  * @retval 无
+  */
 volatile uint8_t Flag = 0;
 void TIM2_IRQHandler(void) 
 {
 	
-	if (TIM_GetITStatus(TIM2, TIM_IT_Update) != RESET) //检查 TIM2 更新中断发生与否
+	if (TIM_GetITStatus(TIM2, TIM_IT_Update) != RESET) 
 	{
-		TIM_ClearITPendingBit(TIM2, TIM_IT_Update ); //清除 TIM2 更新中断标志
+		TIM_ClearITPendingBit(TIM2, TIM_IT_Update ); 
 		Servo_Pulse_Width_Control();
 		Flag = !Flag;
 	}

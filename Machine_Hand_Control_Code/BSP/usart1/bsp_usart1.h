@@ -10,14 +10,15 @@
 	* 1-修改总线时钟的宏，uart1挂载到apb2总线，其他uart挂载到apb1总线
 	* 2-修改GPIO的宏
   */
-	
-// 串口1-USART1
+
+
+/*串口1-USART1*/
 #define  DEBUG_USART1                   USART1
 #define  DEBUG_USART1_CLK               RCC_APB2Periph_USART1
 #define  DEBUG_USART1_APBxClkCmd        RCC_APB2PeriphClockCmd
 #define  DEBUG_USART1_BAUDRATE          115200
 
-// USART GPIO 引脚宏定义
+/*USART GPIO 引脚宏定义*/
 #define  DEBUG_USART1_GPIO_CLK           (RCC_APB2Periph_GPIOA)
 #define  DEBUG_USART1_GPIO_APBxClkCmd    RCC_APB2PeriphClockCmd
     
@@ -105,7 +106,7 @@
 
 
 void USART1_Config(void);
-void Printf(char *string);
+void Printf(char *String);
 
 #endif /* __BSP_USART1_H */
 

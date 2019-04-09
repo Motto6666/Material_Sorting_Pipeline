@@ -125,3 +125,13 @@
 [2019-04-07 19:02:日志记录不属免费功能,请注册支持作者改进软件
 [2019-04-07 19:05:日志记录不属免费功能,请注册支持作者改进软件
 [2019-04-07 19:06:日志记录不属免费功能,请注册支持作者改进软件
+[2019-04-08 17:51:Program Success:49FF72067789505621241367 C:\Users\motto6666\Desktop\Material_Sorting_Pipeline\Material_Sorting_Pipeline\Machine_Hand_Control_Code\Output\32_duoji.hex
+[2019-04-08 17:51:Program Success:49FF72067789505621241367 C:\Users\motto6666\Desktop\Material_Sorting_Pipeline\Material_Sorting_Pipeline\Machine_Hand_Control_Code\Output\32_duoji.hex
+[2019-04-08 17:52:Program Success:49FF72067789505621241367 C:\Users\motto6666\Desktop\Material_Sorting_Pipeline\Material_Sorting_Pipeline\Machine_Hand_Control_Code\Output\32_duoji.hex
+[2019-04-08 21:01:Program Success:49FF72067789505621241367 C:\Users\motto6666\Desktop\Material_Sorting_Pipeline\Material_Sorting_Pipeline\Machine_Hand_Control_Code\Output\32_duoji.hex
+[2019-04-08 21:02:Program Success:49FF72067789505621241367 C:\Users\motto6666\Desktop\Material_Sorting_Pipeline\Material_Sorting_Pipeline\Machine_Hand_Control_Code\Output\32_duoji.hex
+[2019-04-08 21:17:Program Success:49FF72067789505621241367 C:\Users\motto6666\Desktop\Material_Sorting_Pipeline\Material_Sorting_Pipeline\Machine_Hand_Control_Code\Output\32_duoji.hex
+[2019-04-08 21:18:Program Success:49FF72067789505621241367 C:\Users\motto6666\Desktop\Material_Sorting_Pipeline\Material_Sorting_Pipeline\Machine_Hand_Control_Code\Output\32_duoji.hex
+[2019-04-08 21:19:Program Success:49FF72067789505621241367 C:\Users\motto6666\Desktop\Material_Sorting_Pipeline\Material_Sorting_Pipeline\Machine_Hand_Control_Code\Output\32_duoji.hex
+[2019-04-08 22:11:Program Success:49FF72067789505621241367 H:\STM32\野火STM32\作品制作\物料分拣生产线\Code\STM32机械臂资料\分拣机械手STM32资料\32KiBOT-1\02 源码例程\05 定距夹取\05 定距夹取\OUT\32_duoji_20180828.hex
+[2019-04-08 22:27:Program Success:49FF72067789505621241367 C:\Users\motto6666\Desktop\Material_Sorting_Pipeline\调试工具\调试烧录文件\32_duoji_20180828.hex

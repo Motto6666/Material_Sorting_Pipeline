@@ -1,8 +1,11 @@
 #include "analyze_action_group.h"
 
-extern Servo  Servo_Action[SERVO_NUM];
+extern Servo_Struct  Servo[SERVO_NUM];
 
-//处理 #001P1500T1000! 类似的字符串
+/**
+	* @brief  解析动作组，类似处理 “#001P1500T1000!”的字符串
+	* @retval 无
+	*/
 void Analyze_Action_Group(uint8_t (*Action_Group)[20])
 {
 	uint8_t Servo_Num;
@@ -18,7 +21,7 @@ void Analyze_Action_Group(uint8_t (*Action_Group)[20])
 				j++;
 				while(Action_Group[i][j] && Action_Group[i][j] != 'P') 
 				{
-					Servo_Num = Servo_Num*10 + Action_Group[i][j]-'0';
+					Servo_Num = Servo_Num*10 + Action_Group[i][j]-'0';//计算舵机标号
 					j++;
 				}
 			} 
@@ -28,7 +31,7 @@ void Analyze_Action_Group(uint8_t (*Action_Group)[20])
 				j++;
 				while(Action_Group[i][j] && Action_Group[i][j] != 'T') 
 				{
-					PWM = PWM*10 + Action_Group[i][j]-'0';
+					PWM = PWM*10 + Action_Group[i][j]-'0';//计算PWM值
 					j++;
 				}
 			} 
@@ -38,7 +41,7 @@ void Analyze_Action_Group(uint8_t (*Action_Group)[20])
 				j++;
 				while(Action_Group[i][j] && Action_Group[i][j] != '!') 
 				{
-					Time = Time*10 + Action_Group[i][j]-'0';
+					Time = Time*10 + Action_Group[i][j]-'0';//计算舵机转动时间
 					j++;
 				}
 				
@@ -48,9 +51,9 @@ void Analyze_Action_Group(uint8_t (*Action_Group)[20])
 					{
 						Time = 20;//舵机执行时间不能少于20ms
 					}
-					Servo_Action[Servo_Num].Pulse_Width_Aim = PWM;
-					Servo_Action[Servo_Num].Time = Time;
-					Servo_Action[Servo_Num].Pulse_Width_Increment = (Servo_Action[Servo_Num].Pulse_Width_Aim - Servo_Action[Servo_Num].Current_Pulse_Width) / (Servo_Action[Servo_Num].Time / 20.000);
+					Servo[Servo_Num].Aim_PWM = PWM;
+					Servo[Servo_Num].Time = Time;
+					Servo[Servo_Num].Increment_PWM = (Servo[Servo_Num].Aim_PWM - Servo[Servo_Num].Current_PWM) / (Servo[Servo_Num].Time / 20.000);
 					
 				}
 			} 
