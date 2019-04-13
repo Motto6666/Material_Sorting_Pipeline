@@ -553,12 +553,13 @@ ARM Macro Assembler    Page 9
               00000000 
 Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M3 --apcs=interw
 ork --depend=..\..\output\startup_stm32f10x_hd.d -o..\..\output\startup_stm32f1
-0x_hd.o -IH:\STM32\野火STM32\作品制作\物料分拣生产线\Code\LCD_Display_Code\LCD_
-Display\Project\RVMDK（uv5）\RTE -IC:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0
- -IC:\Keil_v5\ARM\CMSIS\Include -IC:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0\
-Device\Include --predefine="__MICROLIB SETA 1" --predefine="__UVISION_VERSION S
-ETA 514" --predefine="STM32F10X_HD SETA 1" --list=..\..\listing\startup_stm32f1
-0x_hd.lst ..\..\Libraries\CMSIS\startup\startup_stm32f10x_hd.s
+0x_hd.o -IF:\上传到GitHub文件\Material_Sorting_Pipeline\Material_Sorting_Pipeli
+ne\LCD_Display_Code\LCD_Display\Project\RVMDK（uv5）\RTE -IC:\Keil_v5\ARM\PACK\
+Keil\STM32F1xx_DFP\2.0.0 -IC:\Keil_v5\ARM\CMSIS\Include -IC:\Keil_v5\ARM\PACK\K
+eil\STM32F1xx_DFP\2.0.0\Device\Include --predefine="__MICROLIB SETA 1" --predef
+ine="__UVISION_VERSION SETA 514" --predefine="STM32F10X_HD SETA 1" --list=..\..
+\listing\startup_stm32f10x_hd.lst ..\..\Libraries\CMSIS\startup\startup_stm32f1
+0x_hd.s
 
 
 
