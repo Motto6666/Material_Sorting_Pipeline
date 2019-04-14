@@ -365,7 +365,7 @@
               <MiscControls></MiscControls>
               <Define>STM32F10X_HD, USE_STDPERIPH_DRIVER</Define>
               <Undefine></Undefine>
-              <IncludePath>..\..\Libraries\CMSIS;..\..\User;..\..\Libraries\FWlib\inc;..\..\BSP\usart;..\..\BSP\lcd;..\..\User\display_character;..\..\User\modbus_agreement;..\..\BSP\systick</IncludePath>
+              <IncludePath>..\..\Libraries\CMSIS;..\..\User;..\..\Libraries\FWlib\inc;..\..\BSP\usart;..\..\BSP\lcd;..\..\User\display_character;..\..\User\modbus_agreement;..\..\BSP\systick;..\..\BSP\tim6;..\..\BSP\tim7</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -652,6 +652,26 @@
               <FileName>bsp_systick.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\..\BSP\systick\bsp_systick.h</FilePath>
+            </File>
+            <File>
+              <FileName>bsp_tim6.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\BSP\tim6\bsp_tim6.c</FilePath>
+            </File>
+            <File>
+              <FileName>bsp_tim6.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\BSP\tim6\bsp_tim6.h</FilePath>
+            </File>
+            <File>
+              <FileName>bsp_tim7.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\BSP\tim7\bsp_tim7.c</FilePath>
+            </File>
+            <File>
+              <FileName>bsp_tim7.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\BSP\tim7\bsp_tim7.h</FilePath>
             </File>
           </Files>
         </Group>

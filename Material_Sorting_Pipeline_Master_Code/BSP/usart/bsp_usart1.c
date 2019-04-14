@@ -5,7 +5,7 @@
   * @param  无
   * @retval 无
   */
-static void NVIC_Configuration(void)
+static void USART1_NVIC_Configuration(void)
 {
   NVIC_InitTypeDef NVIC_InitStructure;
   
@@ -17,7 +17,7 @@ static void NVIC_Configuration(void)
   /* 抢断优先级*/
   NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 0;
   /* 子优先级 */
-  NVIC_InitStructure.NVIC_IRQChannelSubPriority = 2;
+  NVIC_InitStructure.NVIC_IRQChannelSubPriority = 1;
   /* 使能中断 */
   NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
   /* 初始化配置NVIC */
@@ -66,8 +66,10 @@ void USART1_Config(void)
 	USART_InitStructure.USART_Mode = USART_Mode_Rx | USART_Mode_Tx;
 	// 完成串口的初始化配置
 	USART_Init(DEBUG_USART1, &USART_InitStructure);
+	
 	// 串口中断优先级配置
-	NVIC_Configuration();
+	USART1_NVIC_Configuration();
+	
 	// 使能串口接收中断
 	USART_ITConfig(DEBUG_USART1, USART_IT_RXNE, ENABLE);	
 	// 使能串口
@@ -120,12 +122,14 @@ void USART1_Printf(char *Str)
   * @param  需要发送出去的字符串的指针
   * @retval 无
   */
-char USART1_RX_Pack[50] = {'\0'};
+char USART1_RX_Pack[10];
 volatile uint16_t USART1_RX_Count = 0;//USART1接收到的字符个数
 void DEBUG_USART1_IRQHandler(void)
 {
 	if(USART_GetITStatus(DEBUG_USART1,USART_IT_RXNE)!=RESET)
 	{		
+		TIM7_ENABLE;//开启TIM7定时器，用于判断USART1数据是否接收完毕
+		TIM7_Count = 10;
 		USART1_RX_Pack[USART1_RX_Count] = USART_ReceiveData(DEBUG_USART1);
     USART1_RX_Count++;
 	}	 

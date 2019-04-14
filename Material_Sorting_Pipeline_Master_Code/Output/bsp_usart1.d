@@ -31,3 +31,4 @@
 ..\..\output\bsp_usart1.o: ..\..\Libraries\FWlib\inc\misc.h
 ..\..\output\bsp_usart1.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 ..\..\output\bsp_usart1.o: ..\..\BSP\systick\bsp_systick.h
+..\..\output\bsp_usart1.o: ..\..\BSP\tim7\bsp_tim7.h

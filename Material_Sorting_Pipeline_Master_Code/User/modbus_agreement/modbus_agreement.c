@@ -20,6 +20,8 @@ void Pack_Data(char Address, char Funtion, char Data, uint8_t Send_Device)
 		case USART2_DEVICE: ; break;//到时候添加USART2_Printf(String)函数上去！！！！！！！ 
 		default: break;
 	}
+	Data_Clean(String);//清除String字符串中的数据，保证下一次执行时数据不出错
+	Data_Clean(Check_Code);//清Check_Code字符串中的数据，保证下一次执行时数据不出错
 }
 
 

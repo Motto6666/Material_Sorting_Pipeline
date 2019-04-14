@@ -5,6 +5,7 @@
 #include "stm32f10x.h"
 #include <stdio.h>
 #include "bsp_systick.h"
+#include "bsp_tim7.h"
 
 /** 
   * 串口宏定义，不同的串口挂载的总线和IO不一样，移植时需要修改这几个宏
@@ -104,7 +105,7 @@
 //#define  DEBUG_USART_IRQ                UART5_IRQn
 //#define  DEBUG_USART_IRQHandler         UART5_IRQHandler
 
-extern char USART1_RX_Pack[];
+extern char USART1_RX_Pack[10];
 extern volatile uint16_t USART1_RX_Count;//USART1接收到的字符个数
 
 void USART1_Config(void);
