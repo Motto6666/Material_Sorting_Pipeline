@@ -15,7 +15,7 @@
 #define            TIM7_DISABLE                 TIM_Cmd(BASIC_TIM7, DISABLE);
 
 extern volatile uint8_t TIM7_Count;
-extern volatile uint8_t USART1_RX_Over;
+extern volatile uint8_t USART_RX_Over;
 
 void BASIC_TIM7_Init(void);
 

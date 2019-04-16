@@ -673,6 +673,16 @@
               <FileType>5</FileType>
               <FilePath>..\..\BSP\tim7\bsp_tim7.h</FilePath>
             </File>
+            <File>
+              <FileName>bsp_usart2.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\BSP\usart\bsp_usart2.c</FilePath>
+            </File>
+            <File>
+              <FileName>bsp_usart2.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\BSP\usart\bsp_usart2.h</FilePath>
+            </File>
           </Files>
         </Group>
       </Groups>

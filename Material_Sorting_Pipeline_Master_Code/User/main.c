@@ -1,5 +1,6 @@
 #include "stm32f10x.h"
 #include "bsp_usart1.h"
+#include "bsp_usart2.h"
 #include "bsp_ili9341_lcd.h"
 #include "lcd_display_english.h"
 #include "lcd_display_chinese.h"
@@ -26,59 +27,110 @@
 
 //void Delay(__IO uint32_t nCount);// 延时函数声明
 
-uint8_t Send_Count = 0;//发送RTU数据包次数
+uint8_t USART1_Send_Count = 0;//USART1发送RTU数据包次数
+uint8_t USART2_Send_Count = 0;//USART2发送RTU数据包次数
+
+uint8_t Data_Stirng[50];//调试使用，调试完毕删除
 
 int main(void)
 { 	
-	
 	USART1_Config();//初始化USART1
+	USART2_Config();//初始化USART2
 	BASIC_TIM6_Init();//初始化TIM6
 	BASIC_TIM7_Init();//初始化TIM7
 	
-	Pack_Data(OPENMV_ADD, OPENMV_CHACK, NONE, USART1_DEVICE);//打包RTU数据并发送到指定设备
+	RTU_Pack_Data(OPENMV_ADD, OPENMV_CHACK, 0, Data_Stirng, USART1_DEVICE);//打包RTU数据并发送到指定设备
+	
+	Debug_USART2_Printf("USART1数据发送成功");
 	
 	TIM6_ENABLE;//开启定时器TIM6
 	
 	while(1)
 	{
-		if(USART1_RX_Over == 1)
+		if( USART_RX_Over == 1)
 		{
 			TIM6_DISABLE;//关闭定时器TIM6
 			TIM6_Count = 0;//TIM6计数值清0
-			Send_Count = 0;//发送RTU数据包次数清0
+			USART1_Send_Count = 0;//发送RTU数据包次数清0
+			USART_RX_Over = 0;//USART_RX_Over恢复到最初值，保证下次超时检测不出错 
 			break;
 		}
 		
-		if( (TIM6_Count == 100) && (Send_Count<=5) )//计时时间为5秒
+		if( (TIM6_Count == 100) && (USART1_Send_Count<=5) )//计时时间为5秒
 		{
 			TIM6_DISABLE;
 			TIM6_Count = 0;
-			if(Send_Count == 5)
+			if(USART1_Send_Count == 5)
 			{
-				USART1_Printf("与OpenMv模块第一次通信超时");
+				TIM6_DISABLE;
+				Debug_USART2_Printf("与OpenMv模块第一次通信超时");//到时候用LCD显示屏显示
 				while(1);
 			}
-			Pack_Data(OPENMV_ADD, OPENMV_CHACK, NONE, USART1_DEVICE);//打包RTU数据并发送到指定设备
-			Send_Count++;
+			RTU_Pack_Data(OPENMV_ADD, OPENMV_CHACK, 0, Data_Stirng, USART1_DEVICE);//打包RTU数据并发送到指定设备
+			USART1_Send_Count++;
 			TIM6_ENABLE;
 		}
 		
 	}
-	
-//	while(USART1_RX_Over != 1);//等待接收
-		
-	
-	USART1_Printf("完成USART1超时检测");//到时候用LCD显示屏显示
-	USART1_Printf(USART1_RX_Pack);	
-	if(strcmp(USART1_RX_Pack,"1ANAN") == NULL)
+				
+	if(USART1_RX_Pack[0] == OPENMV_ADD && USART1_RX_Pack[1] == OPENMV_CHACK)
 	{
-		USART1_Printf("OpenMV模块响应正常");
+		Debug_USART2_Printf("OpenMV模块响应正常\n");//到时候用LCD显示屏显示
 	}
 	Data_Clean(USART1_RX_Pack);//USART1_RX_Pack字符串中的数据，保证下一次执行时数据不出错
 	USART1_RX_Count = 0;//计数值清0
-	USART1_RX_Over = 0;//Receive_Over恢复到最初值，保证下次超时检测不出错 
+
 	
-	while(1);
+	while(1);//调试使用，调试完毕删除！！！
+	
+	
+	
+	
+
+//	RTU_Pack_Data(IRON_HAND_ADD, IRON_HAND_CHACK, 0, Data_Stirng, USART2_DEVICE);//打包RTU数据并发送到指定设备
+//	
+//	TIM6_ENABLE;//开启定时器TIM6
+//	
+//	while(1)
+//	{
+//		if( USART_RX_Over == 1)
+//		{
+//			TIM6_DISABLE;//关闭定时器TIM6
+//			TIM6_Count = 0;//TIM6计数值清0
+//			USART2_Send_Count = 0;//USART2发送RTU数据包次数清0
+//			USART_RX_Over = 0;//USART_RX_Over恢复到最初值，保证下次超时检测不出错 
+//			break;
+//		}
+//		
+//		if( (TIM6_Count == 100) && (USART2_Send_Count<=5) )//计时时间为5秒
+//		{
+//			TIM6_DISABLE;
+//			TIM6_Count = 0;
+//			if(USART2_Send_Count == 5)
+//			{
+//				Debug_USART2_Printf("与机械手模块第一次通信超时");
+//				while(1);
+//			}
+//			RTU_Pack_Data(IRON_HAND_ADD, IRON_HAND_CHACK, 0, Data_Stirng, USART2_DEVICE);//打包RTU数据并发送到指定设备
+//			USART2_Send_Count++;
+//			TIM6_ENABLE;
+//		}
+//		
+//	}
+//				
+//	Debug_USART2_Printf("完成USART2超时检测");//到时候用LCD显示屏显示
+//	USART2_Printf(USART2_RX_Pack);
+//	if(USART2_RX_Pack[0] == IRON_HAND_ADD && USART2_RX_Pack[1] == IRON_HAND_CHACK)
+//	{
+//		Debug_USART2_Printf("机械手模块响应正常");//到时候用LCD显示屏显示
+//	}	
+//	Data_Clean(USART2_RX_Pack);//USART1_RX_Pack字符串中的数据，保证下一次执行时数据不出错
+//	USART2_RX_Count = 0;//计数值清0
+//	
+//	while(1);
+
+
+
 	
 //	ILI9341_Init();//可以根据实际情况做参数的修改!!!
 

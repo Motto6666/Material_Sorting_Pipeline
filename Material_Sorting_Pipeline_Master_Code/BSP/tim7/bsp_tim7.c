@@ -65,7 +65,7 @@ void BASIC_TIM7_Init(void)
   * @retval 无
   */
 volatile uint8_t TIM7_Count = 10;
-volatile uint8_t USART1_RX_Over = 0;
+volatile uint8_t USART_RX_Over = 0;
 void  BASIC_TIM7_IRQHandler (void) 
 {
 	if ( TIM_GetITStatus( BASIC_TIM7, TIM_IT_Update) != RESET ) 
@@ -73,9 +73,9 @@ void  BASIC_TIM7_IRQHandler (void)
 		TIM7_Count--;
 		TIM_ClearITPendingBit(BASIC_TIM7, TIM_FLAG_Update);
 		
-		if(TIM7_Count == 0)//若TIM7_Count为0，即可判断USART1串口数据接收完毕
+		if(TIM7_Count == 0)//若TIM7_Count为0，即可判断USART串口数据接收完毕
 		{
-			USART1_RX_Over = 1;//表示数据接收完毕
+			USART_RX_Over = 1;//表示数据接收完毕
 			TIM7_Count = 10;//TIM7_Count值恢复到最初值，保证下次超时检测不出错
 			TIM7_DISABLE;
 		}

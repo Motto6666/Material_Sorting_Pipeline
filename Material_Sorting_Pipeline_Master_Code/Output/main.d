@@ -32,6 +32,7 @@
 ..\..\output\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 ..\..\output\main.o: ..\..\BSP\systick\bsp_systick.h
 ..\..\output\main.o: ..\..\BSP\tim7\bsp_tim7.h
+..\..\output\main.o: ..\..\BSP\usart\bsp_usart2.h
 ..\..\output\main.o: ..\..\BSP\lcd\bsp_ili9341_lcd.h
 ..\..\output\main.o: ..\..\User\display_character\lcd_display_english.h
 ..\..\output\main.o: ..\..\User\display_character\lcd_display_chinese.h

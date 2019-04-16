@@ -105,11 +105,10 @@
 //#define  DEBUG_USART_IRQ                UART5_IRQn
 //#define  DEBUG_USART_IRQHandler         UART5_IRQHandler
 
-extern char USART1_RX_Pack[10];
+extern uint8_t USART1_RX_Pack[50];
 extern volatile uint16_t USART1_RX_Count;//USART1接收到的字符个数
 
 void USART1_Config(void);
-void USART1_Printf(char *Str);
-
+void USART1_Printf(uint8_t *Str);
 
 #endif /* __USART_H */

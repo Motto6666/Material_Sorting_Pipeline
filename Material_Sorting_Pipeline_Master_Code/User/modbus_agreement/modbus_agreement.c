@@ -2,29 +2,48 @@
 
 /**
   * @brief  打包Modbus协议的RTU模式数据帧
-  * @param  Address ：地址码
-	* @param  Funtion ：功能码
-  * @param  Data    ：数据码
+  * @param  Address 				地址码
+	* @param  Funtion 				功能码
+	* @param  Data_Len				数据长度
+	* @param  Data 						数据
+  * @param  Send_Device			发送设备
   * @retval 无
-  */	
-char String[] = {'\0'};
-void Pack_Data(char Address, char Funtion, char Data, uint8_t Send_Device)
+  */
+
+uint8_t Strings[50];
+void RTU_Pack_Data(uint8_t Address, uint8_t Funtion, uint8_t Data_Len, uint8_t *Data, uint8_t Send_Device )
 { 
-	sprintf(String,"%c%c%c",Address,Funtion,Data);
-	CRC_16(String,STRING_LEN);//生成CRC码
-	Data_Clean(String);
-	sprintf(String,"%c%c%c%s",Address,Funtion,Data,Check_Code);//重新打包完整的RTU模式数据帧
+	uint8_t i;
+	Strings[0] = Address;
+	Strings[1] = Funtion;
+	
+	if(Data_Len == 0)	//若Data_Len为0（0x00）时，不能直接将其放入到Strings数组里面，因为在
+										//串口发送数据时遇到0时则停止发送，导致不能发送一个完整的数据帧，需注意！！
+	{
+		Strings[2] = DATA_NONE;
+	}
+	else
+	{
+		Strings[2] = Data_Len;
+	}
+	
+	for(i = 0;i<Data_Len;i++)
+	{
+		Strings[i+3] = Data[i];
+	};
+	CRC_16(Strings,Data_Len+3);//生成CRC码
+	Strings[Data_Len+3] = Check_Code[1]; 
+	Strings[Data_Len+4] = Check_Code[0];
+
 	switch(Send_Device)
 	{
-		case USART1_DEVICE: USART1_Printf(String); break; 
-		case USART2_DEVICE: ; break;//到时候添加USART2_Printf(String)函数上去！！！！！！！ 
+		case USART1_DEVICE: USART1_Printf(Strings); break; 
+		case USART2_DEVICE: USART2_Printf(Strings); break;
 		default: break;
 	}
-	Data_Clean(String);//清除String字符串中的数据，保证下一次执行时数据不出错
+	Data_Clean(Strings);//清除String字符串中的数据，保证下一次执行时数据不出错
 	Data_Clean(Check_Code);//清Check_Code字符串中的数据，保证下一次执行时数据不出错
 }
-
-
 
 
 /**
@@ -33,11 +52,11 @@ void Pack_Data(char Address, char Funtion, char Data, uint8_t Send_Device)
   * @param  Len  ：需要校验的字符串数据长度
   * @retval 无
   */	
-char Check_Code[2];//CRC校验码
-void CRC_16(char *Str,uint8_t Len)
+uint8_t Check_Code[2];//CRC校验码
+void CRC_16(uint8_t *Str,uint8_t Len)
 {
   uint16_t WCRC=0XFFFF; //预置16位CRC寄存器
-  char Temp;
+  uint8_t Temp;
   uint8_t i=0,j=0;
   for(i=0;i<Len;i++)
   {
@@ -67,7 +86,7 @@ void CRC_16(char *Str,uint8_t Len)
   * @param  *Str ：字符串数据的指针
   * @retval 无
   */
-void Data_Clean(char *Str)
+void Data_Clean(uint8_t *Str)
 {
 	uint16_t Str_Num=0;
 	uint16_t i;
