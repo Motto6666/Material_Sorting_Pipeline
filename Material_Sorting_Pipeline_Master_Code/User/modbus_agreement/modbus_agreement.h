@@ -22,6 +22,9 @@
 #define USART1_DEVICE      1
 #define USART2_DEVICE      2
 
+#define CHECK_SUCCESS 		 1
+#define CHECK_FAILED			 0	
+
 
 extern uint8_t Strings[50];
 extern uint8_t Check_Code[2];
@@ -29,5 +32,6 @@ extern uint8_t Check_Code[2];
 void RTU_Pack_Data(uint8_t Address, uint8_t Funtion, uint8_t Data_Len, uint8_t *Data, uint8_t Send_Device );
 void CRC_16(uint8_t *Str,uint8_t Len);
 void Data_Clean(uint8_t *Str);
+uint8_t RTU_Data_Analysis(uint8_t * RTU_Data);
 
 #endif /*__MODBUS_AGREEMENT_H*/

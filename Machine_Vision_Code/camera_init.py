@@ -7,4 +7,3 @@ def camera_init():
     sensor.skip_frames(10,1000) #跳过10帧
     sensor.set_contrast(1) #设置对比度
     sensor.set_auto_whitebal(False) #关闭白平衡
-    #sensor.set_auto_gain(False) #关闭自动增益

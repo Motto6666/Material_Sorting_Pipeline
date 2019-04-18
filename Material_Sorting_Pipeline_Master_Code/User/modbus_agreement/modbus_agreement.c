@@ -47,6 +47,36 @@ void RTU_Pack_Data(uint8_t Address, uint8_t Funtion, uint8_t Data_Len, uint8_t *
 
 
 /**
+  * @brief  RTU数据帧校验
+  * @param  * RTU_Data：RTU数据帧指针
+  * @retval 返回1或0
+  */
+uint8_t RTU_Data_Analysis(uint8_t * RTU_Data)
+{
+	uint8_t Temp_Array[2];
+	uint16_t Str_Num;
+	while(RTU_Data[Str_Num] != '\0')
+	{
+		Str_Num++;
+	}
+	Temp_Array[0] = RTU_Data[Str_Num - 1];
+	Temp_Array[1] = RTU_Data[Str_Num - 2];
+	RTU_Data[Str_Num - 1] = '\0';
+	RTU_Data[Str_Num - 2] = '\0';
+	CRC_16(RTU_Data,Str_Num-2);
+	if(Temp_Array[0] == Check_Code[0] && Temp_Array[1] == Check_Code[1])
+	{
+		Data_Clean(Check_Code);//清Check_Code字符串中的数据，保证下一次执行时数据不出错
+		return CHECK_SUCCESS;
+	}
+	else
+	{
+		Data_Clean(Check_Code);//清Check_Code字符串中的数据，保证下一次执行时数据不出错
+		return CHECK_FAILED;
+	}
+}
+
+/**
   * @brief  CRC生成函数，并将计算后的十六位CRC码存储在Check_Code[2]数组里
   * @param  *Str ：字符串数据的指针
   * @param  Len  ：需要校验的字符串数据长度
@@ -79,6 +109,7 @@ void CRC_16(uint8_t *Str,uint8_t Len)
   Check_Code[0] = WCRC;//CRC的低八位
   Check_Code[1] = WCRC>>8;//CRC的高八位
 }
+
 
 
 /**

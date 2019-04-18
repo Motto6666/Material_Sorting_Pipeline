@@ -365,7 +365,7 @@
               <MiscControls></MiscControls>
               <Define>STM32F10X_HD, USE_STDPERIPH_DRIVER</Define>
               <Undefine></Undefine>
-              <IncludePath>..\..\Libraries\CMSIS;..\..\User;..\..\Libraries\FWlib\inc;..\..\BSP\usart;..\..\BSP\lcd;..\..\User\display_character;..\..\User\modbus_agreement;..\..\BSP\systick;..\..\BSP\tim6;..\..\BSP\tim7</IncludePath>
+              <IncludePath>..\..\Libraries\CMSIS;..\..\User;..\..\Libraries\FWlib\inc;..\..\BSP\usart;..\..\BSP\lcd;..\..\User\display_character;..\..\User\modbus_agreement;..\..\BSP\systick;..\..\BSP\tim6;..\..\BSP\tim7;..\..\User\receive_rtu_data</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -607,6 +607,16 @@
               <FileName>modbus_agreement.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\..\User\modbus_agreement\modbus_agreement.h</FilePath>
+            </File>
+            <File>
+              <FileName>receive_rtu_data.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\User\receive_rtu_data\receive_rtu_data.c</FilePath>
+            </File>
+            <File>
+              <FileName>receive_rtu_data.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\User\receive_rtu_data\receive_rtu_data.h</FilePath>
             </File>
           </Files>
         </Group>
