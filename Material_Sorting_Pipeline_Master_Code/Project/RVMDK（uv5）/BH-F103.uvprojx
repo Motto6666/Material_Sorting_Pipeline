@@ -365,7 +365,7 @@
               <MiscControls></MiscControls>
               <Define>STM32F10X_HD, USE_STDPERIPH_DRIVER</Define>
               <Undefine></Undefine>
-              <IncludePath>..\..\Libraries\CMSIS;..\..\User;..\..\Libraries\FWlib\inc;..\..\BSP\usart;..\..\BSP\lcd;..\..\User\display_character;..\..\User\modbus_agreement;..\..\BSP\systick;..\..\BSP\tim6;..\..\BSP\tim7;..\..\User\receive_rtu_data</IncludePath>
+              <IncludePath>..\..\Libraries\CMSIS;..\..\User;..\..\Libraries\FWlib\inc;..\..\BSP\usart;..\..\BSP\lcd;..\..\User\display_character;..\..\User\modbus_agreement;..\..\BSP\systick;..\..\BSP\tim6;..\..\BSP\tim7;..\..\User\receive_rtu_data;..\..\User\system_init</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -617,6 +617,16 @@
               <FileName>receive_rtu_data.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\..\User\receive_rtu_data\receive_rtu_data.h</FilePath>
+            </File>
+            <File>
+              <FileName>system_init.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\User\system_init\system_init.c</FilePath>
+            </File>
+            <File>
+              <FileName>system_init.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\User\system_init\system_init.h</FilePath>
             </File>
           </Files>
         </Group>

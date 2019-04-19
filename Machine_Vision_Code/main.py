@@ -2,6 +2,7 @@ import sensor,image,time
 from find_max_blob import find_max_blob
 from camera_init import camera_init
 from receive_data import data_receive
+from receive_data import receive
 from send_rtu_data import send_rtu_data
 
 red_threshold = (0, 100, 21, 101, -12, 74)#设置红色阈值
@@ -27,14 +28,15 @@ while(1):
 data = []#清除data数组里的内容，避免数据出错
 
 while(1):
+    data = data_receive(openmv_add,recognize)
+    if( data != none ):#判断是否接收到openmv_add,recognize指令
+        break
 
-    while(1):
-        data = data_receive(openmv_add,recognize)
-        if( data != none ):#判断是否接收到openmv_add,recognize指令
-            break
+data = []#清除data数组里的内容，避免数据出错
 
-    time.sleep(10)#等待10ms，保证STM32主控板已进入到接收数据的状态
+time.sleep(1000)#等待1000ms，确保STM32主控板已进入到接收数据的状态
 
+while(1):
     img = sensor.snapshot().binary([white_thresholds], invert=False, zero=True) #获取一帧图片，并将图片上的白色强光去除
     target_blob =find_max_blob( img.find_blobs([red_threshold,green_threshold],pixles_threshold = 200,area_threshold = 200,merge = 1) )#寻找目标色块
 
@@ -50,3 +52,10 @@ while(1):
     else:
         send_rtu_data(no_color)
         print("该物体不在识别范围内")
+
+    while(1):
+        data = receive(openmv_add,recognize)
+        if( data != none ):#判断是否接收到openmv_add,recognize指令
+            break
+
+    data = []#清除data数组里的内容，避免数据出错

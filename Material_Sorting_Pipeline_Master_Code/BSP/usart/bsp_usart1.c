@@ -78,23 +78,6 @@ void USART1_Config(void)
 
 
  /**
-  * @brief  重定向c库函数printf到串口，重定向后可使用printf函数
-  * @param  无
-  * @retval 无
-  */
-int fputc(int ch, FILE *f)
-{
-		/* 发送一个字节数据到串口 */
-		USART_SendData(DEBUG_USART1, (uint8_t) ch);
-		
-		/* 等待发送完毕 */
-		while (USART_GetFlagStatus(DEBUG_USART1, USART_FLAG_TXE) == RESET);		
-	
-		return (ch);
-}
-
-
- /**
   * @brief  模拟重定向后的printf函数
   * @param  需要发送出去的字符串的指针
   * @retval 无

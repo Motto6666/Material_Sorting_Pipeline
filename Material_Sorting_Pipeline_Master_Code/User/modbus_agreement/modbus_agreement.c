@@ -30,11 +30,11 @@ void RTU_Pack_Data(uint8_t Address, uint8_t Funtion, uint8_t Data_Len, uint8_t *
 	for(i = 0;i<Data_Len;i++)
 	{
 		Strings[i+3] = Data[i];
-	};
+	}
 	CRC_16(Strings,Data_Len+3);//生成CRC码
 	Strings[Data_Len+3] = Check_Code[1]; 
 	Strings[Data_Len+4] = Check_Code[0];
-
+	
 	switch(Send_Device)
 	{
 		case USART1_DEVICE: USART1_Printf(Strings); break; 
@@ -53,28 +53,38 @@ void RTU_Pack_Data(uint8_t Address, uint8_t Funtion, uint8_t Data_Len, uint8_t *
   */
 uint8_t RTU_Data_Analysis(uint8_t * RTU_Data)
 {
-	uint8_t Temp_Array[2];
-	uint16_t Str_Num;
-	while(RTU_Data[Str_Num] != '\0')
+	uint8_t Temp_Array[2] = {'\0'};
+	uint16_t Str_Num = 0;
+	
+	while(RTU_Data[Str_Num] != '\0')//计算数据帧长度
 	{
 		Str_Num++;
 	}
-	Temp_Array[0] = RTU_Data[Str_Num - 1];
-	Temp_Array[1] = RTU_Data[Str_Num - 2];
+	
+	Temp_Array[0] = RTU_Data[Str_Num - 1];//获取CRC的低八位
+	Temp_Array[1] = RTU_Data[Str_Num - 2];//获取CRC的高八位
+	
 	RTU_Data[Str_Num - 1] = '\0';
 	RTU_Data[Str_Num - 2] = '\0';
+	
+	Data_Clean(Check_Code);//清Check_Code字符串中的数据，保证执行时数据不出错
+	
 	CRC_16(RTU_Data,Str_Num-2);
+	
 	if(Temp_Array[0] == Check_Code[0] && Temp_Array[1] == Check_Code[1])
 	{
+		//Debug_USART2_Printf("RTU数据校验成功\n");//调试使用，调试完毕删除！！！
 		Data_Clean(Check_Code);//清Check_Code字符串中的数据，保证下一次执行时数据不出错
 		return CHECK_SUCCESS;
 	}
 	else
 	{
+		//Debug_USART2_Printf("RTU数据校验失败\n");//调试使用，调试完毕删除！！！
 		Data_Clean(Check_Code);//清Check_Code字符串中的数据，保证下一次执行时数据不出错
 		return CHECK_FAILED;
 	}
 }
+
 
 /**
   * @brief  CRC生成函数，并将计算后的十六位CRC码存储在Check_Code[2]数组里

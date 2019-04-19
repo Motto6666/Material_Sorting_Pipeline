@@ -31,3 +31,4 @@
 ..\..\output\lcd_display_chinese.o: ..\..\Libraries\FWlib\inc\misc.h
 ..\..\output\lcd_display_chinese.o: ..\..\BSP\lcd\bsp_ili9341_lcd.h
 ..\..\output\lcd_display_chinese.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+..\..\output\lcd_display_chinese.o: ..\..\BSP\systick\bsp_systick.h

@@ -13,7 +13,7 @@ green_crc_high = 0x6E
 green_crc_low = 0xEF
 no_color = 0x4E
 no_color_crc_high = 0x68
-no_color_crc_low = 0xDF
+no_color_crc_low = 0x2F
 
 
 def send_rtu_data(color):
@@ -30,7 +30,9 @@ def send_rtu_data(color):
         data = [address, funtion, data_len, no_color, no_color_crc_high, no_color_crc_low]
         rtu_data=struct.pack("%dB"%(len(data)),*data)#生成RTU数据帧
 
-    print(rtu_data)
+    #print(rtu_data)
     uart3.write(rtu_data)
+    data = []#清除data数组里的内容，避免数据出错
+    rtu_data = []#清除rtu_data数组里的内容，避免数据出错
 
 

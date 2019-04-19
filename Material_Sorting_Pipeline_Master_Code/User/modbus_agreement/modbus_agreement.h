@@ -17,7 +17,7 @@
 
 #define DATA_RED         	0x52 
 #define DATA_GREEN       	0x47
-#define DATA_NONE         0X4E
+#define DATA_NONE         0x4E
 
 #define USART1_DEVICE      1
 #define USART2_DEVICE      2

@@ -457,7 +457,7 @@ void ILI9341_GramScan ( uint8_t ucOption )
 }
 
 
-void ILI9341_Init(void)
+void LCD_Init(void)
 {
 	ILI9341_GPIO_Init();//配置LCD引脚 
 	ILI9341_REG_Config();//初始化ILI9341液晶控制芯片

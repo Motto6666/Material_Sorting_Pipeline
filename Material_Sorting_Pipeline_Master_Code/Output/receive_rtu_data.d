@@ -30,10 +30,13 @@
 ..\..\output\receive_rtu_data.o: ..\..\Libraries\FWlib\inc\stm32f10x_wwdg.h
 ..\..\output\receive_rtu_data.o: ..\..\Libraries\FWlib\inc\misc.h
 ..\..\output\receive_rtu_data.o: ..\..\BSP\usart\bsp_usart1.h
-..\..\output\receive_rtu_data.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 ..\..\output\receive_rtu_data.o: ..\..\BSP\systick\bsp_systick.h
 ..\..\output\receive_rtu_data.o: ..\..\BSP\tim7\bsp_tim7.h
 ..\..\output\receive_rtu_data.o: ..\..\BSP\usart\bsp_usart2.h
+..\..\output\receive_rtu_data.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 ..\..\output\receive_rtu_data.o: ..\..\BSP\tim6\bsp_tim6.h
 ..\..\output\receive_rtu_data.o: ..\..\User\modbus_agreement\modbus_agreement.h
 ..\..\output\receive_rtu_data.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+..\..\output\receive_rtu_data.o: ..\..\BSP\lcd\bsp_ili9341_lcd.h
+..\..\output\receive_rtu_data.o: ..\..\User\display_character\lcd_display_english.h
+..\..\output\receive_rtu_data.o: ..\..\User\display_character\lcd_display_chinese.h

@@ -1,59 +1,37 @@
 #include "stm32f10x.h"
-#include "bsp_usart1.h"
-#include "bsp_usart2.h"
-#include "bsp_ili9341_lcd.h"
-#include "lcd_display_english.h"
-#include "lcd_display_chinese.h"
-#include "modbus_agreement.h"
+#include "system_init.h"
 #include "bsp_systick.h"
-#include "bsp_tim6.h"
-#include "bsp_tim7.h"
+#include "modbus_agreement.h"
 #include "receive_rtu_data.h"
-
-//extern uint8_t Chinese_Character_1[9][32];
-//extern uint8_t Chinese_Character_2[7][32];
-//extern uint8_t Chinese_Character_3[8][32];
-//extern uint8_t Chinese_Character_4[12][32];
-//extern uint8_t Chinese_Character_5[11][32];
-//extern uint8_t Chinese_Character_6[15][32];
-//extern uint8_t Chinese_Character_7[8][32];
-//extern uint8_t Chinese_Character_8[12][32];
-//extern uint8_t Chinese_Character_9[8][32];
-//extern uint8_t Chinese_Character_10[12][32];
-//extern uint8_t Chinese_Character_11[7][32];
-//extern uint8_t Chinese_Character_12[15][32];
-//extern uint8_t Chinese_Character_13[7][32];
-//extern uint8_t Chinese_Character_14[15][32];
 
 
 volatile uint8_t USART1_Send_Count = 0;//USART1发送RTU数据包次数（仍然存在疑问）
 volatile uint8_t USART2_Send_Count = 0;//USART2发送RTU数据包次数（仍然存在疑问）
 
-uint8_t Data_Stirng[50];//调试使用，调试完毕删除
+uint8_t Data_Stirng[1];
 
 int main(void)
-{ 	
-	USART1_Config();//初始化USART1
-	USART2_Config();//初始化USART2
-	BASIC_TIM6_Init();//初始化TIM6
-	BASIC_TIM7_Init();//初始化TIM7
+{ 		
+	System_Init();
 	
 	RTU_Pack_Data(OPENMV_ADD, OPENMV_CHACK, 0, Data_Stirng, USART1_DEVICE);//打包RTU数据并发送到指定设备
-	
-	Debug_USART2_Printf("USART1第一次数据发送成功");
+		
+	Debug_USART2_Printf("USART1第一次数据发送成功");//调试使用，调试完毕删除！！！
 	
 	USART1_Rtu_Data_Receive(OPENMV_ADD, OPENMV_CHACK);
 	
-	SysTick_Delay_us(1000);
+	SysTick_Delay_us(1000);//等待1ms，保证OpenMV模块已进入到接收数据的状态
 	
 	RTU_Pack_Data(OPENMV_ADD, OPENMV_RECOGNIZE, 0, Data_Stirng, USART1_DEVICE);
 	
-	Debug_USART2_Printf("USART1第二次数据发送成功");
+	Debug_USART2_Printf("USART1第二次数据发送成功");//调试使用，调试完毕删除！！！
 	
 	USART1_Rtu_Data_Receive(OPENMV_ADD, OPENMV_RECOGNIZE);
 	
+	USART1_Receive_Recognize_Data();
 	
-	
+	Debug_USART2_Printf("USART1第三次数据发送成功");//调试使用，调试完毕删除！！！
+		
 //	TIM6_ENABLE;//开启定时器TIM6
 		 
 //	while(1)

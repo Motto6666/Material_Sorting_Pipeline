@@ -31,6 +31,7 @@
 "..\..\output\lcd_display_english.o"
 "..\..\output\modbus_agreement.o"
 "..\..\output\receive_rtu_data.o"
+"..\..\output\system_init.o"
 "..\..\output\bsp_ili9341_lcd.o"
 "..\..\output\bsp_usart1.o"
 "..\..\output\bsp_systick.o"

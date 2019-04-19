@@ -85,7 +85,7 @@
 /*ILIL9341接口定义-结尾****************************/
 void ILI9341_GPIO_Init(void);
 uint16_t ILI9341_Read_ID(void);
-void ILI9341_Init(void);
+void LCD_Init(void);
 void ILI9341_GramScan ( uint8_t ucOption );
 void ILI9341_Open_Window(uint16_t x,uint16_t y,uint16_t width, uint16_t heigh);
 void ILI9341_Draw_Rect(uint16_t x,uint16_t y,uint16_t width, uint16_t heigh,uint16_t color);
