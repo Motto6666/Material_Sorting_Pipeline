@@ -51,7 +51,7 @@ void BASIC_TIM6_Init(void)
 
 
  /**
-  * @brief  Tim6定时中断服务函数，20ms中断一次
+  * @brief  Tim6定时中断服务函数，50ms中断一次
   * @param  需要发送出去的字符串的指针
   * @retval 无
   */
@@ -63,4 +63,10 @@ void  BASIC_TIM6_IRQHandler (void)
 		TIM6_Count++;
 		TIM_ClearITPendingBit(BASIC_TIM6, TIM_FLAG_Update);  		 
 	}		 	
+}
+
+void TIM6_Shut_Down(void)
+{
+	TIM6_DISABLE;
+	TIM6_Count = 0;
 }

@@ -19,6 +19,8 @@
 #define DATA_GREEN       	0x47
 #define DATA_NONE         0x4E
 
+#define OK								0x04
+
 #define USART1_DEVICE      1
 #define USART2_DEVICE      2
 

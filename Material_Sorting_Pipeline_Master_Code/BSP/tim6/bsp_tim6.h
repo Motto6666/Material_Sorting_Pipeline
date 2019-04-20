@@ -13,9 +13,11 @@
 
 #define            TIM6_ENABLE                  TIM_Cmd(BASIC_TIM6, ENABLE);
 #define            TIM6_DISABLE                 TIM_Cmd(BASIC_TIM6, DISABLE);
+#define						 FIVE_SECONDS                 100
 
 extern volatile uint32_t TIM6_Count;
 
 void BASIC_TIM6_Init(void);
+void TIM6_Shut_Down(void);
 
 #endif /*__BSP_TIM6_H*/

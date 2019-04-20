@@ -30,7 +30,7 @@ def send_rtu_data(color):
         data = [address, funtion, data_len, no_color, no_color_crc_high, no_color_crc_low]
         rtu_data=struct.pack("%dB"%(len(data)),*data)#生成RTU数据帧
 
-    #print(rtu_data)
+    print(rtu_data)
     uart3.write(rtu_data)
     data = []#清除data数组里的内容，避免数据出错
     rtu_data = []#清除rtu_data数组里的内容，避免数据出错

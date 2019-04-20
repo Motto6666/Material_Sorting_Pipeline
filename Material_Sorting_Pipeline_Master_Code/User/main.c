@@ -15,22 +15,29 @@ int main(void)
 	System_Init();
 	
 	RTU_Pack_Data(OPENMV_ADD, OPENMV_CHACK, 0, Data_Stirng, USART1_DEVICE);//打包RTU数据并发送到指定设备
+			
+	USART1_Receive_State_Data(OPENMV_ADD, OPENMV_CHACK);
+	
+	while(1)
+	{
+		SysTick_Delay_us(1000);//等待1ms，保证OpenMV模块已进入到接收数据的状态
+	
+		RTU_Pack_Data(OPENMV_ADD, OPENMV_RECOGNIZE, 0, Data_Stirng, USART1_DEVICE);
 		
-	Debug_USART2_Printf("USART1第一次数据发送成功");//调试使用，调试完毕删除！！！
+		USART1_Receive_State_Data(OPENMV_ADD, OPENMV_RECOGNIZE);
+		
+		USART1_Receive_Recognize_Data();
+		
+		USART_Buffer_Clean(USART1_RX_Pack);
+	}
 	
-	USART1_Rtu_Data_Receive(OPENMV_ADD, OPENMV_CHACK);
 	
-	SysTick_Delay_us(1000);//等待1ms，保证OpenMV模块已进入到接收数据的状态
 	
-	RTU_Pack_Data(OPENMV_ADD, OPENMV_RECOGNIZE, 0, Data_Stirng, USART1_DEVICE);
+		
 	
-	Debug_USART2_Printf("USART1第二次数据发送成功");//调试使用，调试完毕删除！！！
 	
-	USART1_Rtu_Data_Receive(OPENMV_ADD, OPENMV_RECOGNIZE);
 	
-	USART1_Receive_Recognize_Data();
 	
-	Debug_USART2_Printf("USART1第三次数据发送成功");//调试使用，调试完毕删除！！！
 		
 //	TIM6_ENABLE;//开启定时器TIM6
 		 
