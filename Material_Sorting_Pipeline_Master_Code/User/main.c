@@ -28,7 +28,7 @@ int main(void)
 		
 		USART1_Receive_Recognize_Data();
 		
-		USART_Buffer_Clean(USART1_RX_Pack);
+		USART_Buffer_Clean(USART1_RX_Pack);//到时候需要用到识别数据，待成功发送识别数据到机械手时再清除
 	}
 	
 	
@@ -171,12 +171,6 @@ int main(void)
 //	USART1_RX_Count = 0;//计数值清0
 	
 
-	
-	while(1);//调试使用，调试完毕删除！！！
-	
-	
-	
-	
 
 //	RTU_Pack_Data(IRON_HAND_ADD, IRON_HAND_CHACK, 0, Data_Stirng, USART2_DEVICE);//打包RTU数据并发送到指定设备
 //	

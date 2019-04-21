@@ -2,4 +2,4 @@
 -I H:\Keil4\ARM\RV31\INC 
 -I H:\Keil4\ARM\CMSIS\Include 
 -I H:\Keil4\ARM\Inc\ST\STM32F10x 
--DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD -o "..\Output\bsp_usart1.o" --omf_browse "..\Output\bsp_usart1.crf" --depend "..\Output\bsp_usart1.d" "..\BSP\usart1\bsp_usart1.c"
+-DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD -o "..\Output\bsp_usart2.o" --omf_browse "..\Output\bsp_usart2.crf" --depend "..\Output\bsp_usart2.d" "..\BSP\usart2\bsp_usart2.c"

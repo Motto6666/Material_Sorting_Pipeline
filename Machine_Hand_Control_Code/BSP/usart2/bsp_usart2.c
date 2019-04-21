@@ -17,7 +17,7 @@ static void USART2_NVIC_Configuration(void)
   /* 抢断优先级*/
   NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 0;
   /* 子优先级 */
-  NVIC_InitStructure.NVIC_IRQChannelSubPriority = 2;
+  NVIC_InitStructure.NVIC_IRQChannelSubPriority = 1;
   /* 使能中断 */
   NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
   /* 初始化配置NVIC */
@@ -103,23 +103,6 @@ void USART2_Printf(uint8_t *Str)
 
 
  /**
-  * @brief  重定向c库函数printf到串口，重定向后可使用printf函数
-  * @param  无
-  * @retval 无
-  */
-int fputc(int ch, FILE *f)
-{
-		/* 发送一个字节数据到串口 */
-		USART_SendData(DEBUG_USART2, (uint8_t) ch);
-		
-		/* 等待发送完毕 */
-		while (USART_GetFlagStatus(DEBUG_USART2, USART_FLAG_TXE) == RESET);		
-	
-		return (ch);
-}
-
-
- /**
   * @brief  USART2串口接收中断服务函数
   * @param  需要发送出去的字符串的指针
   * @retval 无
@@ -130,8 +113,8 @@ void DEBUG_USART2_IRQHandler(void)
 {
 	if(USART_GetITStatus(DEBUG_USART2,USART_IT_RXNE)!=RESET)
 	{		
-		TIM7_ENABLE;//开启TIM7定时器，用于判断USART2数据是否接收完毕
-		TIM7_Count = 10;
+		TIM3_ENABLE;//开启TIM7定时器，用于判断USART2数据是否接收完毕
+		TIM3_Count = 10;
 		USART2_RX_Pack[USART2_RX_Count] = USART_ReceiveData(DEBUG_USART2);
     USART2_RX_Count++;
 	}	 

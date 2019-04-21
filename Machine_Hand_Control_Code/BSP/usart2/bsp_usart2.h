@@ -4,8 +4,7 @@
 
 #include "stm32f10x.h"
 #include "bsp_systick.h"
-#include "bsp_tim7.h"
-#include <stdio.h>
+#include "bsp_tim3.h"
 
 // ´®¿Ú2-USART2
 #define  DEBUG_USART2                   USART2
