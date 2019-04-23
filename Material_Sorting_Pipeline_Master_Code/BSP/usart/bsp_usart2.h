@@ -8,7 +8,7 @@
 #include <stdio.h>
 
 // ´®¿Ú2-USART2
-#define  DEBUG_USART2                   USART2
+#define  DEBUG_USART2                    USART2
 #define  DEBUG_USART2_CLK                RCC_APB1Periph_USART2
 #define  DEBUG_USART2_APBxClkCmd         RCC_APB1PeriphClockCmd
 #define  DEBUG_USART2_BAUDRATE           115200

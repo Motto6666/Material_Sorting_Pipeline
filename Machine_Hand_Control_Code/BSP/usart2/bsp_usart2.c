@@ -119,3 +119,27 @@ void DEBUG_USART2_IRQHandler(void)
     USART2_RX_Count++;
 	}	 
 }
+
+
+/**
+  * @brief  将字符串输入的字符串数据
+  * @param  *Str ：字符串数据的指针
+  * @retval 无
+  */
+void USAER2_RX_Data_Clean(uint8_t *Str)
+{
+	uint16_t Str_Num=0;
+	uint16_t i;
+	
+	while(Str[Str_Num] != '\0')
+	{
+		Str_Num++;
+	}
+	
+	for(i=0;i<Str_Num;i++)
+	{
+		Str[i] = '\0';
+  }
+	
+	USART2_RX_Count = 0;
+}

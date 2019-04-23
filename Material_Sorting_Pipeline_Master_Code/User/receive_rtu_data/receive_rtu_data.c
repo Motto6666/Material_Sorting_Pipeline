@@ -16,7 +16,7 @@ void USART1_Receive_State_Data(uint8_t Address, uint8_t Funtion)
 	TIM6_ENABLE;
 	while(1)
 	{
-		if( USART_RX_Over == TURE)
+		if( USART_RX_Over == TURE)//完成机械手通信后参考机械手程序修改该地方！！！！
 		{
 			TIM6_Shut_Down();
 			USART1_Send_Count = 0;
@@ -73,11 +73,19 @@ void USART2_Receive_State_Data(uint8_t Address, uint8_t Funtion)
 	while(1)
 	{
 		if( USART_RX_Over == TURE)
-		{
+		{		
 			TIM6_Shut_Down();
-			USART2_Send_Count = 0;
 			USART_RX_Over = 0;
-			break;			
+			if( USART2_RX_Pack[0] == Address || USART2_RX_Pack[1] == Funtion )
+			{				
+				USART2_Send_Count = 0;
+				break;//跳出接收循环函数
+			}
+			else
+			{
+				TIM6_ENABLE;
+				USART_Buffer_Clean(USART2_RX_Pack);
+			}			
 		}
 		
 		if( (TIM6_Count == FIVE_SECONDS) && (USART2_Send_Count<=5) )//计时时间为10秒
@@ -111,10 +119,28 @@ void USART2_Receive_State_Data(uint8_t Address, uint8_t Funtion)
 				while(1);
 			}
 			
-			if(Funtion != IRON_HAND_EXECUTE_END)//进入到等待机械手返回执行完毕数据环节时，超时无需再次发送RTU数据帧
+			switch(Funtion)
 			{
-				RTU_Pack_Data(Address, Funtion, 0, Data_Stirngs, USART2_DEVICE);//重新打包RTU数据并发送到指定设备
+				case IRON_HAND_CHACK:
+							RTU_Pack_Data(Address, Funtion, 0, Data_Stirngs, USART2_DEVICE);//重新打包RTU数据并发送到指定设备
+							break;
+				
+				case IRON_HAND_EXECUTE:
+							Data_Stirngs[0] = USART1_RX_Pack[3];////将识别到的颜色数据存放到Data_Stirngs数组里
+							RTU_Pack_Data(Address, Funtion, 1, Data_Stirngs, USART2_DEVICE);//重新打包RTU数据并发送到指定设备
+							Data_Clean(Data_Stirngs);
+							break;
+				
+				case IRON_HAND_EXECUTE_END://进入到等待机械手返回执行完毕数据环节时，无需每隔5S发送RTU数据帧
+							break;
+				
+				default: break;
 			}
+			
+//			if(Funtion != IRON_HAND_EXECUTE_END)//进入到等待机械手返回执行完毕数据环节时，无需每隔5S发送RTU数据帧
+//			{
+//				RTU_Pack_Data(Address, Funtion, 0, Data_Stirngs, USART2_DEVICE);//重新打包RTU数据并发送到指定设备
+//			}
 			
 			USART2_Send_Count++;
 			
@@ -193,6 +219,7 @@ void USART1_Receive_Recognize_Data(void)
 			USART_RX_Over = 0;
 			if( RTU_Data_Analysis(USART1_RX_Pack) == CHECK_SUCCESS )
 			{
+				USART1_Send_Count = 0;
 				
 				RTU_Pack_Data(OPENMV_ADD, OK, 0, Data_Stirngs, USART1_DEVICE);//发送ok帧到openMV
 				

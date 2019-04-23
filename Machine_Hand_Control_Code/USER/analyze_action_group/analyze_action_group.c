@@ -87,9 +87,7 @@ void Analyze_Action_Group( uint8_t (*Action_Group)[15])
 {
 	uint8_t Servo_Num;
 	uint16_t PWM, Time,i = 0,j = 0;
-	
-	Printf(Action_Group[0]);//调试使用，调试完毕删除
-	
+		
 	while(Action_Group[i][j])
 	{
 		while(Action_Group[i][j]) 

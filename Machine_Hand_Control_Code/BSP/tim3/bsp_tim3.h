@@ -11,12 +11,14 @@
 #define            GENERAL_TIM3_IRQ               TIM3_IRQn
 #define            GENERAL_TIM3_IRQHandler        TIM3_IRQHandler
 
-#define            TIM3_ENABLE                  TIM_Cmd(GENERAL_TIM3, ENABLE);
-#define            TIM3_DISABLE                 TIM_Cmd(GENERAL_TIM3, DISABLE);
+#define            TIM3_ENABLE                  	TIM_Cmd(GENERAL_TIM3, ENABLE);
+#define            TIM3_DISABLE                 	TIM_Cmd(GENERAL_TIM3, DISABLE);
+
+#define 					 TRUE														1
 
 extern volatile uint8_t TIM3_Count;
 extern volatile uint8_t USART_RX_Over;
 
-void BASIC_TIM7_Init(void);
+void TIM3_Config_Init(void);
 
 #endif /*__BSP_TIM3_H*/

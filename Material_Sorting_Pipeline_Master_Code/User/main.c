@@ -7,29 +7,50 @@
 
 volatile uint8_t USART1_Send_Count = 0;//USART1发送RTU数据包次数（仍然存在疑问）
 volatile uint8_t USART2_Send_Count = 0;//USART2发送RTU数据包次数（仍然存在疑问）
+uint8_t Data_Stirng[1];//若识别到颜色数据，则把识别到的数据存放到该数组里
 
-uint8_t Data_Stirng[1];
 
 int main(void)
 { 		
 	System_Init();
 	
-	RTU_Pack_Data(OPENMV_ADD, OPENMV_CHACK, 0, Data_Stirng, USART1_DEVICE);//打包RTU数据并发送到指定设备
-			
-	USART1_Receive_State_Data(OPENMV_ADD, OPENMV_CHACK);
+//	RTU_Pack_Data(OPENMV_ADD, OPENMV_CHACK, 0, Data_Stirng, USART1_DEVICE);//打包RTU数据并发送到指定设备
+//			
+//	USART1_Receive_State_Data(OPENMV_ADD, OPENMV_CHACK);
 	
-	while(1)
-	{
-		SysTick_Delay_us(1000);//等待1ms，保证OpenMV模块已进入到接收数据的状态
+	RTU_Pack_Data(IRON_HAND_ADD, IRON_HAND_CHACK, 0, Data_Stirng, USART2_DEVICE);
 	
-		RTU_Pack_Data(OPENMV_ADD, OPENMV_RECOGNIZE, 0, Data_Stirng, USART1_DEVICE);
-		
-		USART1_Receive_State_Data(OPENMV_ADD, OPENMV_RECOGNIZE);
-		
-		USART1_Receive_Recognize_Data();
-		
-		USART_Buffer_Clean(USART1_RX_Pack);//到时候需要用到识别数据，待成功发送识别数据到机械手时再清除
-	}
+	USART2_Receive_State_Data(IRON_HAND_ADD, IRON_HAND_CHACK);
+	
+//	while(1)
+//	{
+//		SysTick_Delay_us(1000);//等待1ms，保证OpenMV模块已进入到接收数据的状态
+//	
+//		RTU_Pack_Data(OPENMV_ADD, OPENMV_RECOGNIZE, 0, Data_Stirng, USART1_DEVICE);
+//		
+//		USART1_Receive_State_Data(OPENMV_ADD, OPENMV_RECOGNIZE);
+//		
+//		USART1_Receive_Recognize_Data();
+//		
+//	}
+	
+//	Data_Stirng[0] = USART1_RX_Pack[3];//将识别到的颜色数据存放到Data_Stirng数组里
+
+
+
+	SysTick_Delay_us(5000000);//等待5s，保证机械手控制模块已进入到接收数据的状态
+
+	Data_Stirng[0] = DATA_RED;//调试使用，调试完毕删除!!!!
+	
+	RTU_Pack_Data(IRON_HAND_ADD, IRON_HAND_EXECUTE, 1, Data_Stirng, USART2_DEVICE);
+	USART2_Receive_State_Data(IRON_HAND_ADD,IRON_HAND_EXECUTE);
+	
+	USART_Buffer_Clean(USART1_RX_Pack);
+	Data_Clean(Data_Stirng);
+	
+	USART2_Receive_State_Data(IRON_HAND_ADD,IRON_HAND_EXECUTE_END);
+	
+	while(1);//调试使用，调试完毕删除!!!!
 	
 	
 	

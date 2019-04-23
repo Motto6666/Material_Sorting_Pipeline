@@ -207,3 +207,13 @@
 [2019-04-09 20:35:日志记录不属免费功能,请注册支持作者改进软件
 [2019-04-09 21:01:日志记录不属免费功能,请注册支持作者改进软件
 [2019-04-09 21:20:日志记录不属免费功能,请注册支持作者改进软件
+[2019-04-22 19:03:Program Success:49FF72067789505621241367 C:\Users\motto6666\Desktop\Machine_Hand_Control_Code\Output\32_duoji.hex
+[2019-04-22 19:08:Program Success:49FF72067789505621241367 C:\Users\motto6666\Desktop\Machine_Hand_Control_Code\Output\32_duoji.hex
+[2019-04-22 19:13:Program Success:49FF72067789505621241367 C:\Users\motto6666\Desktop\Machine_Hand_Control_Code\Output\32_duoji.hex
+[2019-04-22 20:13:Program Success:49FF72067789505621241367 C:\Users\motto6666\Desktop\Machine_Hand_Control_Code\Output\32_duoji.hex
+[2019-04-22 20:47:Program Success:49FF72067789505621241367 C:\Users\motto6666\Desktop\Machine_Hand_Control_Code\Output\32_duoji.hex
+[2019-04-22 20:48:Program Success:49FF72067789505621241367 C:\Users\motto6666\Desktop\Machine_Hand_Control_Code\Output\32_duoji.hex
+[2019-04-22 20:54:Program Success:49FF72067789505621241367 C:\Users\motto6666\Desktop\Machine_Hand_Control_Code\Output\32_duoji.hex
+[2019-04-22 21:28:Program Success:49FF72067789505621241367 C:\Users\motto6666\Desktop\Machine_Hand_Control_Code\Output\32_duoji.hex
+[2019-04-22 21:48:Program Success:49FF72067789505621241367 C:\Users\motto6666\Desktop\Machine_Hand_Control_Code\Output\32_duoji.hex
+[2019-04-23 15:03:Program Success:49FF72067789505621241367 F:\上传到GitHub文件\Material_Sorting_Pipeline\Material_Sorting_Pipeline\Machine_Hand_Control_Code\Output\32_duoji.hex

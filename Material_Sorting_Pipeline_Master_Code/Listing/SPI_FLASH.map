@@ -29,7 +29,7 @@ Section Cross References
     stm32f10x_wwdg.o(.text) refers to stm32f10x_rcc.o(.text) for RCC_APB1PeriphResetCmd
     main.o(.text) refers to system_init.o(.text) for System_Init
     main.o(.text) refers to modbus_agreement.o(.text) for RTU_Pack_Data
-    main.o(.text) refers to receive_rtu_data.o(.text) for USART1_Receive_State_Data
+    main.o(.text) refers to receive_rtu_data.o(.text) for USART2_Receive_State_Data
     main.o(.text) refers to bsp_systick.o(.text) for SysTick_Delay_us
     main.o(.text) refers to main.o(.data) for Data_Stirng
     main.o(.text) refers to bsp_usart1.o(.bss) for USART1_RX_Pack
@@ -225,30 +225,30 @@ Image Symbol Table
     TI1_Config                               0x08001187   Thumb Code   108  stm32f10x_tim.o(.text)
     .text                                    0x08001940   Section        0  stm32f10x_usart.o(.text)
     .text                                    0x08001d48   Section        0  main.o(.text)
-    .text                                    0x08001d9c   Section        0  stm32f10x_it.o(.text)
-    .text                                    0x08001db8   Section        0  lcd_display_chinese.o(.text)
-    .text                                    0x08001f60   Section        0  lcd_display_english.o(.text)
-    .text                                    0x08002070   Section        0  modbus_agreement.o(.text)
-    .text                                    0x080021d8   Section        0  receive_rtu_data.o(.text)
-    .text                                    0x080025ec   Section        0  system_init.o(.text)
-    .text                                    0x0800263c   Section        0  bsp_ili9341_lcd.o(.text)
-    ILI9341_Delay                            0x0800263d   Thumb Code    18  bsp_ili9341_lcd.o(.text)
-    .text                                    0x08002c48   Section        0  bsp_usart1.o(.text)
-    USART1_NVIC_Configuration                0x08002c49   Thumb Code    40  bsp_usart1.o(.text)
-    .text                                    0x08002d74   Section        0  bsp_systick.o(.text)
-    .text                                    0x08002df4   Section        0  bsp_tim6.o(.text)
-    BASIC_TIM6_NVIC_Config                   0x08002df5   Thumb Code    42  bsp_tim6.o(.text)
-    BASIC_TIM6_Mode_Config                   0x08002e1f   Thumb Code    60  bsp_tim6.o(.text)
-    .text                                    0x08002ea0   Section        0  bsp_tim7.o(.text)
-    BASIC_TIM7_NVIC_Config                   0x08002ea1   Thumb Code    42  bsp_tim7.o(.text)
-    BASIC_TIM7_Mode_Config                   0x08002ecb   Thumb Code    60  bsp_tim7.o(.text)
-    .text                                    0x08002f58   Section        0  bsp_usart2.o(.text)
-    USART2_NVIC_Configuration                0x08002f59   Thumb Code    42  bsp_usart2.o(.text)
-    .text                                    0x080030a4   Section       36  init.o(.text)
-    .text                                    0x080030c8   Section        0  __dclz77c.o(.text)
-    i.__scatterload_copy                     0x08003126   Section       14  handlers.o(i.__scatterload_copy)
-    i.__scatterload_null                     0x08003134   Section        2  handlers.o(i.__scatterload_null)
-    i.__scatterload_zeroinit                 0x08003136   Section       14  handlers.o(i.__scatterload_zeroinit)
+    .text                                    0x08001db0   Section        0  stm32f10x_it.o(.text)
+    .text                                    0x08001dcc   Section        0  lcd_display_chinese.o(.text)
+    .text                                    0x08001f74   Section        0  lcd_display_english.o(.text)
+    .text                                    0x08002084   Section        0  modbus_agreement.o(.text)
+    .text                                    0x080021ec   Section        0  receive_rtu_data.o(.text)
+    .text                                    0x08002630   Section        0  system_init.o(.text)
+    .text                                    0x08002680   Section        0  bsp_ili9341_lcd.o(.text)
+    ILI9341_Delay                            0x08002681   Thumb Code    18  bsp_ili9341_lcd.o(.text)
+    .text                                    0x08002c8c   Section        0  bsp_usart1.o(.text)
+    USART1_NVIC_Configuration                0x08002c8d   Thumb Code    40  bsp_usart1.o(.text)
+    .text                                    0x08002db8   Section        0  bsp_systick.o(.text)
+    .text                                    0x08002e38   Section        0  bsp_tim6.o(.text)
+    BASIC_TIM6_NVIC_Config                   0x08002e39   Thumb Code    42  bsp_tim6.o(.text)
+    BASIC_TIM6_Mode_Config                   0x08002e63   Thumb Code    60  bsp_tim6.o(.text)
+    .text                                    0x08002ee4   Section        0  bsp_tim7.o(.text)
+    BASIC_TIM7_NVIC_Config                   0x08002ee5   Thumb Code    42  bsp_tim7.o(.text)
+    BASIC_TIM7_Mode_Config                   0x08002f0f   Thumb Code    60  bsp_tim7.o(.text)
+    .text                                    0x08002f9c   Section        0  bsp_usart2.o(.text)
+    USART2_NVIC_Configuration                0x08002f9d   Thumb Code    42  bsp_usart2.o(.text)
+    .text                                    0x080030e8   Section       36  init.o(.text)
+    .text                                    0x0800310c   Section        0  __dclz77c.o(.text)
+    i.__scatterload_copy                     0x0800316a   Section       14  handlers.o(i.__scatterload_copy)
+    i.__scatterload_null                     0x08003178   Section        2  handlers.o(i.__scatterload_null)
+    i.__scatterload_zeroinit                 0x0800317a   Section       14  handlers.o(i.__scatterload_zeroinit)
     .data                                    0x20000000   Section       20  system_stm32f10x.o(.data)
     .data                                    0x20000014   Section       20  stm32f10x_rcc.o(.data)
     APBAHBPrescTable                         0x20000014   Data          16  stm32f10x_rcc.o(.data)
@@ -520,65 +520,65 @@ Image Symbol Table
     USART_ClearFlag                          0x08001caf   Thumb Code    18  stm32f10x_usart.o(.text)
     USART_GetITStatus                        0x08001cc1   Thumb Code    84  stm32f10x_usart.o(.text)
     USART_ClearITPendingBit                  0x08001d15   Thumb Code    52  stm32f10x_usart.o(.text)
-    main                                     0x08001d49   Thumb Code    76  main.o(.text)
-    NMI_Handler                              0x08001d9d   Thumb Code     2  stm32f10x_it.o(.text)
-    HardFault_Handler                        0x08001d9f   Thumb Code     4  stm32f10x_it.o(.text)
-    MemManage_Handler                        0x08001da3   Thumb Code     4  stm32f10x_it.o(.text)
-    BusFault_Handler                         0x08001da7   Thumb Code     4  stm32f10x_it.o(.text)
-    UsageFault_Handler                       0x08001dab   Thumb Code     4  stm32f10x_it.o(.text)
-    SVC_Handler                              0x08001daf   Thumb Code     2  stm32f10x_it.o(.text)
-    DebugMon_Handler                         0x08001db1   Thumb Code     2  stm32f10x_it.o(.text)
-    PendSV_Handler                           0x08001db3   Thumb Code     2  stm32f10x_it.o(.text)
-    SysTick_Handler                          0x08001db5   Thumb Code     2  stm32f10x_it.o(.text)
-    Display_Chinese                          0x08001db9   Thumb Code   202  lcd_display_chinese.o(.text)
-    Clean_Screen                             0x08001e83   Thumb Code   112  lcd_display_chinese.o(.text)
-    Display_Chinese_String                   0x08001ef3   Thumb Code    50  lcd_display_chinese.o(.text)
-    Display_Rectangle                        0x08001f25   Thumb Code    56  lcd_display_chinese.o(.text)
-    Display_English                          0x08001f61   Thumb Code   218  lcd_display_english.o(.text)
-    Display_Motto6666                        0x0800203b   Thumb Code    48  lcd_display_english.o(.text)
-    Data_Clean                               0x08002071   Thumb Code    34  modbus_agreement.o(.text)
-    CRC_16                                   0x08002093   Thumb Code    72  modbus_agreement.o(.text)
-    RTU_Pack_Data                            0x080020db   Thumb Code   136  modbus_agreement.o(.text)
-    RTU_Data_Analysis                        0x08002163   Thumb Code   108  modbus_agreement.o(.text)
-    USART_Buffer_Clean                       0x080021d9   Thumb Code    50  receive_rtu_data.o(.text)
-    LCD_Display_State                        0x0800220b   Thumb Code   190  receive_rtu_data.o(.text)
-    USART1_Receive_State_Data                0x080022c9   Thumb Code   198  receive_rtu_data.o(.text)
-    USART2_Receive_State_Data                0x0800238f   Thumb Code   236  receive_rtu_data.o(.text)
-    USART1_Receive_Recognize_Data            0x0800247b   Thumb Code   272  receive_rtu_data.o(.text)
-    System_Init                              0x080025ed   Thumb Code    72  system_init.o(.text)
-    ILI9341_GPIO_Init                        0x0800264f   Thumb Code   134  bsp_ili9341_lcd.o(.text)
-    ILI9341_Write_CMD                        0x080026d5   Thumb Code    60  bsp_ili9341_lcd.o(.text)
-    ILI9341_Write_Data                       0x08002711   Thumb Code    60  bsp_ili9341_lcd.o(.text)
-    ILI9341_Read_Data                        0x0800274d   Thumb Code   118  bsp_ili9341_lcd.o(.text)
-    ILI9341_Read_ID                          0x080027c3   Thumb Code    42  bsp_ili9341_lcd.o(.text)
-    ILI9341_REG_Config                       0x080027ed   Thumb Code   702  bsp_ili9341_lcd.o(.text)
-    ILI9341_GramScan                         0x08002aab   Thumb Code   172  bsp_ili9341_lcd.o(.text)
-    ILI9341_Open_Window                      0x08002b57   Thumb Code    96  bsp_ili9341_lcd.o(.text)
-    ILI9341_Draw_Rect                        0x08002bb7   Thumb Code    58  bsp_ili9341_lcd.o(.text)
-    LCD_Init                                 0x08002bf1   Thumb Code    38  bsp_ili9341_lcd.o(.text)
-    ILI9341_Draw_Point                       0x08002c17   Thumb Code    34  bsp_ili9341_lcd.o(.text)
-    USART1_Config                            0x08002c71   Thumb Code   136  bsp_usart1.o(.text)
-    USART1_Printf                            0x08002cf9   Thumb Code    46  bsp_usart1.o(.text)
-    USART1_IRQHandler                        0x08002d27   Thumb Code    54  bsp_usart1.o(.text)
-    SysTick_Delay_us                         0x08002d75   Thumb Code   118  bsp_systick.o(.text)
-    BASIC_TIM6_Init                          0x08002e5b   Thumb Code    12  bsp_tim6.o(.text)
-    TIM6_IRQHandler                          0x08002e67   Thumb Code    32  bsp_tim6.o(.text)
-    TIM6_Shut_Down                           0x08002e87   Thumb Code    18  bsp_tim6.o(.text)
-    BASIC_TIM7_Init                          0x08002f07   Thumb Code    12  bsp_tim7.o(.text)
-    TIM7_IRQHandler                          0x08002f13   Thumb Code    58  bsp_tim7.o(.text)
-    USART2_Config                            0x08002f83   Thumb Code   132  bsp_usart2.o(.text)
-    USART2_Printf                            0x08003007   Thumb Code    46  bsp_usart2.o(.text)
-    fputc                                    0x08003035   Thumb Code    32  bsp_usart2.o(.text)
-    USART2_IRQHandler                        0x08003055   Thumb Code    54  bsp_usart2.o(.text)
-    __scatterload                            0x080030a5   Thumb Code    28  init.o(.text)
-    __scatterload_rt2                        0x080030a5   Thumb Code     0  init.o(.text)
-    __decompress                             0x080030c9   Thumb Code     0  __dclz77c.o(.text)
-    __decompress2                            0x080030c9   Thumb Code    94  __dclz77c.o(.text)
-    __scatterload_copy                       0x08003127   Thumb Code    14  handlers.o(i.__scatterload_copy)
-    __scatterload_null                       0x08003135   Thumb Code     2  handlers.o(i.__scatterload_null)
-    __scatterload_zeroinit                   0x08003137   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
-    Region$$Table$$Base                      0x08003144   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x08003164   Number         0  anon$$obj.o(Region$$Table)
+    main                                     0x08001d49   Thumb Code    90  main.o(.text)
+    NMI_Handler                              0x08001db1   Thumb Code     2  stm32f10x_it.o(.text)
+    HardFault_Handler                        0x08001db3   Thumb Code     4  stm32f10x_it.o(.text)
+    MemManage_Handler                        0x08001db7   Thumb Code     4  stm32f10x_it.o(.text)
+    BusFault_Handler                         0x08001dbb   Thumb Code     4  stm32f10x_it.o(.text)
+    UsageFault_Handler                       0x08001dbf   Thumb Code     4  stm32f10x_it.o(.text)
+    SVC_Handler                              0x08001dc3   Thumb Code     2  stm32f10x_it.o(.text)
+    DebugMon_Handler                         0x08001dc5   Thumb Code     2  stm32f10x_it.o(.text)
+    PendSV_Handler                           0x08001dc7   Thumb Code     2  stm32f10x_it.o(.text)
+    SysTick_Handler                          0x08001dc9   Thumb Code     2  stm32f10x_it.o(.text)
+    Display_Chinese                          0x08001dcd   Thumb Code   202  lcd_display_chinese.o(.text)
+    Clean_Screen                             0x08001e97   Thumb Code   112  lcd_display_chinese.o(.text)
+    Display_Chinese_String                   0x08001f07   Thumb Code    50  lcd_display_chinese.o(.text)
+    Display_Rectangle                        0x08001f39   Thumb Code    56  lcd_display_chinese.o(.text)
+    Display_English                          0x08001f75   Thumb Code   218  lcd_display_english.o(.text)
+    Display_Motto6666                        0x0800204f   Thumb Code    48  lcd_display_english.o(.text)
+    Data_Clean                               0x08002085   Thumb Code    34  modbus_agreement.o(.text)
+    CRC_16                                   0x080020a7   Thumb Code    72  modbus_agreement.o(.text)
+    RTU_Pack_Data                            0x080020ef   Thumb Code   136  modbus_agreement.o(.text)
+    RTU_Data_Analysis                        0x08002177   Thumb Code   108  modbus_agreement.o(.text)
+    USART_Buffer_Clean                       0x080021ed   Thumb Code    50  receive_rtu_data.o(.text)
+    LCD_Display_State                        0x0800221f   Thumb Code   190  receive_rtu_data.o(.text)
+    USART1_Receive_State_Data                0x080022dd   Thumb Code   198  receive_rtu_data.o(.text)
+    USART2_Receive_State_Data                0x080023a3   Thumb Code   286  receive_rtu_data.o(.text)
+    USART1_Receive_Recognize_Data            0x080024c1   Thumb Code   272  receive_rtu_data.o(.text)
+    System_Init                              0x08002631   Thumb Code    72  system_init.o(.text)
+    ILI9341_GPIO_Init                        0x08002693   Thumb Code   134  bsp_ili9341_lcd.o(.text)
+    ILI9341_Write_CMD                        0x08002719   Thumb Code    60  bsp_ili9341_lcd.o(.text)
+    ILI9341_Write_Data                       0x08002755   Thumb Code    60  bsp_ili9341_lcd.o(.text)
+    ILI9341_Read_Data                        0x08002791   Thumb Code   118  bsp_ili9341_lcd.o(.text)
+    ILI9341_Read_ID                          0x08002807   Thumb Code    42  bsp_ili9341_lcd.o(.text)
+    ILI9341_REG_Config                       0x08002831   Thumb Code   702  bsp_ili9341_lcd.o(.text)
+    ILI9341_GramScan                         0x08002aef   Thumb Code   172  bsp_ili9341_lcd.o(.text)
+    ILI9341_Open_Window                      0x08002b9b   Thumb Code    96  bsp_ili9341_lcd.o(.text)
+    ILI9341_Draw_Rect                        0x08002bfb   Thumb Code    58  bsp_ili9341_lcd.o(.text)
+    LCD_Init                                 0x08002c35   Thumb Code    38  bsp_ili9341_lcd.o(.text)
+    ILI9341_Draw_Point                       0x08002c5b   Thumb Code    34  bsp_ili9341_lcd.o(.text)
+    USART1_Config                            0x08002cb5   Thumb Code   136  bsp_usart1.o(.text)
+    USART1_Printf                            0x08002d3d   Thumb Code    46  bsp_usart1.o(.text)
+    USART1_IRQHandler                        0x08002d6b   Thumb Code    54  bsp_usart1.o(.text)
+    SysTick_Delay_us                         0x08002db9   Thumb Code   118  bsp_systick.o(.text)
+    BASIC_TIM6_Init                          0x08002e9f   Thumb Code    12  bsp_tim6.o(.text)
+    TIM6_IRQHandler                          0x08002eab   Thumb Code    32  bsp_tim6.o(.text)
+    TIM6_Shut_Down                           0x08002ecb   Thumb Code    18  bsp_tim6.o(.text)
+    BASIC_TIM7_Init                          0x08002f4b   Thumb Code    12  bsp_tim7.o(.text)
+    TIM7_IRQHandler                          0x08002f57   Thumb Code    58  bsp_tim7.o(.text)
+    USART2_Config                            0x08002fc7   Thumb Code   132  bsp_usart2.o(.text)
+    USART2_Printf                            0x0800304b   Thumb Code    46  bsp_usart2.o(.text)
+    fputc                                    0x08003079   Thumb Code    32  bsp_usart2.o(.text)
+    USART2_IRQHandler                        0x08003099   Thumb Code    54  bsp_usart2.o(.text)
+    __scatterload                            0x080030e9   Thumb Code    28  init.o(.text)
+    __scatterload_rt2                        0x080030e9   Thumb Code     0  init.o(.text)
+    __decompress                             0x0800310d   Thumb Code     0  __dclz77c.o(.text)
+    __decompress2                            0x0800310d   Thumb Code    94  __dclz77c.o(.text)
+    __scatterload_copy                       0x0800316b   Thumb Code    14  handlers.o(i.__scatterload_copy)
+    __scatterload_null                       0x08003179   Thumb Code     2  handlers.o(i.__scatterload_null)
+    __scatterload_zeroinit                   0x0800317b   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
+    Region$$Table$$Base                      0x08003188   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x080031a8   Number         0  anon$$obj.o(Region$$Table)
     SystemCoreClock                          0x20000000   Data           4  system_stm32f10x.o(.data)
     AHBPrescTable                            0x20000004   Data          16  system_stm32f10x.o(.data)
     USART1_Send_Count                        0x20000028   Data           1  main.o(.data)
@@ -625,9 +625,9 @@ Memory Map of the image
 
   Image Entry point : 0x08000131
 
-  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x00004894, Max: 0x00040000, ABSOLUTE, COMPRESSED[0x0000389c])
+  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x000048d8, Max: 0x00040000, ABSOLUTE, COMPRESSED[0x000038e0])
 
-    Execution Region ER_IROM1 (Base: 0x08000000, Size: 0x00003164, Max: 0x00040000, ABSOLUTE)
+    Execution Region ER_IROM1 (Base: 0x08000000, Size: 0x000031a8, Max: 0x00040000, ABSOLUTE)
 
     Base Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -649,26 +649,26 @@ Memory Map of the image
     0x08000b24   0x00000e1a   Code   RO          367    .text               stm32f10x_tim.o
     0x0800193e   0x00000002   PAD
     0x08001940   0x00000408   Code   RO          379    .text               stm32f10x_usart.o
-    0x08001d48   0x00000054   Code   RO          403    .text               main.o
-    0x08001d9c   0x0000001a   Code   RO          464    .text               stm32f10x_it.o
-    0x08001db6   0x00000002   PAD
-    0x08001db8   0x000001a8   Code   RO          479    .text               lcd_display_chinese.o
-    0x08001f60   0x00000110   Code   RO          497    .text               lcd_display_english.o
-    0x08002070   0x00000168   Code   RO          512    .text               modbus_agreement.o
-    0x080021d8   0x00000414   Code   RO          531    .text               receive_rtu_data.o
-    0x080025ec   0x00000050   Code   RO          547    .text               system_init.o
-    0x0800263c   0x0000060c   Code   RO          559    .text               bsp_ili9341_lcd.o
-    0x08002c48   0x0000012c   Code   RO          574    .text               bsp_usart1.o
-    0x08002d74   0x00000080   Code   RO          593    .text               bsp_systick.o
-    0x08002df4   0x000000ac   Code   RO          609    .text               bsp_tim6.o
-    0x08002ea0   0x000000b8   Code   RO          627    .text               bsp_tim7.o
-    0x08002f58   0x0000014c   Code   RO          645    .text               bsp_usart2.o
-    0x080030a4   0x00000024   Code   RO          681    .text               mc_w.l(init.o)
-    0x080030c8   0x0000005e   Code   RO          691    .text               mc_w.l(__dclz77c.o)
-    0x08003126   0x0000000e   Code   RO          685    i.__scatterload_copy  mc_w.l(handlers.o)
-    0x08003134   0x00000002   Code   RO          686    i.__scatterload_null  mc_w.l(handlers.o)
-    0x08003136   0x0000000e   Code   RO          687    i.__scatterload_zeroinit  mc_w.l(handlers.o)
-    0x08003144   0x00000020   Data   RO          683    Region$$Table       anon$$obj.o
+    0x08001d48   0x00000068   Code   RO          403    .text               main.o
+    0x08001db0   0x0000001a   Code   RO          464    .text               stm32f10x_it.o
+    0x08001dca   0x00000002   PAD
+    0x08001dcc   0x000001a8   Code   RO          479    .text               lcd_display_chinese.o
+    0x08001f74   0x00000110   Code   RO          497    .text               lcd_display_english.o
+    0x08002084   0x00000168   Code   RO          512    .text               modbus_agreement.o
+    0x080021ec   0x00000444   Code   RO          531    .text               receive_rtu_data.o
+    0x08002630   0x00000050   Code   RO          547    .text               system_init.o
+    0x08002680   0x0000060c   Code   RO          559    .text               bsp_ili9341_lcd.o
+    0x08002c8c   0x0000012c   Code   RO          574    .text               bsp_usart1.o
+    0x08002db8   0x00000080   Code   RO          593    .text               bsp_systick.o
+    0x08002e38   0x000000ac   Code   RO          609    .text               bsp_tim6.o
+    0x08002ee4   0x000000b8   Code   RO          627    .text               bsp_tim7.o
+    0x08002f9c   0x0000014c   Code   RO          645    .text               bsp_usart2.o
+    0x080030e8   0x00000024   Code   RO          681    .text               mc_w.l(init.o)
+    0x0800310c   0x0000005e   Code   RO          691    .text               mc_w.l(__dclz77c.o)
+    0x0800316a   0x0000000e   Code   RO          685    i.__scatterload_copy  mc_w.l(handlers.o)
+    0x08003178   0x00000002   Code   RO          686    i.__scatterload_null  mc_w.l(handlers.o)
+    0x0800317a   0x0000000e   Code   RO          687    i.__scatterload_zeroinit  mc_w.l(handlers.o)
+    0x08003188   0x00000020   Data   RO          683    Region$$Table       anon$$obj.o
 
 
     Execution Region RW_IRAM1 (Base: 0x20000000, Size: 0x00001bc8, Max: 0x0000c000, ABSOLUTE, COMPRESSED[0x00000738])
@@ -712,10 +712,10 @@ Image component sizes
          0          0          0          0          0       4504   core_cm3.o
        424          4          0       5440          0       3798   lcd_display_chinese.o
        272          6          0        432          0       1990   lcd_display_english.o
-        84          8          0          3          0       2769   main.o
+       104         14          0          3          0       2777   main.o
        220         22          0          0          0       1969   misc.o
        360         10          0          2         50       2565   modbus_agreement.o
-      1044        104          0          1          0       2930   receive_rtu_data.o
+      1092        102          0          1          0       2954   receive_rtu_data.o
         36          8        304          0       1024        936   startup_stm32f10x_hd.o
        860         38          0          0          0       5809   stm32f10x_gpio.o
         26          0          0          0          0       1290   stm32f10x_it.o
@@ -726,7 +726,7 @@ Image component sizes
        480         38          0         20          0     250959   system_stm32f10x.o
 
     ----------------------------------------------------------------------
-     12128        504        336       5936       1176     348093   Object Totals
+     12196        508        336       5936       1176     348125   Object Totals
          0          0         32          0          0          0   (incl. Generated)
          4          0          0          3          2          0   (incl. Padding)
 
@@ -766,15 +766,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-     12308        520        336       5936       1176     347145   Grand Totals
-     12308        520        336       1848       1176     347145   ELF Image Totals (compressed)
-     12308        520        336       1848          0          0   ROM Totals
+     12376        524        336       5936       1176     347177   Grand Totals
+     12376        524        336       1848       1176     347177   ELF Image Totals (compressed)
+     12376        524        336       1848          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                12644 (  12.35kB)
+    Total RO  Size (Code + RO Data)                12712 (  12.41kB)
     Total RW  Size (RW Data + ZI Data)              7112 (   6.95kB)
-    Total ROM Size (Code + RO Data + RW Data)      14492 (  14.15kB)
+    Total ROM Size (Code + RO Data + RW Data)      14560 (  14.22kB)
 
 ==============================================================================
 

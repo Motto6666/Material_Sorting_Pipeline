@@ -3,7 +3,7 @@
  /**
   * @brief  配置TIM3中断优先级
   */
-static void BASIC_TIM7_NVIC_Config(void)//移植时可以根据实际情况作参数修改
+static void GENERAL_TIM3_NVIC_Config(void)//移植时可以根据实际情况作参数修改
 {
     NVIC_InitTypeDef NVIC_InitStructure; 
     // 设置中断组为0
@@ -22,7 +22,7 @@ static void BASIC_TIM7_NVIC_Config(void)//移植时可以根据实际情况作参数修改
  /**
   * @brief  TIM3外设配置
   */
-static void BASIC_TIM7_Mode_Config(void)
+static void GENERAL_TIM3_Mode_Config(void)
 {
     TIM_TimeBaseInitTypeDef  TIM_TimeBaseStructure;
 		
@@ -52,10 +52,10 @@ static void BASIC_TIM7_Mode_Config(void)
  /**
   * @brief  TIM3初始化
   */
-void BASIC_TIM7_Init(void)
+void TIM3_Config_Init(void)
 {
-	BASIC_TIM7_NVIC_Config();
-	BASIC_TIM7_Mode_Config();
+	GENERAL_TIM3_NVIC_Config();
+	GENERAL_TIM3_Mode_Config();
 }
 
 

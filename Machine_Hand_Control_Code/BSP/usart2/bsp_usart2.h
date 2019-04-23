@@ -7,7 +7,7 @@
 #include "bsp_tim3.h"
 
 // ´®¿Ú2-USART2
-#define  DEBUG_USART2                   USART2
+#define  DEBUG_USART2                    USART2
 #define  DEBUG_USART2_CLK                RCC_APB1Periph_USART2
 #define  DEBUG_USART2_APBxClkCmd         RCC_APB1PeriphClockCmd
 #define  DEBUG_USART2_BAUDRATE           115200
@@ -29,5 +29,6 @@ extern volatile uint16_t USART2_RX_Count;
 
 void USART2_Config(void);
 void USART2_Printf(uint8_t *Str);
+void USAER2_RX_Data_Clean(uint8_t *Str);
 
 #endif /* __BSP_USART2_H */

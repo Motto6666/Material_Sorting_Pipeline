@@ -106,7 +106,7 @@
 
 
 void USART1_Config(void);
-void Printf(uint8_t *String);
+void USART1_Printf(uint8_t *String);
 
 #endif /* __BSP_USART1_H */
 
