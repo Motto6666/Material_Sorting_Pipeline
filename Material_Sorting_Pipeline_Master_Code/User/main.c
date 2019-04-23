@@ -14,17 +14,21 @@ int main(void)
 { 		
 	System_Init();
 	
-//	RTU_Pack_Data(OPENMV_ADD, OPENMV_CHACK, 0, Data_Stirng, USART1_DEVICE);//打包RTU数据并发送到指定设备
-//			
-//	USART1_Receive_State_Data(OPENMV_ADD, OPENMV_CHACK);
+	RTU_Pack_Data(OPENMV_ADD, OPENMV_CHACK, 0, Data_Stirng, USART1_DEVICE);//打包RTU数据并发送到指定设备
+			
+	USART1_Receive_State_Data(OPENMV_ADD, OPENMV_CHACK);
+	
+	SysTick_Delay_ms(2000);
 	
 	RTU_Pack_Data(IRON_HAND_ADD, IRON_HAND_CHACK, 0, Data_Stirng, USART2_DEVICE);
 	
 	USART2_Receive_State_Data(IRON_HAND_ADD, IRON_HAND_CHACK);
 	
+	SysTick_Delay_ms(2000);
+	
 //	while(1)
 //	{
-//		SysTick_Delay_us(1000);//等待1ms，保证OpenMV模块已进入到接收数据的状态
+//		SysTick_Delay_ms(1);//等待1ms，保证OpenMV模块已进入到接收数据的状态
 //	
 //		RTU_Pack_Data(OPENMV_ADD, OPENMV_RECOGNIZE, 0, Data_Stirng, USART1_DEVICE);
 //		
@@ -37,20 +41,41 @@ int main(void)
 //	Data_Stirng[0] = USART1_RX_Pack[3];//将识别到的颜色数据存放到Data_Stirng数组里
 
 
+	while(1)
+	{
+		
+		RTU_Pack_Data(OPENMV_ADD, OPENMV_RECOGNIZE, 0, Data_Stirng, USART1_DEVICE);
+		
+		USART1_Receive_State_Data(OPENMV_ADD, OPENMV_RECOGNIZE);
+		
+		USART1_Receive_Recognize_Data();
 
-	SysTick_Delay_us(5000000);//等待5s，保证机械手控制模块已进入到接收数据的状态
+		Data_Stirng[0] = USART1_RX_Pack[3];//将识别到的颜色数据存放到Data_Stirng数组里
+		
+		
+		
+		
+		SysTick_Delay_ms(1000);//等待5s，保证机械手控制模块已进入到接收数据的状态
 
-	Data_Stirng[0] = DATA_RED;//调试使用，调试完毕删除!!!!
+
+
+		
+		RTU_Pack_Data(IRON_HAND_ADD, IRON_HAND_EXECUTE, 1, Data_Stirng, USART2_DEVICE);
+		            
+		USART2_Receive_State_Data(IRON_HAND_ADD,IRON_HAND_EXECUTE);
+		
+		USART_Buffer_Clean(USART1_RX_Pack);
+		Data_Clean(Data_Stirng);
+		
+		USART2_Receive_State_Data(IRON_HAND_ADD,IRON_HAND_EXECUTE_END);
+		
+		
+		SysTick_Delay_ms(1000);//调试使用，调试完毕删除！！！！！
+		
+	}
+
+
 	
-	RTU_Pack_Data(IRON_HAND_ADD, IRON_HAND_EXECUTE, 1, Data_Stirng, USART2_DEVICE);
-	USART2_Receive_State_Data(IRON_HAND_ADD,IRON_HAND_EXECUTE);
-	
-	USART_Buffer_Clean(USART1_RX_Pack);
-	Data_Clean(Data_Stirng);
-	
-	USART2_Receive_State_Data(IRON_HAND_ADD,IRON_HAND_EXECUTE_END);
-	
-	while(1);//调试使用，调试完毕删除!!!!
 	
 	
 	

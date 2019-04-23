@@ -1,5 +1,0 @@
--c --cpu Cortex-M3 -D__RTX -g -O0 --apcs=interwork -I..\USER -I..\Libraries\src -I..\Libraries\inc -I..\Startup -I..\CMSIS\CM3\CoreSupport -I..\CMSIS\CM3\DeviceSupport\ST\STM32F10x -I..\BSP\servo_gpio -I..\USER\servo_control -I..\BSP\systick -I..\BSP\usart1 -I..\BSP\tim2 -I..\USER\analyze_action_group -I..\USER\execute_action_group -I..\BSP\usart2 -I..\BSP\tim3 -I..\USER\modbus_agreement 
--I H:\Keil4\ARM\RV31\INC 
--I H:\Keil4\ARM\CMSIS\Include 
--I H:\Keil4\ARM\Inc\ST\STM32F10x 
--DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD -o "..\Output\analyze_action_group.o" --omf_browse "..\Output\analyze_action_group.crf" --depend "..\Output\analyze_action_group.d" "..\USER\analyze_action_group\analyze_action_group.c"

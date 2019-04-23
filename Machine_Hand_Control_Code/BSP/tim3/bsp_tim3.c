@@ -60,8 +60,8 @@ void TIM3_Config_Init(void)
 
 
  /**
-  * @brief  Tim7定时中断服务函数，1ms中断一次,用作判断USART1串口数据是否接收完毕，作超时检测
-  * @param  需要发送出去的字符串的指针
+  * @brief  Tim7定时中断服务函数，1ms中断一次,用作判断USART串
+	*					口数据是否接收完毕，作接收数据超时检测
   * @retval 无
   */
 volatile uint8_t TIM3_Count = 10;
@@ -75,7 +75,7 @@ void  GENERAL_TIM3_IRQHandler (void)
 		
 		if(TIM3_Count == 0)//若TIM3_Count为0，即可判断USART串口数据接收完毕
 		{
-			USART_RX_Over = 1;//表示数据接收完毕
+			USART_RX_Over = TRUE;//表示数据接收完毕
 			TIM3_Count = 10;//TIM3_Count值恢复到最初值，保证下次超时检测不出错
 			TIM3_DISABLE;
 		}

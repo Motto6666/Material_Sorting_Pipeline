@@ -15,6 +15,7 @@
 #define            TIM3_DISABLE                 	TIM_Cmd(GENERAL_TIM3, DISABLE);
 
 #define 					 TRUE														1
+#define						 FALSE													0
 
 extern volatile uint8_t TIM3_Count;
 extern volatile uint8_t USART_RX_Over;

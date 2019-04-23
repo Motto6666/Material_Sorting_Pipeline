@@ -14,12 +14,16 @@ static void USART2_NVIC_Configuration(void)
   
   /* 配置USART为中断源 */
   NVIC_InitStructure.NVIC_IRQChannel = DEBUG_USART2_IRQ;
+	
   /* 抢断优先级*/
   NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 0;
+	
   /* 子优先级 */
   NVIC_InitStructure.NVIC_IRQChannelSubPriority = 1;
+	
   /* 使能中断 */
   NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
+	
   /* 初始化配置NVIC */
   NVIC_Init(&NVIC_InitStructure);
 }
@@ -54,16 +58,22 @@ void USART2_Config(void)
 	// 配置串口的工作参数
 	// 配置波特率
 	USART_InitStructure.USART_BaudRate = DEBUG_USART2_BAUDRATE;
+	
 	// 配置 针数据字长
 	USART_InitStructure.USART_WordLength = USART_WordLength_8b;
+	
 	// 配置停止位
 	USART_InitStructure.USART_StopBits = USART_StopBits_1;
+	
 	// 配置校验位
 	USART_InitStructure.USART_Parity = USART_Parity_No ;
+	
 	// 配置硬件流控制
 	USART_InitStructure.USART_HardwareFlowControl = USART_HardwareFlowControl_None;
+	
 	// 配置工作模式，收发一起
 	USART_InitStructure.USART_Mode = USART_Mode_Rx | USART_Mode_Tx;
+	
 	// 完成串口的初始化配置
 	USART_Init(DEBUG_USART2, &USART_InitStructure);
 	
@@ -84,7 +94,7 @@ void USART2_Config(void)
   * @param  需要发送出去的字符串的指针
   * @retval 无
   */
-void USART2_Printf(uint8_t *Str)
+void Send_Data_to_Master(uint8_t *Str)
 {
 	uint16_t Str_Num=0;
 	uint16_t i;
@@ -107,7 +117,7 @@ void USART2_Printf(uint8_t *Str)
   * @param  需要发送出去的字符串的指针
   * @retval 无
   */
-uint8_t USART2_RX_Pack[50];
+uint8_t Receive_Master_Data[50];
 volatile uint16_t USART2_RX_Count = 0;//USART2接收到的字符个数
 void DEBUG_USART2_IRQHandler(void)
 {
@@ -115,7 +125,7 @@ void DEBUG_USART2_IRQHandler(void)
 	{		
 		TIM3_ENABLE;//开启TIM7定时器，用于判断USART2数据是否接收完毕
 		TIM3_Count = 10;
-		USART2_RX_Pack[USART2_RX_Count] = USART_ReceiveData(DEBUG_USART2);
+		Receive_Master_Data[USART2_RX_Count] = USART_ReceiveData(DEBUG_USART2);
     USART2_RX_Count++;
 	}	 
 }
@@ -126,7 +136,7 @@ void DEBUG_USART2_IRQHandler(void)
   * @param  *Str ：字符串数据的指针
   * @retval 无
   */
-void USAER2_RX_Data_Clean(uint8_t *Str)
+void Clean_Data(uint8_t *Str)
 {
 	uint16_t Str_Num=0;
 	uint16_t i;

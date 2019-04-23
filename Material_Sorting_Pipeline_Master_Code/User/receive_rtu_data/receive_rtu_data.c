@@ -16,12 +16,28 @@ void USART1_Receive_State_Data(uint8_t Address, uint8_t Funtion)
 	TIM6_ENABLE;
 	while(1)
 	{
-		if( USART_RX_Over == TURE)//完成机械手通信后参考机械手程序修改该地方！！！！
-		{
+//		if( USART_RX_Over == TURE)//完成机械手通信后参考机械手程序修改该地方！！！！
+//		{
+//			TIM6_Shut_Down();
+//			USART1_Send_Count = 0;
+//			USART_RX_Over = 0;//USART_RX_Over恢复到最初值，保证下次超时检测不出错
+//			break;			
+//		}
+		
+		if( USART_RX_Over == TURE)
+		{		
 			TIM6_Shut_Down();
-			USART1_Send_Count = 0;
-			USART_RX_Over = 0;//USART_RX_Over恢复到最初值，保证下次超时检测不出错
-			break;			
+			USART_RX_Over = 0;
+			if( USART1_RX_Pack[0] == Address || USART1_RX_Pack[1] == Funtion )
+			{				
+				USART1_Send_Count = 0;
+				break;//跳出接收循环函数
+			}
+			else
+			{
+				TIM6_ENABLE;
+				USART_Buffer_Clean(USART1_RX_Pack);
+			}			
 		}
 		
 		if( (TIM6_Count == FIVE_SECONDS) && (USART1_Send_Count<=5) )//计时时间为5秒
@@ -136,12 +152,7 @@ void USART2_Receive_State_Data(uint8_t Address, uint8_t Funtion)
 				
 				default: break;
 			}
-			
-//			if(Funtion != IRON_HAND_EXECUTE_END)//进入到等待机械手返回执行完毕数据环节时，无需每隔5S发送RTU数据帧
-//			{
-//				RTU_Pack_Data(Address, Funtion, 0, Data_Stirngs, USART2_DEVICE);//重新打包RTU数据并发送到指定设备
-//			}
-			
+						
 			USART2_Send_Count++;
 			
 			TIM6_ENABLE;
@@ -153,7 +164,9 @@ void USART2_Receive_State_Data(uint8_t Address, uint8_t Funtion)
 
 
 /**
-  * @brief  
+  * @brief  LCD显示的中文字符
+	* @param  Address 				地址码
+	* @param  Funtion 				功能码
   * @retval 无
   */
 void LCD_Display_State(uint8_t Address, uint8_t Funtion)

@@ -143,7 +143,7 @@ void Analyze_Action_Group( uint8_t (*Action_Group)[15])
 		i++;
 		if(i%5 == 0)
 		{
-			SysTick_Delay_us(1000000);
+			SysTick_Delay_ms(1000);
 		}
 		j = 0;
 	}

@@ -2,7 +2,7 @@
 #define __EXECUTE_ACTION_GROUP_H
 
 #include "stm32f10x.h"
-#include "analyze_action_group.h"
+#include "system_init.h"
 
 extern uint8_t Curl_Up[7][15];
 extern uint8_t Grab_Material_1[9][15];
@@ -17,6 +17,7 @@ void Curl_Up_Action(void);
 void Grab_Material_Action(void);
 void Left_Place_Action(void);
 void Right_Place_Action(void);
+void Execute_Action(uint8_t *Receive__Master__Data);
 
 
 #endif /*__EXECUTE_ACTION_GROUP_H*/

@@ -729,9 +729,9 @@ void Display_Rectangle(void)
 	while(1)//当STM32主控板与模块间通信超时时，使用该函数
 	{
 		ILI9341_Draw_Rect(220,300,20, 20,RED);
-		SysTick_Delay_us(100000);
+		SysTick_Delay_ms(100);
     ILI9341_Draw_Rect(220,300,20,20,BLACK);
-		SysTick_Delay_us(100000);
+		SysTick_Delay_ms(100);
 	} 
 }
 

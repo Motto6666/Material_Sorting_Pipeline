@@ -36,13 +36,13 @@ void RTU_Pack_Data(uint8_t Address, uint8_t Funtion, uint8_t Data_Len, uint8_t *
 	Strings[Data_Len+4] = Check_Code[0];
 	
 	
-	USART1_Printf(Strings);//数据发送到电脑，调试使用，调试完毕删除！！！
-	USART2_Printf(Strings);
+	Send_Data_to_Master(Strings);
 
 	
 	Data_Clean(Strings);//清除String字符串中的数据，保证下一次执行时数据不出错
 	Data_Clean(Check_Code);//清Check_Code字符串中的数据，保证下一次执行时数据不出错
 }
+
 
 
 /**

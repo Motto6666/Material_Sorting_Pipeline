@@ -217,3 +217,33 @@
 [2019-04-22 21:28:Program Success:49FF72067789505621241367 C:\Users\motto6666\Desktop\Machine_Hand_Control_Code\Output\32_duoji.hex
 [2019-04-22 21:48:Program Success:49FF72067789505621241367 C:\Users\motto6666\Desktop\Machine_Hand_Control_Code\Output\32_duoji.hex
 [2019-04-23 15:03:Program Success:49FF72067789505621241367 F:\上传到GitHub文件\Material_Sorting_Pipeline\Material_Sorting_Pipeline\Machine_Hand_Control_Code\Output\32_duoji.hex
+[2019-04-23 16:19:Program Success:49FF72067789505621241367 F:\上传到GitHub文件\Material_Sorting_Pipeline\Material_Sorting_Pipeline\Machine_Hand_Control_Code\Output\32_duoji.hex
+[2019-04-23 16:20:Program Success:49FF72067789505621241367 F:\上传到GitHub文件\Material_Sorting_Pipeline\Material_Sorting_Pipeline\Machine_Hand_Control_Code\Output\32_duoji.hex
+[2019-04-23 16:24:Program Success:49FF72067789505621241367 F:\上传到GitHub文件\Material_Sorting_Pipeline\Material_Sorting_Pipeline\Machine_Hand_Control_Code\Output\32_duoji.hex
+[2019-04-23 16:26:Program Success:49FF72067789505621241367 F:\上传到GitHub文件\Material_Sorting_Pipeline\Material_Sorting_Pipeline\Machine_Hand_Control_Code\Output\32_duoji.hex
+[2019-04-23 16:27:Program Success:49FF72067789505621241367 F:\上传到GitHub文件\Material_Sorting_Pipeline\Material_Sorting_Pipeline\Machine_Hand_Control_Code\Output\32_duoji.hex
+[2019-04-23 16:29:Program Success:49FF72067789505621241367 F:\上传到GitHub文件\Material_Sorting_Pipeline\Material_Sorting_Pipeline\Machine_Hand_Control_Code\Output\32_duoji.hex
+[2019-04-23 16:30:Program Success:49FF72067789505621241367 F:\上传到GitHub文件\Material_Sorting_Pipeline\Material_Sorting_Pipeline\Machine_Hand_Control_Code\Output\32_duoji.hex
+[2019-04-23 16:30:Program Success:49FF72067789505621241367 F:\上传到GitHub文件\Material_Sorting_Pipeline\Material_Sorting_Pipeline\Machine_Hand_Control_Code\Output\32_duoji.hex
+[2019-04-23 16:32:Program Success:49FF72067789505621241367 F:\上传到GitHub文件\Material_Sorting_Pipeline\Material_Sorting_Pipeline\Machine_Hand_Control_Code\Output\32_duoji.hex
+[2019-04-23 16:36:Program Success:49FF72067789505621241367 F:\上传到GitHub文件\Material_Sorting_Pipeline\Material_Sorting_Pipeline\Machine_Hand_Control_Code\Output\32_duoji.hex
+[2019-04-23 16:37:Program Success:49FF72067789505621241367 F:\上传到GitHub文件\Material_Sorting_Pipeline\Material_Sorting_Pipeline\Machine_Hand_Control_Code\Output\32_duoji.hex
+[2019-04-23 16:38:日志记录不属免费功能,请注册支持作者改进软件
+[2019-04-23 16:39:日志记录不属免费功能,请注册支持作者改进软件
+[2019-04-23 16:49:日志记录不属免费功能,请注册支持作者改进软件
+[2019-04-23 16:54:日志记录不属免费功能,请注册支持作者改进软件
+[2019-04-23 16:56:日志记录不属免费功能,请注册支持作者改进软件
+[2019-04-23 18:08:日志记录不属免费功能,请注册支持作者改进软件
+[2019-04-23 18:23:日志记录不属免费功能,请注册支持作者改进软件
+[2019-04-23 18:24:日志记录不属免费功能,请注册支持作者改进软件
+[2019-04-23 18:25:日志记录不属免费功能,请注册支持作者改进软件
+[2019-04-23 18:27:日志记录不属免费功能,请注册支持作者改进软件
+[2019-04-23 18:27:日志记录不属免费功能,请注册支持作者改进软件
+[2019-04-23 18:28:日志记录不属免费功能,请注册支持作者改进软件
+[2019-04-23 18:36:日志记录不属免费功能,请注册支持作者改进软件
+[2019-04-23 18:58:日志记录不属免费功能,请注册支持作者改进软件
+[2019-04-23 19:06:日志记录不属免费功能,请注册支持作者改进软件
+[2019-04-23 19:28:日志记录不属免费功能,请注册支持作者改进软件
+[2019-04-23 19:50:日志记录不属免费功能,请注册支持作者改进软件
+[2019-04-23 20:05:日志记录不属免费功能,请注册支持作者改进软件
+[2019-04-23 20:09:日志记录不属免费功能,请注册支持作者改进软件

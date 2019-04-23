@@ -24,11 +24,11 @@
 #define  DEBUG_USART2_IRQ                USART2_IRQn
 #define  DEBUG_USART2_IRQHandler         USART2_IRQHandler
 
-extern uint8_t USART2_RX_Pack[50];
+extern uint8_t Receive_Master_Data[50];
 extern volatile uint16_t USART2_RX_Count;
 
 void USART2_Config(void);
-void USART2_Printf(uint8_t *Str);
-void USAER2_RX_Data_Clean(uint8_t *Str);
+void Send_Data_to_Master(uint8_t *Str);
+void Clean_Data(uint8_t *Str);
 
 #endif /* __BSP_USART2_H */

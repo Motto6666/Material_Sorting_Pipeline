@@ -2,4 +2,4 @@
 -I H:\Keil4\ARM\RV31\INC 
 -I H:\Keil4\ARM\CMSIS\Include 
 -I H:\Keil4\ARM\Inc\ST\STM32F10x 
--DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD -o "..\Output\main.o" --omf_browse "..\Output\main.crf" --depend "..\Output\main.d" "..\USER\main.c"
+-DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD -o "..\Output\execute_action_group.o" --omf_browse "..\Output\execute_action_group.crf" --depend "..\Output\execute_action_group.d" "..\USER\execute_action_group\execute_action_group.c"
