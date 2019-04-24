@@ -124,8 +124,9 @@ int fputc(int ch, FILE *f)
   * @param  需要发送出去的字符串的指针
   * @retval 无
   */
-uint8_t USART2_RX_Pack[50];
-volatile uint16_t USART2_RX_Count = 0;//USART2接收到的字符个数
+uint8_t USART2_RX_Pack[50];//将USART2串口接收到的数据存放到该数组里
+volatile uint16_t USART2_RX_Count = 0;//USART2接收到的8位数据个数
+
 void DEBUG_USART2_IRQHandler(void)
 {
 	if(USART_GetITStatus(DEBUG_USART2,USART_IT_RXNE)!=RESET)

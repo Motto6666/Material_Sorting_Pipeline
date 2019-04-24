@@ -11,19 +11,11 @@ uint8_t Data_Stirngs[1];
 	* @param  Funtion 				功能码
   * @retval 无
   */
-void USART1_Receive_State_Data(uint8_t Address, uint8_t Funtion)
+void Receive_Openmv_Data(uint8_t Address, uint8_t Funtion)
 {
 	TIM6_ENABLE;
 	while(1)
-	{
-//		if( USART_RX_Over == TURE)//完成机械手通信后参考机械手程序修改该地方！！！！
-//		{
-//			TIM6_Shut_Down();
-//			USART1_Send_Count = 0;
-//			USART_RX_Over = 0;//USART_RX_Over恢复到最初值，保证下次超时检测不出错
-//			break;			
-//		}
-		
+	{		
 		if( USART_RX_Over == TURE)
 		{		
 			TIM6_Shut_Down();
@@ -73,7 +65,7 @@ void USART1_Receive_State_Data(uint8_t Address, uint8_t Funtion)
 		}
 	}
 	
-	LCD_Display_State(Address,Funtion);
+	LCD_Display_State(Address,Funtion);//当跳出循环时，执行该语句
 }
 
 
@@ -83,7 +75,7 @@ void USART1_Receive_State_Data(uint8_t Address, uint8_t Funtion)
 	* @param  Funtion 				功能码
   * @retval 无
   */
-void USART2_Receive_State_Data(uint8_t Address, uint8_t Funtion)
+void Receive_Iron_Hand_Data(uint8_t Address, uint8_t Funtion)
 {
 	TIM6_ENABLE;
 	while(1)
@@ -221,7 +213,7 @@ void LCD_Display_State(uint8_t Address, uint8_t Funtion)
   * @brief  USART1串口等待接收Openmv发送的识别到的颜色RTU数据帧
   * @retval 无
   */
-void USART1_Receive_Recognize_Data(void)
+void Receive_Openmv_Recognize_Data(void)
 {	
 	TIM6_ENABLE;
 	while(1)
@@ -234,7 +226,7 @@ void USART1_Receive_Recognize_Data(void)
 			{
 				USART1_Send_Count = 0;
 				
-				RTU_Pack_Data(OPENMV_ADD, OK, 0, Data_Stirngs, USART1_DEVICE);//发送ok帧到openMV
+				RTU_Pack_Data(OPENMV_ADD, OK, 0, Data_Stirngs, USART1_DEVICE);//发送ok帧到Openmv
 				
 				switch(USART1_RX_Pack[3])//USART1_RX_Pack[3]为数据码
 				{
@@ -288,7 +280,7 @@ void USART1_Receive_Recognize_Data(void)
 
 
 /**
-  * @brief  清除USART1串口接收缓存
+  * @brief  清除USART串口接收缓存
   * @retval 无
   */
 void USART_Buffer_Clean(uint8_t *Buffer)

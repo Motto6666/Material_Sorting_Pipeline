@@ -20,15 +20,15 @@ def send_rtu_data(color):
 
     if(color == red_color):
         data = [address, funtion, data_len, red_color, red_crc_high, red_crc_low]
-        rtu_data=struct.pack("%dB"%(len(data)),*data)#生成RTU数据帧
+        rtu_data=struct.pack("%dB"%(len(data)),*data)#生成RTU数据帧，十六进制数据
 
     elif(color == green_color):
         data = [address, funtion, data_len, green_color, green_crc_high, green_crc_low]
-        rtu_data=struct.pack("%dB"%(len(data)),*data)#生成RTU数据帧
+        rtu_data=struct.pack("%dB"%(len(data)),*data)#生成RTU数据帧，十六进制数据
 
     else:
         data = [address, funtion, data_len, no_color, no_color_crc_high, no_color_crc_low]
-        rtu_data=struct.pack("%dB"%(len(data)),*data)#生成RTU数据帧
+        rtu_data=struct.pack("%dB"%(len(data)),*data)#生成RTU数据帧，十六进制数据
 
     print(rtu_data)
     uart3.write(rtu_data)

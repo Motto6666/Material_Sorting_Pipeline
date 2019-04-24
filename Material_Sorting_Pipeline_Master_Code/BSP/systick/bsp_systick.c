@@ -1,7 +1,7 @@
 #include "bsp_systick.h"
 
 /**
-	* @brief  采用读标志位值计时
+	* @brief  采用读标志位值计时,单位为us
 	* @param  定时时间值
 	* @retval 无
 	*/

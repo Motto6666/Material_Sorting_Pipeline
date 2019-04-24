@@ -66,6 +66,7 @@ void BASIC_TIM7_Init(void)
   */
 volatile uint8_t TIM7_Count = 10;
 volatile uint8_t USART_RX_Over = 0;
+
 void  BASIC_TIM7_IRQHandler (void) 
 {
 	if ( TIM_GetITStatus( BASIC_TIM7, TIM_IT_Update) != RESET ) 

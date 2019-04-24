@@ -56,6 +56,7 @@ void BASIC_TIM6_Init(void)
   * @retval нч
   */
 volatile uint32_t TIM6_Count;
+
 void  BASIC_TIM6_IRQHandler (void) 
 {
 	if ( TIM_GetITStatus( BASIC_TIM6, TIM_IT_Update) != RESET ) 

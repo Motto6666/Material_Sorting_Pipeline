@@ -10,7 +10,8 @@
   * @retval 无
   */
 
-uint8_t Strings[50];
+uint8_t Strings[50];//将打包好的RTU数据帧存放在该数组里
+
 void RTU_Pack_Data(uint8_t Address, uint8_t Funtion, uint8_t Data_Len, uint8_t *Data, uint8_t Send_Device )
 { 
 	uint8_t i;
@@ -52,7 +53,8 @@ void RTU_Pack_Data(uint8_t Address, uint8_t Funtion, uint8_t Data_Len, uint8_t *
   * @param  Len  ：需要校验的字符串数据长度
   * @retval 无
   */	
-uint8_t Check_Code[2];//CRC校验码
+uint8_t Check_Code[2];//将CRC校验码存放在该数组里
+
 void CRC_16(uint8_t *Str,uint8_t Len)
 {
   uint16_t WCRC=0XFFFF; //预置16位CRC寄存器

@@ -79,7 +79,7 @@ void USART1_Config(void)
 
  /**
   * @brief  模拟重定向后的printf函数
-  * @param  需要发送出去的字符串的指针
+  * @param  需要发送出去的数据指针
   * @retval 无
   */
 void USART1_Printf(uint8_t *Str)
@@ -105,8 +105,9 @@ void USART1_Printf(uint8_t *Str)
   * @param  需要发送出去的字符串的指针
   * @retval 无
   */
-uint8_t USART1_RX_Pack[50];
-volatile uint16_t USART1_RX_Count = 0;//USART1接收到的字符个数
+uint8_t USART1_RX_Pack[50];//将USART1串口接收到的数据存放到该数组里
+volatile uint16_t USART1_RX_Count = 0;//USART1接收到的8位数据个数
+
 void DEBUG_USART1_IRQHandler(void)
 {
 	if(USART_GetITStatus(DEBUG_USART1,USART_IT_RXNE)!=RESET)

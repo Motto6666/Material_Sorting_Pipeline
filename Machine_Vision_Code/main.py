@@ -19,12 +19,12 @@ green_color = 0x47
 no_color = 0x4E
 ok = 0x04
 
-camera_init()#初始化摄像头
+camera_init()
 
 while(1):
     data = data_receive(openmv_add,check)
     if( data != none ):#判断是否接收到openmv_add,check指令
-        data_send( data)
+        data_send( data)#将接收到的数据返回stm32主控板
         break
 
 while(1):
@@ -34,11 +34,10 @@ while(1):
     while(1):
         data = data_receive(openmv_add,recognize)
         if( data != none ):#判断是否接收到openmv_add,recognize指令
-            data_send( data)
+            data_send( data)#将接收到的数据返回stm32主控板
             break
 
     data = []#清除data数组里的内容，避免数据出错
-
     time.sleep(500)#等待500ms，确保STM32主控板已进入到接收数据的状态
 
     while(1):
@@ -53,19 +52,17 @@ while(1):
             elif target_blob.code() == green_code:
                 send_rtu_data(green_color)
                 print("识别到绿色")
-
         else:
             send_rtu_data(no_color)
             print("该物体不在识别范围内")
 
         while(1):
             data = data_receive(openmv_add,recognize)
-            if( data != none ):
+            if( data != none ):#判断是否接收到openmv_add,recognize指令
                 break
 
-        if(data[1] == ok):#stm32主控板接收到正确的识别数据，返回ok数据帧
-            break
+        if(data[1] == ok):#若接收到stm32返回的ok数据，则表明识别数据帧发送成功
+            break              #若发送识别数据帧失败，则重新识别再发送识别数据
 
         data = []#清除data数组里的内容，避免数据出错
-
         time.sleep(10)#等待10ms，确保STM32主控板已进入到接收数据的状态

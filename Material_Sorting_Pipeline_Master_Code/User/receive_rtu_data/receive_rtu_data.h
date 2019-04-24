@@ -13,9 +13,9 @@
 #include "lcd_display_english.h"
 #include "lcd_display_chinese.h"
 
-void USART1_Receive_State_Data(uint8_t Address, uint8_t Funtion);
-void USART2_Receive_State_Data(uint8_t Address, uint8_t Funtion);
-void USART1_Receive_Recognize_Data(void);
+void Receive_Openmv_Data(uint8_t Address, uint8_t Funtion);
+void Receive_Iron_Hand_Data(uint8_t Address, uint8_t Funtion);
+void Receive_Openmv_Recognize_Data(void);
 void USART_Buffer_Clean(uint8_t *Buffer);
 void LCD_Display_State(uint8_t Address, uint8_t Funtion);
 #endif /*__RECEIVE_RTU_DATA_H*/
