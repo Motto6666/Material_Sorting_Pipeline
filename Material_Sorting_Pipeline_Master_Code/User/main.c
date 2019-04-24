@@ -14,6 +14,8 @@ int main(void)
 { 		
 	System_Init();
 	
+	SysTick_Delay_ms(5000);//调试使用，调试完毕删除
+	
 	RTU_Pack_Data(OPENMV_ADD, OPENMV_CHACK, 0, Data_Stirng, USART1_DEVICE);//打包RTU数据并发送到指定设备
 			
 	Receive_Openmv_Data(OPENMV_ADD, OPENMV_CHACK);
@@ -28,6 +30,7 @@ int main(void)
 	
 	while(1)
 	{
+		
 		
 		RTU_Pack_Data(OPENMV_ADD, OPENMV_RECOGNIZE, 0, Data_Stirng, USART1_DEVICE);
 		

@@ -38,6 +38,7 @@
 "..\..\output\bsp_tim6.o"
 "..\..\output\bsp_tim7.o"
 "..\..\output\bsp_usart2.o"
+"..\..\output\bsp_motor_control.o"
 --library_type=microlib --strict --scatter "..\..\Output\HEX.sct"
 --summary_stderr --info summarysizes --map --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers

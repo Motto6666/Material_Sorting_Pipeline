@@ -38,3 +38,4 @@
 ..\..\output\system_init.o: ..\..\User\display_character\lcd_display_english.h
 ..\..\output\system_init.o: ..\..\User\display_character\lcd_display_chinese.h
 ..\..\output\system_init.o: ..\..\BSP\tim6\bsp_tim6.h
+..\..\output\system_init.o: ..\..\BSP\motor_control\bsp_motor_control.h

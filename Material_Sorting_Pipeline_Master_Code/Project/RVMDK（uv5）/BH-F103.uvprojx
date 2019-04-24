@@ -359,13 +359,13 @@
             <wLevel>0</wLevel>
             <uThumb>0</uThumb>
             <uSurpInc>0</uSurpInc>
-            <uC99>0</uC99>
+            <uC99>1</uC99>
             <useXO>0</useXO>
             <VariousControls>
               <MiscControls></MiscControls>
               <Define>STM32F10X_HD, USE_STDPERIPH_DRIVER</Define>
               <Undefine></Undefine>
-              <IncludePath>..\..\Libraries\CMSIS;..\..\User;..\..\Libraries\FWlib\inc;..\..\BSP\usart;..\..\BSP\lcd;..\..\User\display_character;..\..\User\modbus_agreement;..\..\BSP\systick;..\..\BSP\tim6;..\..\BSP\tim7;..\..\User\receive_rtu_data;..\..\User\system_init</IncludePath>
+              <IncludePath>..\..\Libraries\CMSIS;..\..\User;..\..\Libraries\FWlib\inc;..\..\BSP\usart;..\..\BSP\lcd;..\..\User\display_character;..\..\User\modbus_agreement;..\..\BSP\systick;..\..\BSP\tim6;..\..\BSP\tim7;..\..\User\receive_rtu_data;..\..\User\system_init;..\..\BSP\motor_control</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -702,6 +702,16 @@
               <FileName>bsp_usart2.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\..\BSP\usart\bsp_usart2.h</FilePath>
+            </File>
+            <File>
+              <FileName>bsp_motor_control.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\BSP\motor_control\bsp_motor_control.c</FilePath>
+            </File>
+            <File>
+              <FileName>bsp_motor_control.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\BSP\motor_control\bsp_motor_control.h</FilePath>
             </File>
           </Files>
         </Group>

@@ -7,6 +7,7 @@ void System_Init(void)
 	BASIC_TIM6_Init();
 	BASIC_TIM7_Init();
 	LCD_Init();
+	Motor_Init();
 	
 	Display_Motto6666(1 ,1, YELLOW);//显示“Motto6666”英文字符串
 	Display_Chinese_String( Chinese_Character_1  ,9  ,3 ,1 ,BLUE2);//显示“物料分拣流水线系统”中文字符串
