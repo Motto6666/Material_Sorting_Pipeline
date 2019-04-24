@@ -226,7 +226,11 @@ void Receive_Openmv_Recognize_Data(void)
 			{
 				USART1_Send_Count = 0;
 				
-				RTU_Pack_Data(OPENMV_ADD, OK, 0, Data_Stirngs, USART1_DEVICE);//发送ok帧到Openmv
+				Data_Stirngs[0] = OK;
+				
+				RTU_Pack_Data(OPENMV_ADD, OPENMV_RECOGNIZE, 1, Data_Stirngs, USART1_DEVICE);//发送ok帧到Openmv
+				
+				Data_Clean(Data_Stirngs);
 				
 				switch(USART1_RX_Pack[3])//USART1_RX_Pack[3]为数据码
 				{

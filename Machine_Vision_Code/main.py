@@ -61,7 +61,7 @@ while(1):
             if( data != none ):#判断是否接收到openmv_add,recognize指令
                 break
 
-        if(data[1] == ok):#若接收到stm32返回的ok数据，则表明识别数据帧发送成功
+        if(data[3] == ok):#若接收到stm32返回的ok数据，则表明识别数据帧发送成功
             break              #若发送识别数据帧失败，则重新识别再发送识别数据
 
         data = []#清除data数组里的内容，避免数据出错
