@@ -3,7 +3,7 @@
 <title>Static Call Graph - [..\..\Output\HEX.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image ..\..\Output\HEX.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5050106: Last Updated: Thu Apr 25 18:11:59 2019
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5050106: Last Updated: Thu Apr 25 19:04:08 2019
 <BR><P>
 <H3>Maximum Stack Usage =        152 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -300,7 +300,7 @@ Global Symbols
 <P><STRONG><a name="[b7]"></a>SystemCoreClockUpdate</STRONG> (Thumb, 142 bytes, Stack size 8 bytes, system_stm32f10x.o(.text), UNUSED)
 
 <P><STRONG><a name="[94]"></a>NVIC_PriorityGroupConfig</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, misc.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM2_NVIC_Init
+<BR><BR>[Called By]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MOTOR_TIM_NVIC_Init
 <LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART2_NVIC_Configuration
 <LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BASIC_TIM7_NVIC_Config
 <LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BASIC_TIM6_NVIC_Config
@@ -310,7 +310,7 @@ Global Symbols
 <P><STRONG><a name="[95]"></a>NVIC_Init</STRONG> (Thumb, 100 bytes, Stack size 16 bytes, misc.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = NVIC_Init
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM2_NVIC_Init
+<BR>[Called By]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MOTOR_TIM_NVIC_Init
 <LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART2_NVIC_Configuration
 <LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BASIC_TIM7_NVIC_Config
 <LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BASIC_TIM6_NVIC_Config
@@ -450,7 +450,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[9f]"></a>RCC_APB1PeriphClockCmd</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, stm32f10x_rcc.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM2_Init
+<BR><BR>[Called By]<UL><LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MOTOR_TIM_Init
 <LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BASIC_TIM7_Mode_Config
 <LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BASIC_TIM6_Mode_Config
 <LI><a href="#[81]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART2_Config
@@ -486,7 +486,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[a0]"></a>TIM_TimeBaseInit</STRONG> (Thumb, 122 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM2_Init
+<BR><BR>[Called By]<UL><LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MOTOR_TIM_Init
 <LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BASIC_TIM7_Mode_Config
 <LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BASIC_TIM6_Mode_Config
 </UL>
@@ -546,7 +546,7 @@ Global Symbols
 <P><STRONG><a name="[e7]"></a>TIM_BDTRStructInit</STRONG> (Thumb, 40 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
 
 <P><STRONG><a name="[6a]"></a>TIM_Cmd</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM2_Init
+<BR><BR>[Called By]<UL><LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MOTOR_TIM_Init
 <LI><a href="#[30]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART2_IRQHandler
 <LI><a href="#[41]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM7_IRQHandler
 <LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BASIC_TIM7_Mode_Config
@@ -562,7 +562,7 @@ Global Symbols
 <P><STRONG><a name="[e8]"></a>TIM_CtrlPWMOutputs</STRONG> (Thumb, 30 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
 
 <P><STRONG><a name="[a2]"></a>TIM_ITConfig</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM2_Init
+<BR><BR>[Called By]<UL><LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MOTOR_TIM_Init
 <LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BASIC_TIM7_Mode_Config
 <LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BASIC_TIM6_Mode_Config
 </UL>
@@ -618,7 +618,7 @@ Global Symbols
 <P><STRONG><a name="[f3]"></a>TIM_ForcedOC4Config</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
 
 <P><STRONG><a name="[ad]"></a>TIM_ARRPreloadConfig</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM2_Init
+<BR><BR>[Called By]<UL><LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MOTOR_TIM_Init
 </UL>
 
 <P><STRONG><a name="[f4]"></a>TIM_SelectCOM</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
@@ -1303,17 +1303,17 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Motor_Init
 </UL>
 
-<P><STRONG><a name="[ab]"></a>TIM2_NVIC_Init</STRONG> (Thumb, 42 bytes, Stack size 8 bytes, bsp_motor_control.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = TIM2_NVIC_Init &rArr; NVIC_Init
+<P><STRONG><a name="[ab]"></a>MOTOR_TIM_NVIC_Init</STRONG> (Thumb, 42 bytes, Stack size 8 bytes, bsp_motor_control.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = MOTOR_TIM_NVIC_Init &rArr; NVIC_Init
 </UL>
 <BR>[Calls]<UL><LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NVIC_Init
 <LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NVIC_PriorityGroupConfig
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM2_Config_Init
+<BR>[Called By]<UL><LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MOTOR_TIM_Config_Init
 </UL>
 
-<P><STRONG><a name="[ac]"></a>TIM2_Init</STRONG> (Thumb, 74 bytes, Stack size 16 bytes, bsp_motor_control.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = TIM2_Init
+<P><STRONG><a name="[ac]"></a>MOTOR_TIM_Init</STRONG> (Thumb, 74 bytes, Stack size 16 bytes, bsp_motor_control.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = MOTOR_TIM_Init
 </UL>
 <BR>[Calls]<UL><LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_ARRPreloadConfig
 <LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_ITConfig
@@ -1321,28 +1321,28 @@ Global Symbols
 <LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_TimeBaseInit
 <LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RCC_APB1PeriphClockCmd
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM2_Config_Init
+<BR>[Called By]<UL><LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MOTOR_TIM_Config_Init
 </UL>
 
-<P><STRONG><a name="[ae]"></a>TIM2_Config_Init</STRONG> (Thumb, 12 bytes, Stack size 8 bytes, bsp_motor_control.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = TIM2_Config_Init &rArr; TIM2_NVIC_Init &rArr; NVIC_Init
+<P><STRONG><a name="[ae]"></a>MOTOR_TIM_Config_Init</STRONG> (Thumb, 12 bytes, Stack size 8 bytes, bsp_motor_control.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = MOTOR_TIM_Config_Init &rArr; MOTOR_TIM_NVIC_Init &rArr; NVIC_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM2_Init
-<LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM2_NVIC_Init
+<BR>[Calls]<UL><LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MOTOR_TIM_Init
+<LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MOTOR_TIM_NVIC_Init
 </UL>
 <BR>[Called By]<UL><LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Motor_Init
 </UL>
 
 <P><STRONG><a name="[85]"></a>Motor_Init</STRONG> (Thumb, 12 bytes, Stack size 8 bytes, bsp_motor_control.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = Motor_Init &rArr; TIM2_Config_Init &rArr; TIM2_NVIC_Init &rArr; NVIC_Init
+<BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = Motor_Init &rArr; MOTOR_TIM_Config_Init &rArr; MOTOR_TIM_NVIC_Init &rArr; NVIC_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM2_Config_Init
+<BR>[Calls]<UL><LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MOTOR_TIM_Config_Init
 <LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TB6612_Pin_Set
 </UL>
 <BR>[Called By]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;System_Init
 </UL>
 
-<P><STRONG><a name="[af]"></a>TB6612_PWM_Pin_Control</STRONG> (Thumb, 40 bytes, Stack size 8 bytes, bsp_motor_control.o(.text))
+<P><STRONG><a name="[af]"></a>TB6612_PWM_Pin_Control</STRONG> (Thumb, 44 bytes, Stack size 8 bytes, bsp_motor_control.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = TB6612_PWM_Pin_Control
 </UL>
 <BR>[Calls]<UL><LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_ResetBits

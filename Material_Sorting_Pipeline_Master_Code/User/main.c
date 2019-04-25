@@ -14,7 +14,7 @@ int main(void)
 { 		
 	System_Init();
 	
-	CLOCKWISE_ROTATION;
+	MOTOR_ROTATION;
 	
 	SysTick_Delay_ms(60000);//调试使用，调试完毕删除!!!
 	

@@ -3,7 +3,7 @@
 
 #include "stm32f10x.h"
 
-/******初始化TB6612电机驱动板上的AIN1、AIN2引脚******/
+/******初始化TB6612电机驱动板上的AIN1、AIN2、PWMA引脚******/
 #define TB6612_GPIO_PORT_CLOCK    								RCC_APB2Periph_GPIOA
 #define TB6612_GPIO_PORT          								GPIOA
 
@@ -21,7 +21,7 @@
 #define PWMA_OFF																	GPIO_ResetBits(TB6612_GPIO_PORT, PWMA_PIN)
 
 
-
+/******初始化PWM_Pin输出PWM波的定时器******/
 #define MOTOR_TIM                   							TIM2
 #define MOTOR_TIM_APBxClock_FUN     							RCC_APB1PeriphClockCmd
 #define MOTOR_TIM_CLK               							RCC_APB1Periph_TIM2
@@ -36,9 +36,8 @@
 
 
 /*电机运动控制*/
-#define CLOCKWISE_ROTATION       									{AIN1_ON;AIN2_OFF;MOTOR_TIM_ENABLE;}//顺时针转动
-#define ANTI_CLOCKWISE_ROTATION  								  {AIN2_ON;AIN1_OFF;MOTOR_TIM_ENABLE;}//逆时针转动
-#define MOTOR_STOP																{AIN1_OFF;AIN2_OFF;PWMA_OFF;MOTOR_TIM_DISABLE;}//停止运转
+#define MOTOR_ROTATION       									{AIN1_ON;AIN2_OFF;MOTOR_TIM_ENABLE;}//顺时针转动
+#define MOTOR_STOP														{AIN1_OFF;AIN2_OFF;PWMA_OFF;MOTOR_TIM_DISABLE;}//停止运转
 
 void Motor_Init(void);
 void TB6612_PWM_Pin_Control(void);
