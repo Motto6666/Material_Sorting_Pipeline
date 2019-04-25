@@ -14,7 +14,14 @@ int main(void)
 { 		
 	System_Init();
 	
-	SysTick_Delay_ms(5000);//调试使用，调试完毕删除
+	CLOCKWISE_ROTATION;
+	
+	SysTick_Delay_ms(60000);//调试使用，调试完毕删除!!!
+	
+	MOTOR_STOP;
+	
+	
+	
 	
 	RTU_Pack_Data(OPENMV_ADD, OPENMV_CHACK, 0, Data_Stirng, USART1_DEVICE);//打包RTU数据并发送到指定设备
 			
