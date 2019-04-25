@@ -3,7 +3,7 @@
 <title>Static Call Graph - [..\..\Output\HEX.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image ..\..\Output\HEX.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5050106: Last Updated: Wed Apr 24 21:58:21 2019
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5050106: Last Updated: Thu Apr 25 09:09:13 2019
 <BR><P>
 <H3>Maximum Stack Usage =        152 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -359,7 +359,6 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ILI9341_Read_Data
 <LI><a href="#[8b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ILI9341_Write_Data
 <LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ILI9341_Write_CMD
-<LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Motor_Init
 </UL>
 
 <P><STRONG><a name="[88]"></a>GPIO_ResetBits</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, stm32f10x_gpio.o(.text))
@@ -367,7 +366,6 @@ Global Symbols
 <LI><a href="#[8b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ILI9341_Write_Data
 <LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ILI9341_Write_CMD
 <LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ILI9341_GPIO_Init
-<LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Motor_Init
 </UL>
 
 <P><STRONG><a name="[bf]"></a>GPIO_WriteBit</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, stm32f10x_gpio.o(.text), UNUSED)
@@ -1317,12 +1315,10 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Motor_Init
 </UL>
 
-<P><STRONG><a name="[83]"></a>Motor_Init</STRONG> (Thumb, 28 bytes, Stack size 8 bytes, bsp_motor_control.o(.text))
+<P><STRONG><a name="[83]"></a>Motor_Init</STRONG> (Thumb, 12 bytes, Stack size 8 bytes, bsp_motor_control.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = Motor_Init &rArr; TB6612_PWMA_Pin_Set &rArr; GPIO_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_ResetBits
-<LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_SetBits
-<LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TB6612_PWMA_Pin_Set
+<BR>[Calls]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TB6612_PWMA_Pin_Set
 <LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TB6612_AIN_Pin_Set
 </UL>
 <BR>[Called By]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;System_Init
