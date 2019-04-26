@@ -701,7 +701,7 @@ I (..\..\Libraries\FWlib\inc\stm32f10x_spi.h)(0x57C78855)
 I (..\..\Libraries\FWlib\inc\stm32f10x_tim.h)(0x57C78855)
 I (..\..\Libraries\FWlib\inc\stm32f10x_usart.h)(0x57C78855)
 I (..\..\Libraries\FWlib\inc\misc.h)(0x57C78855)
-F (..\..\User\main.c)(0x5CC2B96E)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\..\Libraries\CMSIS -I..\..\User -I..\..\Libraries\FWlib\inc -I..\..\BSP\usart -I..\..\BSP\lcd -I..\..\User\display_character -I..\..\User\modbus_agreement -I..\..\BSP\systick -I..\..\BSP\tim6 -I..\..\BSP\tim7 -I..\..\User\receive_rtu_data -I..\..\User\system_init -I..\..\BSP\motor_control -I..\..\BSP\photoelectric_sensor-I F:\上传到GitHub文件\Material_Sorting_Pipeline\Material_Sorting_Pipeline\Material_Sorting_Pipeline_Master_Code\Project\RVMDK（uv5）\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0-I C:\Keil_v5\ARM\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0\Device\Include-D__UVISION_VERSION="514" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\main.o --omf_browse ..\..\output\main.crf --depend ..\..\output\main.d)
+F (..\..\User\main.c)(0x5CC2DA83)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\..\Libraries\CMSIS -I..\..\User -I..\..\Libraries\FWlib\inc -I..\..\BSP\usart -I..\..\BSP\lcd -I..\..\User\display_character -I..\..\User\modbus_agreement -I..\..\BSP\systick -I..\..\BSP\tim6 -I..\..\BSP\tim7 -I..\..\User\receive_rtu_data -I..\..\User\system_init -I..\..\BSP\motor_control -I..\..\BSP\photoelectric_sensor-I F:\上传到GitHub文件\Material_Sorting_Pipeline\Material_Sorting_Pipeline\Material_Sorting_Pipeline_Master_Code\Project\RVMDK（uv5）\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0-I C:\Keil_v5\ARM\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0\Device\Include-D__UVISION_VERSION="514" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\main.o --omf_browse ..\..\output\main.crf --depend ..\..\output\main.d)
 I (..\..\Libraries\CMSIS\stm32f10x.h)(0x57C78855)
 I (..\..\Libraries\CMSIS\core_cm3.h)(0x57C78855)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5475F300)
@@ -741,7 +741,7 @@ I (..\..\User\display_character\lcd_display_english.h)(0x5CA1B56D)
 I (..\..\User\display_character\lcd_display_chinese.h)(0x5CB9AE8F)
 I (..\..\BSP\tim6\bsp_tim6.h)(0x5CBC5C4D)
 I (..\..\BSP\motor_control\bsp_motor_control.h)(0x5CC19426)
-I (..\..\BSP\photoelectric_sensor\photoelectric_sensor.h)(0x5CC2B5A0)
+I (..\..\BSP\photoelectric_sensor\photoelectric_sensor.h)(0x5CC2CDE6)
 I (..\..\User\modbus_agreement\modbus_agreement.h)(0x5CBC532F)
 I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5475F300)
 I (..\..\User\receive_rtu_data\receive_rtu_data.h)(0x5CBFA389)
@@ -961,7 +961,7 @@ I (..\..\User\display_character\lcd_display_english.h)(0x5CA1B56D)
 I (..\..\User\display_character\lcd_display_chinese.h)(0x5CB9AE8F)
 I (..\..\BSP\tim6\bsp_tim6.h)(0x5CBC5C4D)
 I (..\..\BSP\motor_control\bsp_motor_control.h)(0x5CC19426)
-I (..\..\BSP\photoelectric_sensor\photoelectric_sensor.h)(0x5CC2B5A0)
+I (..\..\BSP\photoelectric_sensor\photoelectric_sensor.h)(0x5CC2CDE6)
 F (..\..\User\system_init\system_init.h)(0x5CC2B2F4)()
 F (..\..\Doc\readme.txt)(0x5954B602)()
 F (..\..\BSP\lcd\bsp_ili9341_lcd.c)(0x5CB99B56)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\..\Libraries\CMSIS -I..\..\User -I..\..\Libraries\FWlib\inc -I..\..\BSP\usart -I..\..\BSP\lcd -I..\..\User\display_character -I..\..\User\modbus_agreement -I..\..\BSP\systick -I..\..\BSP\tim6 -I..\..\BSP\tim7 -I..\..\User\receive_rtu_data -I..\..\User\system_init -I..\..\BSP\motor_control -I..\..\BSP\photoelectric_sensor-I F:\上传到GitHub文件\Material_Sorting_Pipeline\Material_Sorting_Pipeline\Material_Sorting_Pipeline_Master_Code\Project\RVMDK（uv5）\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0-I C:\Keil_v5\ARM\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0\Device\Include-D__UVISION_VERSION="514" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\bsp_ili9341_lcd.o --omf_browse ..\..\output\bsp_ili9341_lcd.crf --depend ..\..\output\bsp_ili9341_lcd.d)
@@ -1187,8 +1187,8 @@ I (..\..\Libraries\FWlib\inc\stm32f10x_usart.h)(0x57C78855)
 I (..\..\Libraries\FWlib\inc\stm32f10x_wwdg.h)(0x57C78855)
 I (..\..\Libraries\FWlib\inc\misc.h)(0x57C78855)
 F (..\..\BSP\motor_control\bsp_motor_control.h)(0x5CC19426)()
-F (..\..\BSP\photoelectric_sensor\photoelectric_sensor.c)(0x5CC2B737)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\..\Libraries\CMSIS -I..\..\User -I..\..\Libraries\FWlib\inc -I..\..\BSP\usart -I..\..\BSP\lcd -I..\..\User\display_character -I..\..\User\modbus_agreement -I..\..\BSP\systick -I..\..\BSP\tim6 -I..\..\BSP\tim7 -I..\..\User\receive_rtu_data -I..\..\User\system_init -I..\..\BSP\motor_control -I..\..\BSP\photoelectric_sensor-I F:\上传到GitHub文件\Material_Sorting_Pipeline\Material_Sorting_Pipeline\Material_Sorting_Pipeline_Master_Code\Project\RVMDK（uv5）\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0-I C:\Keil_v5\ARM\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0\Device\Include-D__UVISION_VERSION="514" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\photoelectric_sensor.o --omf_browse ..\..\output\photoelectric_sensor.crf --depend ..\..\output\photoelectric_sensor.d)
-I (..\..\BSP\photoelectric_sensor\photoelectric_sensor.h)(0x5CC2B5A0)
+F (..\..\BSP\photoelectric_sensor\photoelectric_sensor.c)(0x5CC2D865)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\..\Libraries\CMSIS -I..\..\User -I..\..\Libraries\FWlib\inc -I..\..\BSP\usart -I..\..\BSP\lcd -I..\..\User\display_character -I..\..\User\modbus_agreement -I..\..\BSP\systick -I..\..\BSP\tim6 -I..\..\BSP\tim7 -I..\..\User\receive_rtu_data -I..\..\User\system_init -I..\..\BSP\motor_control -I..\..\BSP\photoelectric_sensor-I F:\上传到GitHub文件\Material_Sorting_Pipeline\Material_Sorting_Pipeline\Material_Sorting_Pipeline_Master_Code\Project\RVMDK（uv5）\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0-I C:\Keil_v5\ARM\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0\Device\Include-D__UVISION_VERSION="514" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\photoelectric_sensor.o --omf_browse ..\..\output\photoelectric_sensor.crf --depend ..\..\output\photoelectric_sensor.d)
+I (..\..\BSP\photoelectric_sensor\photoelectric_sensor.h)(0x5CC2CDE6)
 I (..\..\Libraries\CMSIS\stm32f10x.h)(0x57C78855)
 I (..\..\Libraries\CMSIS\core_cm3.h)(0x57C78855)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5475F300)
@@ -1217,4 +1217,4 @@ I (..\..\Libraries\FWlib\inc\stm32f10x_tim.h)(0x57C78855)
 I (..\..\Libraries\FWlib\inc\stm32f10x_usart.h)(0x57C78855)
 I (..\..\Libraries\FWlib\inc\stm32f10x_wwdg.h)(0x57C78855)
 I (..\..\Libraries\FWlib\inc\misc.h)(0x57C78855)
-F (..\..\BSP\photoelectric_sensor\photoelectric_sensor.h)(0x5CC2B5A0)()
+F (..\..\BSP\photoelectric_sensor\photoelectric_sensor.h)(0x5CC2CDE6)()

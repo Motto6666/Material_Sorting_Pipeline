@@ -12,6 +12,9 @@
 #define SENSOR_EXTI_IRQn            		EXTI1_IRQn
 #define SENSOR_EXTI_IRQHandler      		EXTI1_IRQHandler
 
+#define PHOTOELECTRIC_SENSOR_ENABLE			{ EXTI->IMR |= SENSOR_EXTI_LINE; Check_Object = 0;} 
+#define PHOTOELECTRIC_SENSOR_DISABLE		{ EXTI->IMR &= ~(SENSOR_EXTI_LINE); Check_Object = 0;}  
+
 extern volatile uint8_t Check_Object;
 void Photoelectric_Sensor_Init(void);
 

@@ -365,7 +365,7 @@
               <MiscControls></MiscControls>
               <Define>STM32F10X_HD, USE_STDPERIPH_DRIVER</Define>
               <Undefine></Undefine>
-              <IncludePath>..\..\Libraries\CMSIS;..\..\User;..\..\Libraries\FWlib\inc;..\..\BSP\usart;..\..\BSP\lcd;..\..\User\display_character;..\..\User\modbus_agreement;..\..\BSP\systick;..\..\BSP\tim6;..\..\BSP\tim7;..\..\User\receive_rtu_data;..\..\User\system_init;..\..\BSP\motor_control</IncludePath>
+              <IncludePath>..\..\Libraries\CMSIS;..\..\User;..\..\Libraries\FWlib\inc;..\..\BSP\usart;..\..\BSP\lcd;..\..\User\display_character;..\..\User\modbus_agreement;..\..\BSP\systick;..\..\BSP\tim6;..\..\BSP\tim7;..\..\User\receive_rtu_data;..\..\User\system_init;..\..\BSP\motor_control;..\..\BSP\photoelectric_sensor</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -712,6 +712,16 @@
               <FileName>bsp_motor_control.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\..\BSP\motor_control\bsp_motor_control.h</FilePath>
+            </File>
+            <File>
+              <FileName>photoelectric_sensor.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\BSP\photoelectric_sensor\photoelectric_sensor.c</FilePath>
+            </File>
+            <File>
+              <FileName>photoelectric_sensor.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\BSP\photoelectric_sensor\photoelectric_sensor.h</FilePath>
             </File>
           </Files>
         </Group>

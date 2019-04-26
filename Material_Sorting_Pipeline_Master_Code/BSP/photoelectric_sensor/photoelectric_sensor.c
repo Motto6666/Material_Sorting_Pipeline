@@ -70,7 +70,8 @@ void Photoelectric_Sensor_Init(void)
   * @brief  外部中断服务函数，当光电传感器检测到物体时，执行该函数
   * @retval 无
   */
-volatile uint8_t Check_Object = 0;//用于判断是否检测到物体
+volatile uint8_t Check_Object = 0;//用于判断是否检测到物体,其取值范围是0或1
+
 void SENSOR_EXTI_IRQHandler(void)
 {	
   if(EXTI_GetITStatus(SENSOR_EXTI_LINE) != RESET)
