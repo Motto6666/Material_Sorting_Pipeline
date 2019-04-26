@@ -14,15 +14,6 @@ int main(void)
 { 		
 	System_Init();
 	
-	MOTOR_ROTATION;
-	
-	SysTick_Delay_ms(60000);//调试使用，调试完毕删除!!!
-	
-	MOTOR_STOP;
-	
-	
-	
-	
 	RTU_Pack_Data(OPENMV_ADD, OPENMV_CHACK, 0, Data_Stirng, USART1_DEVICE);//打包RTU数据并发送到指定设备
 			
 	Receive_Openmv_Data(OPENMV_ADD, OPENMV_CHACK);
@@ -38,6 +29,13 @@ int main(void)
 	while(1)
 	{
 		
+		MOTOR_ROTATION;
+		
+		while(Check_Object != 1)//当检测到物体时，跳出循环
+		{}
+		Check_Object = 0;	//Check_Object恢复到最初值
+			
+		MOTOR_STOP;
 		
 		RTU_Pack_Data(OPENMV_ADD, OPENMV_RECOGNIZE, 0, Data_Stirng, USART1_DEVICE);
 		
@@ -48,11 +46,7 @@ int main(void)
 		Data_Stirng[0] = USART1_RX_Pack[3];//将识别到的颜色数据存放到Data_Stirng数组里
 		
 		
-		
-		
 		SysTick_Delay_ms(1000);//等待1s，保证机械手控制模块已进入到接收数据的状态
-
-
 
 		
 		RTU_Pack_Data(IRON_HAND_ADD, IRON_HAND_EXECUTE, 1, Data_Stirng, USART2_DEVICE);

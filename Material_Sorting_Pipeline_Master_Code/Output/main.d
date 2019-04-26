@@ -39,6 +39,7 @@
 ..\..\output\main.o: ..\..\User\display_character\lcd_display_chinese.h
 ..\..\output\main.o: ..\..\BSP\tim6\bsp_tim6.h
 ..\..\output\main.o: ..\..\BSP\motor_control\bsp_motor_control.h
+..\..\output\main.o: ..\..\BSP\photoelectric_sensor\photoelectric_sensor.h
 ..\..\output\main.o: ..\..\User\modbus_agreement\modbus_agreement.h
 ..\..\output\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 ..\..\output\main.o: ..\..\User\receive_rtu_data\receive_rtu_data.h
