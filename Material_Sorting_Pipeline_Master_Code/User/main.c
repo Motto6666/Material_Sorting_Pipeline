@@ -36,6 +36,8 @@ int main(void)
 		{}//当检测到物体时，跳出循环
 		
 		PHOTOELECTRIC_SENSOR_DISABLE;
+			
+		SysTick_Delay_ms(500);
 					
 		MOTOR_STOP;
 		
