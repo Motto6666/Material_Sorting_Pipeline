@@ -8,7 +8,6 @@
 #include "lcd_display_english.h"
 #include "lcd_display_chinese.h"
 #include "bsp_tim6.h"
-#include "bsp_tim7.h"
 #include "bsp_motor_control.h"
 #include "photoelectric_sensor.h"
 

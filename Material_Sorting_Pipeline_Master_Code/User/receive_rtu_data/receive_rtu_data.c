@@ -80,10 +80,10 @@ void Receive_Iron_Hand_Data(uint8_t Address, uint8_t Funtion)
 	TIM6_ENABLE;
 	while(1)
 	{
-		if( USART_RX_Over == TURE)
+		if( USART2_RX_Over == TURE)
 		{		
 			TIM6_Shut_Down();
-			USART_RX_Over = 0;
+			USART2_RX_Over = 0;
 			if( USART2_RX_Pack[0] == Address || USART2_RX_Pack[1] == Funtion )
 			{				
 				USART2_Send_Count = 0;
@@ -293,12 +293,11 @@ void USART_Buffer_Clean(uint8_t *Buffer)
 	{
 		case OPENMV_ADD :
 					Data_Clean(Buffer);
-					//USART1_RX_Count = 0;
 					break;
 		
 		case IRON_HAND_ADD :
 					Data_Clean(Buffer);
-					USART2_RX_Count = 0;
+					//USART2_RX_Count = 0;
 					break;
 		
 		default : break;

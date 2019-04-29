@@ -71,7 +71,10 @@ void USART2_Config(void)
 	USART2_NVIC_Configuration();
 	
 	// 使能串口接收中断
-	USART_ITConfig(DEBUG_USART2, USART_IT_RXNE, ENABLE);	
+	USART_ITConfig(DEBUG_USART2, USART_IT_RXNE, ENABLE);
+
+	//开启串口2总线空闲中断
+	USART_ITConfig(DEBUG_USART2, USART_IT_IDLE, ENABLE);
 	
 	// 使能串口
 	USART_Cmd(DEBUG_USART2, ENABLE);		
@@ -126,14 +129,22 @@ int fputc(int ch, FILE *f)
   */
 uint8_t USART2_RX_Pack[50];//将USART2串口接收到的数据存放到该数组里
 volatile uint16_t USART2_RX_Count = 0;//USART2接收到的8位数据个数
+uint8_t Free_Read_Rst_2 = 0;//读DR清除空闲中断
+volatile uint8_t USART2_RX_Over = 0;//用于判断数据USART2是否收接收完毕，取值范围位0或1
 
 void DEBUG_USART2_IRQHandler(void)
 {
 	if(USART_GetITStatus(DEBUG_USART2,USART_IT_RXNE)!=RESET)
 	{		
-		TIM7_ENABLE;//开启TIM7定时器，用于判断USART2数据是否接收完毕
-		TIM7_Count = 10;
+		USART_ClearITPendingBit(DEBUG_USART2, USART_FLAG_ORE); //清除中断标志
+		USART_ClearITPendingBit(DEBUG_USART2,USART_IT_ORE); //清除中断标志
 		USART2_RX_Pack[USART2_RX_Count] = USART_ReceiveData(DEBUG_USART2);
     USART2_RX_Count++;
-	}	 
+	}
+	else if(USART_GetITStatus(DEBUG_USART2,USART_IT_IDLE) !=RESET)//传输完一条完整的数据就会进入这个
+	{
+		Free_Read_Rst_2 = DEBUG_USART2->DR; //读取USART2数据寄存器，达到清USART2_IT_IDLE标志目的
+		USART2_RX_Over = 1;//接收到一条完整的数据
+		USART2_RX_Count = 0;//清零接收的个数
+  } 
 }

@@ -33,5 +33,4 @@
 ..\..\output\modbus_agreement.o: ..\..\BSP\usart\bsp_usart1.h
 ..\..\output\modbus_agreement.o: ..\..\BSP\systick\bsp_systick.h
 ..\..\output\modbus_agreement.o: ..\..\BSP\usart\bsp_usart2.h
-..\..\output\modbus_agreement.o: ..\..\BSP\tim7\bsp_tim7.h
 ..\..\output\modbus_agreement.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h

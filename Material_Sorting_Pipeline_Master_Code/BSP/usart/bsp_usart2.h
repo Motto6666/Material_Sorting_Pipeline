@@ -4,7 +4,6 @@
 
 #include "stm32f10x.h"
 #include "bsp_systick.h"
-#include "bsp_tim7.h"
 #include <stdio.h>
 
 // ´®¿Ú2-USART2
@@ -26,7 +25,7 @@
 #define  DEBUG_USART2_IRQHandler         USART2_IRQHandler
 
 extern uint8_t USART2_RX_Pack[50];
-extern volatile uint16_t USART2_RX_Count;
+extern volatile uint8_t USART2_RX_Over;
 
 void USART2_Config(void);
 void USART2_Printf(uint8_t *Str);

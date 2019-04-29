@@ -30,5 +30,4 @@
 ..\..\output\bsp_usart2.o: ..\..\Libraries\FWlib\inc\stm32f10x_wwdg.h
 ..\..\output\bsp_usart2.o: ..\..\Libraries\FWlib\inc\misc.h
 ..\..\output\bsp_usart2.o: ..\..\BSP\systick\bsp_systick.h
-..\..\output\bsp_usart2.o: ..\..\BSP\tim7\bsp_tim7.h
 ..\..\output\bsp_usart2.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h

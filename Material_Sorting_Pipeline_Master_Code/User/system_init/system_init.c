@@ -5,7 +5,6 @@ void System_Init(void)
 	USART1_Config();
 	USART2_Config();
 	BASIC_TIM6_Init();
-	BASIC_TIM7_Init();
 	LCD_Init();
 	Motor_Init();
 	Photoelectric_Sensor_Init();
