@@ -44,7 +44,7 @@ static void BASIC_TIM7_Mode_Config(void)
 		// 开启计数器中断
     TIM_ITConfig(BASIC_TIM7,TIM_IT_Update,ENABLE);
 		
-		// 使能定时器
+		// 关闭定时器
     TIM7_DISABLE;
 }
 

@@ -30,4 +30,3 @@
 ..\..\output\bsp_usart1.o: ..\..\Libraries\FWlib\inc\stm32f10x_wwdg.h
 ..\..\output\bsp_usart1.o: ..\..\Libraries\FWlib\inc\misc.h
 ..\..\output\bsp_usart1.o: ..\..\BSP\systick\bsp_systick.h
-..\..\output\bsp_usart1.o: ..\..\BSP\tim7\bsp_tim7.h

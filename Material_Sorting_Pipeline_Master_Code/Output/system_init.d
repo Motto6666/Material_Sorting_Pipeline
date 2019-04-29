@@ -31,8 +31,8 @@
 ..\..\output\system_init.o: ..\..\Libraries\FWlib\inc\misc.h
 ..\..\output\system_init.o: ..\..\BSP\usart\bsp_usart1.h
 ..\..\output\system_init.o: ..\..\BSP\systick\bsp_systick.h
-..\..\output\system_init.o: ..\..\BSP\tim7\bsp_tim7.h
 ..\..\output\system_init.o: ..\..\BSP\usart\bsp_usart2.h
+..\..\output\system_init.o: ..\..\BSP\tim7\bsp_tim7.h
 ..\..\output\system_init.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 ..\..\output\system_init.o: ..\..\BSP\lcd\bsp_ili9341_lcd.h
 ..\..\output\system_init.o: ..\..\User\display_character\lcd_display_english.h

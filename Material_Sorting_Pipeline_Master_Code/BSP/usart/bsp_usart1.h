@@ -4,7 +4,6 @@
 
 #include "stm32f10x.h"
 #include "bsp_systick.h"
-#include "bsp_tim7.h"
 
 /** 
   * 串口宏定义，不同的串口挂载的总线和IO不一样，移植时需要修改这几个宏
@@ -32,7 +31,7 @@
 
 
 extern uint8_t USART1_RX_Pack[50];
-extern volatile uint16_t USART1_RX_Count;
+extern volatile uint8_t USART1_RX_Over;
 
 void USART1_Config(void);
 void USART1_Printf(uint8_t *Str);

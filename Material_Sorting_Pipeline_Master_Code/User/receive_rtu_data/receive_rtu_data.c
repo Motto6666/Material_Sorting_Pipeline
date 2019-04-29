@@ -16,10 +16,10 @@ void Receive_Openmv_Data(uint8_t Address, uint8_t Funtion)
 	TIM6_ENABLE;
 	while(1)
 	{		
-		if( USART_RX_Over == TURE)
+		if( USART1_RX_Over == TURE)
 		{		
 			TIM6_Shut_Down();
-			USART_RX_Over = 0;
+			USART1_RX_Over = 0;
 			if( USART1_RX_Pack[0] == Address || USART1_RX_Pack[1] == Funtion )
 			{				
 				USART1_Send_Count = 0;
@@ -218,10 +218,10 @@ void Receive_Openmv_Recognize_Data(void)
 	TIM6_ENABLE;
 	while(1)
 	{
-		if( USART_RX_Over == TURE)
+		if( USART1_RX_Over == TURE)
 		{
 			TIM6_Shut_Down();
-			USART_RX_Over = 0;
+			USART1_RX_Over = 0;
 			if( RTU_Data_Analysis(USART1_RX_Pack) == CHECK_SUCCESS )
 			{
 				USART1_Send_Count = 0;
@@ -293,7 +293,7 @@ void USART_Buffer_Clean(uint8_t *Buffer)
 	{
 		case OPENMV_ADD :
 					Data_Clean(Buffer);
-					USART1_RX_Count = 0;
+					//USART1_RX_Count = 0;
 					break;
 		
 		case IRON_HAND_ADD :
