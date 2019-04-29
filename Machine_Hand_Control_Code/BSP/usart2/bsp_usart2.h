@@ -25,7 +25,8 @@
 #define  DEBUG_USART2_IRQHandler         USART2_IRQHandler
 
 extern uint8_t Receive_Master_Data[50];
-extern volatile uint16_t USART2_RX_Count;
+//extern volatile uint16_t USART2_RX_Count;
+extern volatile uint8_t USART_RX_Over;
 
 void USART2_Config(void);
 void Send_Data_to_Master(uint8_t *Str);

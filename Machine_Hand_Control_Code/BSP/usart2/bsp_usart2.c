@@ -118,16 +118,27 @@ void Send_Data_to_Master(uint8_t *Str)
   * @retval 无
   */
 uint8_t Receive_Master_Data[50];
-volatile uint16_t USART2_RX_Count = 0;//USART2接收到的字符个数
+volatile uint16_t USART2_RX_Count = 0;//记录USART2接收到8位数据的个数
+uint8_t Free_Read_Rst = 0;//读DR清除空闲中断
+volatile uint8_t USART_RX_Over = 0;//用于判断数据USART2是否收接收完毕，取值范围位0或1
+
 void DEBUG_USART2_IRQHandler(void)
 {
 	if(USART_GetITStatus(DEBUG_USART2,USART_IT_RXNE)!=RESET)
 	{		
-		TIM3_ENABLE;//开启TIM7定时器，用于判断USART2数据是否接收完毕
-		TIM3_Count = 10;
+		//TIM3_ENABLE;//开启TIM7定时器，用于判断USART2数据是否接收完毕
+		//TIM3_Count = 10;
+		USART_ClearITPendingBit(DEBUG_USART2, USART_FLAG_ORE); //清除中断标志
+		USART_ClearITPendingBit(DEBUG_USART2,USART_IT_ORE); //清除中断标志
 		Receive_Master_Data[USART2_RX_Count] = USART_ReceiveData(DEBUG_USART2);
     USART2_RX_Count++;
-	}	 
+	}	
+	else if(USART_GetITStatus(DEBUG_USART2,USART_IT_IDLE) !=RESET)//传输完一条完整的数据就会进入这个
+	{
+		Free_Read_Rst = DEBUG_USART2->DR; //读取USART数据寄存器，达到清USART_IT_IDLE标志目的
+		USART_RX_Over = 1;//接收到一条完整的数据
+		USART2_RX_Count = 0;//清零接收的个数
+  } 
 }
 
 
@@ -151,5 +162,5 @@ void Clean_Data(uint8_t *Str)
 		Str[i] = '\0';
   }
 	
-	USART2_RX_Count = 0;
+	//USART2_RX_Count = 0;
 }

@@ -44,7 +44,7 @@ static void GENERAL_TIM3_Mode_Config(void)
 		// 开启计数器中断
     TIM_ITConfig(GENERAL_TIM3,TIM_IT_Update,ENABLE);
 		
-		// 使能定时器
+		// 关闭定时器
     TIM3_DISABLE;
 }
 
@@ -65,7 +65,7 @@ void TIM3_Config_Init(void)
   * @retval 无
   */
 volatile uint8_t TIM3_Count = 10;
-volatile uint8_t USART_RX_Over = 0;
+//volatile uint8_t USART_RX_Over = 0;
 void  GENERAL_TIM3_IRQHandler (void) 
 {
 	if ( TIM_GetITStatus( GENERAL_TIM3, TIM_IT_Update) != RESET ) 
@@ -75,7 +75,7 @@ void  GENERAL_TIM3_IRQHandler (void)
 		
 		if(TIM3_Count == 0)//若TIM3_Count为0，即可判断USART串口数据接收完毕
 		{
-			USART_RX_Over = TRUE;//表示数据接收完毕
+			//USART_RX_Over = TRUE;//表示数据接收完毕
 			TIM3_Count = 10;//TIM3_Count值恢复到最初值，保证下次超时检测不出错
 			TIM3_DISABLE;
 		}

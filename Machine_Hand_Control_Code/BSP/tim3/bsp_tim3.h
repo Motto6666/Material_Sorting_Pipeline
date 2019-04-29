@@ -18,7 +18,7 @@
 #define						 FALSE													0
 
 extern volatile uint8_t TIM3_Count;
-extern volatile uint8_t USART_RX_Over;
+//extern volatile uint8_t USART_RX_Over;
 
 void TIM3_Config_Init(void);
 
