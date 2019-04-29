@@ -9,7 +9,7 @@ int main(void)
 	
 	while(1)
 	{
-		if(USART_RX_Over == TRUE)//接收主机数据完毕
+		if(USART_RX_Over == TURE)//接收主机数据完毕
 		{			
 			USART_RX_Over = FALSE;//恢复到最初值
 						

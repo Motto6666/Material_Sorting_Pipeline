@@ -4,7 +4,6 @@
 
 #include "stm32f10x.h"
 #include "bsp_systick.h"
-#include "bsp_tim3.h"
 
 // ´®¿Ú2-USART2
 #define  DEBUG_USART2                    USART2
@@ -24,8 +23,10 @@
 #define  DEBUG_USART2_IRQ                USART2_IRQn
 #define  DEBUG_USART2_IRQHandler         USART2_IRQHandler
 
+#define  TURE														 1		
+#define  FALSE													 0
+
 extern uint8_t Receive_Master_Data[50];
-//extern volatile uint16_t USART2_RX_Count;
 extern volatile uint8_t USART_RX_Over;
 
 void USART2_Config(void);

@@ -30,6 +30,7 @@ void Left_Place_Action(void)
 {
 	Analyze_Action_Group(Left_Place_1);	
 	Analyze_Action_Group(Left_Place_2);
+	Analyze_Action_Group(Left_Place_3);
 }
 
 
@@ -42,6 +43,7 @@ void Right_Place_Action(void)
 {
 	Analyze_Action_Group(Right_Place_1);	
 	Analyze_Action_Group(Right_Place_2);
+	Analyze_Action_Group(Right_Place_3);
 }
 
 

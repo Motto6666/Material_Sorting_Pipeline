@@ -11,7 +11,6 @@ void System_Init(void)
 	USART1_Config();
 	USART2_Config();
 	TIM2_Config_Init();
-	TIM3_Config_Init();
 	SysTick_Delay_ms(2000);	
 	Curl_Up_Action();//机械手执行蜷缩动作
 }

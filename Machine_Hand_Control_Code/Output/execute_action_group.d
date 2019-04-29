@@ -22,7 +22,6 @@
 ..\Output\execute_action_group.o: ..\BSP\systick\bsp_systick.h
 ..\Output\execute_action_group.o: ..\BSP\usart1\bsp_usart1.h
 ..\Output\execute_action_group.o: ..\BSP\usart2\bsp_usart2.h
-..\Output\execute_action_group.o: ..\BSP\tim3\bsp_tim3.h
 ..\Output\execute_action_group.o: ..\BSP\tim2\bsp_tim2.h
 ..\Output\execute_action_group.o: ..\USER\analyze_action_group\analyze_action_group.h
 ..\Output\execute_action_group.o: ..\USER\execute_action_group\execute_action_group.h

@@ -81,7 +81,10 @@ void USART2_Config(void)
 	USART2_NVIC_Configuration();
 	
 	// 使能串口接收中断
-	USART_ITConfig(DEBUG_USART2, USART_IT_RXNE, ENABLE);	
+	USART_ITConfig(DEBUG_USART2, USART_IT_RXNE, ENABLE);
+
+	//开启串口2总线空闲中断
+	USART_ITConfig(DEBUG_USART2, USART_IT_IDLE, ENABLE);
 	
 	// 使能串口
 	USART_Cmd(DEBUG_USART2, ENABLE);		
@@ -126,8 +129,6 @@ void DEBUG_USART2_IRQHandler(void)
 {
 	if(USART_GetITStatus(DEBUG_USART2,USART_IT_RXNE)!=RESET)
 	{		
-		//TIM3_ENABLE;//开启TIM7定时器，用于判断USART2数据是否接收完毕
-		//TIM3_Count = 10;
 		USART_ClearITPendingBit(DEBUG_USART2, USART_FLAG_ORE); //清除中断标志
 		USART_ClearITPendingBit(DEBUG_USART2,USART_IT_ORE); //清除中断标志
 		Receive_Master_Data[USART2_RX_Count] = USART_ReceiveData(DEBUG_USART2);
@@ -161,6 +162,4 @@ void Clean_Data(uint8_t *Str)
 	{
 		Str[i] = '\0';
   }
-	
-	//USART2_RX_Count = 0;
 }

@@ -8,7 +8,6 @@
 #include "bsp_usart1.h"
 #include "bsp_usart2.h"
 #include "bsp_tim2.h"
-#include "bsp_tim3.h"
 #include "analyze_action_group.h"
 #include "execute_action_group.h"
 #include "modbus_agreement.h"

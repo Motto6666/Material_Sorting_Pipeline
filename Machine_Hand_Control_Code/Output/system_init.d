@@ -21,7 +21,6 @@
 ..\Output\system_init.o: ..\BSP\systick\bsp_systick.h
 ..\Output\system_init.o: ..\BSP\usart1\bsp_usart1.h
 ..\Output\system_init.o: ..\BSP\usart2\bsp_usart2.h
-..\Output\system_init.o: ..\BSP\tim3\bsp_tim3.h
 ..\Output\system_init.o: ..\BSP\tim2\bsp_tim2.h
 ..\Output\system_init.o: ..\USER\analyze_action_group\analyze_action_group.h
 ..\Output\system_init.o: ..\USER\execute_action_group\execute_action_group.h

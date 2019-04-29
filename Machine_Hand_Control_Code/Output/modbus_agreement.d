@@ -19,5 +19,4 @@
 ..\Output\modbus_agreement.o: ..\BSP\usart1\bsp_usart1.h
 ..\Output\modbus_agreement.o: ..\BSP\systick\bsp_systick.h
 ..\Output\modbus_agreement.o: ..\BSP\usart2\bsp_usart2.h
-..\Output\modbus_agreement.o: ..\BSP\tim3\bsp_tim3.h
 ..\Output\modbus_agreement.o: H:\Keil4\ARM\ARMCC\bin\..\include\string.h

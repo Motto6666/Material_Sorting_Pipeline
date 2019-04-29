@@ -17,4 +17,3 @@
 ..\Output\bsp_usart2.o: ..\Libraries\inc\stm32f10x_usart.h
 ..\Output\bsp_usart2.o: ..\Libraries\inc\misc.h
 ..\Output\bsp_usart2.o: ..\BSP\systick\bsp_systick.h
-..\Output\bsp_usart2.o: ..\BSP\tim3\bsp_tim3.h
