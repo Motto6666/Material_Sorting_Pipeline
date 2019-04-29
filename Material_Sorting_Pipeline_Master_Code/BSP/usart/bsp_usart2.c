@@ -127,7 +127,7 @@ int fputc(int ch, FILE *f)
   * @param  需要发送出去的字符串的指针
   * @retval 无
   */
-uint8_t USART2_RX_Pack[50];//将USART2串口接收到的数据存放到该数组里
+uint8_t USART2_RX_Pack[10];//将USART2串口接收到的数据存放到该数组里
 volatile uint16_t USART2_RX_Count = 0;//USART2接收到的8位数据个数
 uint8_t Free_Read_Rst_2 = 0;//读DR清除空闲中断
 volatile uint8_t USART2_RX_Over = 0;//用于判断数据USART2是否收接收完毕，取值范围位0或1

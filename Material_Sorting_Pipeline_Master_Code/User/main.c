@@ -37,7 +37,7 @@ int main(void)
 		
 		PHOTOELECTRIC_SENSOR_DISABLE;
 			
-		SysTick_Delay_ms(500);
+		SysTick_Delay_ms(450);
 					
 		MOTOR_STOP;
 		

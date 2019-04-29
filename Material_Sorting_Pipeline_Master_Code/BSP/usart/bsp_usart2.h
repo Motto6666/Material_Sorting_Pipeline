@@ -24,7 +24,7 @@
 #define  DEBUG_USART2_IRQ                USART2_IRQn
 #define  DEBUG_USART2_IRQHandler         USART2_IRQHandler
 
-extern uint8_t USART2_RX_Pack[50];
+extern uint8_t USART2_RX_Pack[10];
 extern volatile uint8_t USART2_RX_Over;
 
 void USART2_Config(void);

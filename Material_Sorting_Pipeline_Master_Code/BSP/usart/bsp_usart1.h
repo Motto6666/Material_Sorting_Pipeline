@@ -30,7 +30,7 @@
 #define  DEBUG_USART1_IRQHandler         USART1_IRQHandler
 
 
-extern uint8_t USART1_RX_Pack[50];
+extern uint8_t USART1_RX_Pack[10];
 extern volatile uint8_t USART1_RX_Over;
 
 void USART1_Config(void);
