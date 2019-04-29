@@ -17,3 +17,8 @@
 ..\Output\bsp_usart2.o: ..\Libraries\inc\stm32f10x_usart.h
 ..\Output\bsp_usart2.o: ..\Libraries\inc\misc.h
 ..\Output\bsp_usart2.o: ..\BSP\systick\bsp_systick.h
+..\Output\bsp_usart2.o: ..\USER\modbus_agreement\modbus_agreement.h
+..\Output\bsp_usart2.o: ..\BSP\usart1\bsp_usart1.h
+..\Output\bsp_usart2.o: ..\BSP\usart2\bsp_usart2.h
+..\Output\bsp_usart2.o: H:\Keil4\ARM\ARMCC\bin\..\include\string.h
+..\Output\bsp_usart2.o: ..\BSP\tim2\bsp_tim2.h

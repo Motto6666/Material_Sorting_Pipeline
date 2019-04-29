@@ -120,7 +120,7 @@ void Send_Data_to_Master(uint8_t *Str)
   * @param  需要发送出去的字符串的指针
   * @retval 无
   */
-uint8_t Receive_Master_Data[50];
+uint8_t Receive_Master_Data[10];
 volatile uint16_t USART2_RX_Count = 0;//记录USART2接收到8位数据的个数
 uint8_t Free_Read_Rst = 0;//读DR清除空闲中断
 volatile uint8_t USART_RX_Over = 0;//用于判断数据USART2是否收接收完毕，取值范围位0或1
@@ -139,6 +139,7 @@ void DEBUG_USART2_IRQHandler(void)
 		Free_Read_Rst = DEBUG_USART2->DR; //读取USART数据寄存器，达到清USART_IT_IDLE标志目的
 		USART_RX_Over = 1;//接收到一条完整的数据
 		USART2_RX_Count = 0;//清零接收的个数
+		Check_Stop_Data(Receive_Master_Data);//检查接收到的数据是否为停止数据
   } 
 }
 
@@ -148,7 +149,7 @@ void DEBUG_USART2_IRQHandler(void)
   * @param  *Str ：字符串数据的指针
   * @retval 无
   */
-void Clean_Data(uint8_t *Str)
+void Clean_Data(uint8_t *Str) 
 {
 	uint16_t Str_Num=0;
 	uint16_t i;
@@ -162,4 +163,19 @@ void Clean_Data(uint8_t *Str)
 	{
 		Str[i] = '\0';
   }
+}
+
+
+/**
+  * @brief  检查接收到的数据是否为停止数据
+  * @param  *Str ：字符串数据的指针
+  * @retval 无
+  */
+void Check_Stop_Data(uint8_t *Str)
+{
+	if(Str[1] == IRON_HAND_EXECUTE_STOP)//判断RTU数据帧的功能码是否为机械手停止运行码
+	{
+		TIM2_DISABLE;//关闭控制舵机运行的定时器TIM2，机械手停止运作
+		while(1);
+	}
 }

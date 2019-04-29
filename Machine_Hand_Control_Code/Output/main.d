@@ -21,9 +21,10 @@
 ..\Output\main.o: ..\BSP\systick\bsp_systick.h
 ..\Output\main.o: ..\BSP\usart1\bsp_usart1.h
 ..\Output\main.o: ..\BSP\usart2\bsp_usart2.h
+..\Output\main.o: ..\USER\modbus_agreement\modbus_agreement.h
+..\Output\main.o: ..\BSP\usart2\bsp_usart2.h
+..\Output\main.o: H:\Keil4\ARM\ARMCC\bin\..\include\string.h
 ..\Output\main.o: ..\BSP\tim2\bsp_tim2.h
 ..\Output\main.o: ..\USER\analyze_action_group\analyze_action_group.h
 ..\Output\main.o: ..\USER\execute_action_group\execute_action_group.h
 ..\Output\main.o: ..\USER\system_init\system_init.h
-..\Output\main.o: ..\USER\modbus_agreement\modbus_agreement.h
-..\Output\main.o: H:\Keil4\ARM\ARMCC\bin\..\include\string.h

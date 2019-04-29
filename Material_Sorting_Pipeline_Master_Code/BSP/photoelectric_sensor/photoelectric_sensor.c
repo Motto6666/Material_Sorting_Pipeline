@@ -41,7 +41,7 @@ void Sensor_EXTI_Config(void)
 	
 	/*初始化复用功能的AFIO配置*/
 	RCC_APB2PeriphClockCmd(RCC_APB2Periph_AFIO,ENABLE);
-	/*将PAO连接到EXTI中*/
+	/*将PA1连接到EXTI中*/
 	GPIO_EXTILineConfig(SENSOR_PORTSOURCE,SENSOR_EXTI_GPIO_PINSOURCE);
 	
 	/*初始化EXTI外设结构体*/

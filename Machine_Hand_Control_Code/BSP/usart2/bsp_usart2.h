@@ -4,6 +4,8 @@
 
 #include "stm32f10x.h"
 #include "bsp_systick.h"
+#include "modbus_agreement.h"
+#include "bsp_tim2.h"
 
 // ´®¿Ú2-USART2
 #define  DEBUG_USART2                    USART2
@@ -26,11 +28,12 @@
 #define  TURE														 1		
 #define  FALSE													 0
 
-extern uint8_t Receive_Master_Data[50];
+extern uint8_t Receive_Master_Data[10];
 extern volatile uint8_t USART_RX_Over;
 
 void USART2_Config(void);
 void Send_Data_to_Master(uint8_t *Str);
 void Clean_Data(uint8_t *Str);
+void Check_Stop_Data(uint8_t *Str);
 
 #endif /* __BSP_USART2_H */

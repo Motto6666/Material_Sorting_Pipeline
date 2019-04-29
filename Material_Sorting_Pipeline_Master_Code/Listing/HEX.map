@@ -7,6 +7,7 @@ Section Cross References
     startup_stm32f10x_hd.o(RESET) refers to startup_stm32f10x_hd.o(STACK) for __initial_sp
     startup_stm32f10x_hd.o(RESET) refers to startup_stm32f10x_hd.o(.text) for Reset_Handler
     startup_stm32f10x_hd.o(RESET) refers to stm32f10x_it.o(.text) for NMI_Handler
+    startup_stm32f10x_hd.o(RESET) refers to bsp_exti_key.o(.text) for EXTI0_IRQHandler
     startup_stm32f10x_hd.o(RESET) refers to photoelectric_sensor.o(.text) for EXTI1_IRQHandler
     startup_stm32f10x_hd.o(RESET) refers to bsp_motor_control.o(.text) for TIM2_IRQHandler
     startup_stm32f10x_hd.o(RESET) refers to bsp_usart1.o(.text) for USART1_IRQHandler
@@ -61,6 +62,7 @@ Section Cross References
     system_init.o(.text) refers to bsp_ili9341_lcd.o(.text) for LCD_Init
     system_init.o(.text) refers to bsp_motor_control.o(.text) for Motor_Init
     system_init.o(.text) refers to photoelectric_sensor.o(.text) for Photoelectric_Sensor_Init
+    system_init.o(.text) refers to bsp_exti_key.o(.text) for Key_Init
     system_init.o(.text) refers to lcd_display_english.o(.text) for Display_Motto6666
     system_init.o(.text) refers to lcd_display_chinese.o(.text) for Display_Chinese_String
     system_init.o(.text) refers to lcd_display_chinese.o(.data) for Chinese_Character_1
@@ -95,6 +97,15 @@ Section Cross References
     photoelectric_sensor.o(.text) refers to stm32f10x_gpio.o(.text) for GPIO_Init
     photoelectric_sensor.o(.text) refers to stm32f10x_exti.o(.text) for EXTI_Init
     photoelectric_sensor.o(.text) refers to photoelectric_sensor.o(.data) for Check_Object
+    bsp_exti_key.o(.text) refers to misc.o(.text) for NVIC_PriorityGroupConfig
+    bsp_exti_key.o(.text) refers to stm32f10x_rcc.o(.text) for RCC_APB2PeriphClockCmd
+    bsp_exti_key.o(.text) refers to stm32f10x_gpio.o(.text) for GPIO_Init
+    bsp_exti_key.o(.text) refers to stm32f10x_exti.o(.text) for EXTI_Init
+    bsp_exti_key.o(.text) refers to stm32f10x_tim.o(.text) for TIM_Cmd
+    bsp_exti_key.o(.text) refers to modbus_agreement.o(.text) for RTU_Pack_Data
+    bsp_exti_key.o(.text) refers to lcd_display_chinese.o(.text) for Clean_Screen
+    bsp_exti_key.o(.text) refers to bsp_exti_key.o(.data) for Data_Stirng2
+    bsp_exti_key.o(.text) refers to lcd_display_chinese.o(.data) for Chinese_Character_18
     entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry10a.o(.ARM.Collect$$$$0000000D) for __rt_final_cpp
     entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry11a.o(.ARM.Collect$$$$0000000F) for __rt_final_exit
     entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry7b.o(.ARM.Collect$$$$00000008) for _main_clock
@@ -145,19 +156,20 @@ Image Symbol Table
     Symbol Name                              Value     Ov Type        Size  Object(Section)
 
     ../clib/../cmprslib/lz77c.c              0x00000000   Number         0  __dclz77c.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry5.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry2.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9b.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9a.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11a.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11b.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9b.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8b.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8a.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7b.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry5.o ABSOLUTE
+    ..\..\BSP\key\bsp_exti_key.c             0x00000000   Number         0  bsp_exti_key.o ABSOLUTE
     ..\..\BSP\lcd\bsp_ili9341_lcd.c          0x00000000   Number         0  bsp_ili9341_lcd.o ABSOLUTE
     ..\..\BSP\motor_control\bsp_motor_control.c 0x00000000   Number         0  bsp_motor_control.o ABSOLUTE
     ..\..\BSP\photoelectric_sensor\photoelectric_sensor.c 0x00000000   Number         0  photoelectric_sensor.o ABSOLUTE
@@ -231,7 +243,7 @@ Image Symbol Table
     .text                                    0x0800214c   Section        0  lcd_display_english.o(.text)
     .text                                    0x0800225c   Section        0  modbus_agreement.o(.text)
     .text                                    0x080023c4   Section        0  receive_rtu_data.o(.text)
-    .text                                    0x0800284c   Section        0  system_init.o(.text)
+    .text                                    0x08002848   Section        0  system_init.o(.text)
     .text                                    0x080028a0   Section        0  bsp_ili9341_lcd.o(.text)
     ILI9341_Delay                            0x080028a1   Thumb Code    18  bsp_ili9341_lcd.o(.text)
     .text                                    0x08002eac   Section        0  bsp_usart1.o(.text)
@@ -246,30 +258,33 @@ Image Symbol Table
     .text                                    0x080032fc   Section        0  bsp_motor_control.o(.text)
     .text                                    0x08003440   Section        0  photoelectric_sensor.o(.text)
     Sensor_NVIC_Config                       0x08003441   Thumb Code    42  photoelectric_sensor.o(.text)
-    .text                                    0x080034e4   Section       36  init.o(.text)
-    .text                                    0x08003508   Section        0  __dclz77c.o(.text)
-    i.__scatterload_copy                     0x08003566   Section       14  handlers.o(i.__scatterload_copy)
-    i.__scatterload_null                     0x08003574   Section        2  handlers.o(i.__scatterload_null)
-    i.__scatterload_zeroinit                 0x08003576   Section       14  handlers.o(i.__scatterload_zeroinit)
+    .text                                    0x080034e4   Section        0  bsp_exti_key.o(.text)
+    Key1_NVIC_Config                         0x080034e5   Thumb Code    40  bsp_exti_key.o(.text)
+    .text                                    0x080035d8   Section       36  init.o(.text)
+    .text                                    0x080035fc   Section        0  __dclz77c.o(.text)
+    i.__scatterload_copy                     0x0800365a   Section       14  handlers.o(i.__scatterload_copy)
+    i.__scatterload_null                     0x08003668   Section        2  handlers.o(i.__scatterload_null)
+    i.__scatterload_zeroinit                 0x0800366a   Section       14  handlers.o(i.__scatterload_zeroinit)
     .data                                    0x20000000   Section       20  system_stm32f10x.o(.data)
     .data                                    0x20000014   Section       20  stm32f10x_rcc.o(.data)
     APBAHBPrescTable                         0x20000014   Data          16  stm32f10x_rcc.o(.data)
     ADCPrescTable                            0x20000024   Data           4  stm32f10x_rcc.o(.data)
     .data                                    0x20000028   Section        3  main.o(.data)
-    .data                                    0x2000002b   Section     5440  lcd_display_chinese.o(.data)
-    .data                                    0x2000156b   Section      432  lcd_display_english.o(.data)
-    .data                                    0x2000171b   Section        2  modbus_agreement.o(.data)
-    .data                                    0x2000171d   Section        1  receive_rtu_data.o(.data)
-    .data                                    0x2000171e   Section        5  bsp_ili9341_lcd.o(.data)
-    .data                                    0x20001724   Section        4  bsp_usart1.o(.data)
-    .data                                    0x20001728   Section        4  bsp_tim6.o(.data)
-    .data                                    0x2000172c   Section        4  bsp_usart2.o(.data)
-    .data                                    0x20001730   Section        1  bsp_motor_control.o(.data)
-    .data                                    0x20001731   Section        1  photoelectric_sensor.o(.data)
-    .bss                                     0x20001734   Section       50  modbus_agreement.o(.bss)
-    .bss                                     0x20001766   Section       10  bsp_usart1.o(.bss)
-    .bss                                     0x20001770   Section       10  bsp_usart2.o(.bss)
-    STACK                                    0x20001780   Section     1024  startup_stm32f10x_hd.o(STACK)
+    .data                                    0x2000002b   Section     5664  lcd_display_chinese.o(.data)
+    .data                                    0x2000164b   Section      432  lcd_display_english.o(.data)
+    .data                                    0x200017fb   Section        2  modbus_agreement.o(.data)
+    .data                                    0x200017fd   Section        1  receive_rtu_data.o(.data)
+    .data                                    0x200017fe   Section        5  bsp_ili9341_lcd.o(.data)
+    .data                                    0x20001804   Section        4  bsp_usart1.o(.data)
+    .data                                    0x20001808   Section        4  bsp_tim6.o(.data)
+    .data                                    0x2000180c   Section        4  bsp_usart2.o(.data)
+    .data                                    0x20001810   Section        1  bsp_motor_control.o(.data)
+    .data                                    0x20001811   Section        1  photoelectric_sensor.o(.data)
+    .data                                    0x20001812   Section        1  bsp_exti_key.o(.data)
+    .bss                                     0x20001814   Section       50  modbus_agreement.o(.bss)
+    .bss                                     0x20001846   Section       10  bsp_usart1.o(.bss)
+    .bss                                     0x20001850   Section       10  bsp_usart2.o(.bss)
+    STACK                                    0x20001860   Section     1024  startup_stm32f10x_hd.o(STACK)
 
     Global Symbols
 
@@ -309,7 +324,6 @@ Image Symbol Table
     DMA2_Channel2_IRQHandler                 0x0800015f   Thumb Code     0  startup_stm32f10x_hd.o(.text)
     DMA2_Channel3_IRQHandler                 0x0800015f   Thumb Code     0  startup_stm32f10x_hd.o(.text)
     DMA2_Channel4_5_IRQHandler               0x0800015f   Thumb Code     0  startup_stm32f10x_hd.o(.text)
-    EXTI0_IRQHandler                         0x0800015f   Thumb Code     0  startup_stm32f10x_hd.o(.text)
     EXTI15_10_IRQHandler                     0x0800015f   Thumb Code     0  startup_stm32f10x_hd.o(.text)
     EXTI2_IRQHandler                         0x0800015f   Thumb Code     0  startup_stm32f10x_hd.o(.text)
     EXTI3_IRQHandler                         0x0800015f   Thumb Code     0  startup_stm32f10x_hd.o(.text)
@@ -554,8 +568,8 @@ Image Symbol Table
     LCD_Display_State                        0x080023eb   Thumb Code   190  receive_rtu_data.o(.text)
     Receive_Openmv_Data                      0x080024a9   Thumb Code   230  receive_rtu_data.o(.text)
     Receive_Iron_Hand_Data                   0x0800258f   Thumb Code   318  receive_rtu_data.o(.text)
-    Receive_Openmv_Recognize_Data            0x080026cd   Thumb Code   384  receive_rtu_data.o(.text)
-    System_Init                              0x0800284d   Thumb Code    76  system_init.o(.text)
+    Receive_Openmv_Recognize_Data            0x080026cd   Thumb Code   288  receive_rtu_data.o(.text)
+    System_Init                              0x08002849   Thumb Code    80  system_init.o(.text)
     ILI9341_GPIO_Init                        0x080028b3   Thumb Code   134  bsp_ili9341_lcd.o(.text)
     ILI9341_Write_CMD                        0x08002939   Thumb Code    60  bsp_ili9341_lcd.o(.text)
     ILI9341_Write_Data                       0x08002975   Thumb Code    60  bsp_ili9341_lcd.o(.text)
@@ -589,15 +603,19 @@ Image Symbol Table
     Sensor_EXTI_Config                       0x0800346b   Thumb Code    76  photoelectric_sensor.o(.text)
     Photoelectric_Sensor_Init                0x080034b7   Thumb Code    12  photoelectric_sensor.o(.text)
     EXTI1_IRQHandler                         0x080034c3   Thumb Code    24  photoelectric_sensor.o(.text)
-    __scatterload                            0x080034e5   Thumb Code    28  init.o(.text)
-    __scatterload_rt2                        0x080034e5   Thumb Code     0  init.o(.text)
-    __decompress                             0x08003509   Thumb Code     0  __dclz77c.o(.text)
-    __decompress2                            0x08003509   Thumb Code    94  __dclz77c.o(.text)
-    __scatterload_copy                       0x08003567   Thumb Code    14  handlers.o(i.__scatterload_copy)
-    __scatterload_null                       0x08003575   Thumb Code     2  handlers.o(i.__scatterload_null)
-    __scatterload_zeroinit                   0x08003577   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
-    Region$$Table$$Base                      0x08003584   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x080035a4   Number         0  anon$$obj.o(Region$$Table)
+    Key1_EXTI_Config                         0x0800350d   Thumb Code    76  bsp_exti_key.o(.text)
+    Key_Init                                 0x08003559   Thumb Code    12  bsp_exti_key.o(.text)
+    System_Stop                              0x08003565   Thumb Code    82  bsp_exti_key.o(.text)
+    EXTI0_IRQHandler                         0x080035b7   Thumb Code    22  bsp_exti_key.o(.text)
+    __scatterload                            0x080035d9   Thumb Code    28  init.o(.text)
+    __scatterload_rt2                        0x080035d9   Thumb Code     0  init.o(.text)
+    __decompress                             0x080035fd   Thumb Code     0  __dclz77c.o(.text)
+    __decompress2                            0x080035fd   Thumb Code    94  __dclz77c.o(.text)
+    __scatterload_copy                       0x0800365b   Thumb Code    14  handlers.o(i.__scatterload_copy)
+    __scatterload_null                       0x08003669   Thumb Code     2  handlers.o(i.__scatterload_null)
+    __scatterload_zeroinit                   0x0800366b   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
+    Region$$Table$$Base                      0x08003678   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x08003698   Number         0  anon$$obj.o(Region$$Table)
     SystemCoreClock                          0x20000000   Data           4  system_stm32f10x.o(.data)
     AHBPrescTable                            0x20000004   Data          16  system_stm32f10x.o(.data)
     USART1_Send_Count                        0x20000028   Data           1  main.o(.data)
@@ -620,25 +638,27 @@ Image Symbol Table
     Chinese_Character_15                     0x2000126b   Data         160  lcd_display_chinese.o(.data)
     Chinese_Character_16                     0x2000130b   Data         192  lcd_display_chinese.o(.data)
     Chinese_Character_17                     0x200013cb   Data         416  lcd_display_chinese.o(.data)
-    Character_Motto6666                      0x2000156b   Data         432  lcd_display_english.o(.data)
-    Check_Code                               0x2000171b   Data           2  modbus_agreement.o(.data)
-    Data_Stirngs                             0x2000171d   Data           1  receive_rtu_data.o(.data)
-    LCD_X_LENGTH                             0x2000171e   Data           2  bsp_ili9341_lcd.o(.data)
-    LCD_Y_LENGTH                             0x20001720   Data           2  bsp_ili9341_lcd.o(.data)
-    LCD_SCAN_MODE                            0x20001722   Data           1  bsp_ili9341_lcd.o(.data)
-    USART1_RX_Count                          0x20001724   Data           2  bsp_usart1.o(.data)
-    Free_Read_Rst_1                          0x20001726   Data           1  bsp_usart1.o(.data)
-    USART1_RX_Over                           0x20001727   Data           1  bsp_usart1.o(.data)
-    TIM6_Count                               0x20001728   Data           4  bsp_tim6.o(.data)
-    USART2_RX_Count                          0x2000172c   Data           2  bsp_usart2.o(.data)
-    Free_Read_Rst_2                          0x2000172e   Data           1  bsp_usart2.o(.data)
-    USART2_RX_Over                           0x2000172f   Data           1  bsp_usart2.o(.data)
-    Flag                                     0x20001730   Data           1  bsp_motor_control.o(.data)
-    Check_Object                             0x20001731   Data           1  photoelectric_sensor.o(.data)
-    Strings                                  0x20001734   Data          50  modbus_agreement.o(.bss)
-    USART1_RX_Pack                           0x20001766   Data          10  bsp_usart1.o(.bss)
-    USART2_RX_Pack                           0x20001770   Data          10  bsp_usart2.o(.bss)
-    __initial_sp                             0x20001b80   Data           0  startup_stm32f10x_hd.o(STACK)
+    Chinese_Character_18                     0x2000156b   Data         224  lcd_display_chinese.o(.data)
+    Character_Motto6666                      0x2000164b   Data         432  lcd_display_english.o(.data)
+    Check_Code                               0x200017fb   Data           2  modbus_agreement.o(.data)
+    Data_Stirngs                             0x200017fd   Data           1  receive_rtu_data.o(.data)
+    LCD_X_LENGTH                             0x200017fe   Data           2  bsp_ili9341_lcd.o(.data)
+    LCD_Y_LENGTH                             0x20001800   Data           2  bsp_ili9341_lcd.o(.data)
+    LCD_SCAN_MODE                            0x20001802   Data           1  bsp_ili9341_lcd.o(.data)
+    USART1_RX_Count                          0x20001804   Data           2  bsp_usart1.o(.data)
+    Free_Read_Rst_1                          0x20001806   Data           1  bsp_usart1.o(.data)
+    USART1_RX_Over                           0x20001807   Data           1  bsp_usart1.o(.data)
+    TIM6_Count                               0x20001808   Data           4  bsp_tim6.o(.data)
+    USART2_RX_Count                          0x2000180c   Data           2  bsp_usart2.o(.data)
+    Free_Read_Rst_2                          0x2000180e   Data           1  bsp_usart2.o(.data)
+    USART2_RX_Over                           0x2000180f   Data           1  bsp_usart2.o(.data)
+    Flag                                     0x20001810   Data           1  bsp_motor_control.o(.data)
+    Check_Object                             0x20001811   Data           1  photoelectric_sensor.o(.data)
+    Data_Stirng2                             0x20001812   Data           1  bsp_exti_key.o(.data)
+    Strings                                  0x20001814   Data          50  modbus_agreement.o(.bss)
+    USART1_RX_Pack                           0x20001846   Data          10  bsp_usart1.o(.bss)
+    USART2_RX_Pack                           0x20001850   Data          10  bsp_usart2.o(.bss)
+    __initial_sp                             0x20001c60   Data           0  startup_stm32f10x_hd.o(STACK)
 
 
 
@@ -648,22 +668,22 @@ Memory Map of the image
 
   Image Entry point : 0x08000131
 
-  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x00004cd8, Max: 0x00040000, ABSOLUTE, COMPRESSED[0x00003cd4])
+  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x00004eac, Max: 0x00040000, ABSOLUTE, COMPRESSED[0x00003e04])
 
-    Execution Region ER_IROM1 (Base: 0x08000000, Size: 0x000035a4, Max: 0x00040000, ABSOLUTE)
+    Execution Region ER_IROM1 (Base: 0x08000000, Size: 0x00003698, Max: 0x00040000, ABSOLUTE)
 
     Base Addr    Size         Type   Attr      Idx    E Section Name        Object
 
     0x08000000   0x00000130   Data   RO            3    RESET               startup_stm32f10x_hd.o
-    0x08000130   0x00000000   Code   RO          658  * .ARM.Collect$$$$00000000  mc_w.l(entry.o)
-    0x08000130   0x00000004   Code   RO          661    .ARM.Collect$$$$00000001  mc_w.l(entry2.o)
-    0x08000134   0x00000004   Code   RO          664    .ARM.Collect$$$$00000004  mc_w.l(entry5.o)
-    0x08000138   0x00000000   Code   RO          666    .ARM.Collect$$$$00000008  mc_w.l(entry7b.o)
-    0x08000138   0x00000000   Code   RO          668    .ARM.Collect$$$$0000000A  mc_w.l(entry8b.o)
-    0x08000138   0x00000008   Code   RO          669    .ARM.Collect$$$$0000000B  mc_w.l(entry9a.o)
-    0x08000140   0x00000000   Code   RO          671    .ARM.Collect$$$$0000000D  mc_w.l(entry10a.o)
-    0x08000140   0x00000000   Code   RO          673    .ARM.Collect$$$$0000000F  mc_w.l(entry11a.o)
-    0x08000140   0x00000004   Code   RO          662    .ARM.Collect$$$$00002712  mc_w.l(entry2.o)
+    0x08000130   0x00000000   Code   RO          676  * .ARM.Collect$$$$00000000  mc_w.l(entry.o)
+    0x08000130   0x00000004   Code   RO          679    .ARM.Collect$$$$00000001  mc_w.l(entry2.o)
+    0x08000134   0x00000004   Code   RO          682    .ARM.Collect$$$$00000004  mc_w.l(entry5.o)
+    0x08000138   0x00000000   Code   RO          684    .ARM.Collect$$$$00000008  mc_w.l(entry7b.o)
+    0x08000138   0x00000000   Code   RO          686    .ARM.Collect$$$$0000000A  mc_w.l(entry8b.o)
+    0x08000138   0x00000008   Code   RO          687    .ARM.Collect$$$$0000000B  mc_w.l(entry9a.o)
+    0x08000140   0x00000000   Code   RO          689    .ARM.Collect$$$$0000000D  mc_w.l(entry10a.o)
+    0x08000140   0x00000000   Code   RO          691    .ARM.Collect$$$$0000000F  mc_w.l(entry11a.o)
+    0x08000140   0x00000004   Code   RO          680    .ARM.Collect$$$$00002712  mc_w.l(entry2.o)
     0x08000144   0x00000024   Code   RO            4    .text               startup_stm32f10x_hd.o
     0x08000168   0x000001e0   Code   RO           24    .text               system_stm32f10x.o
     0x08000348   0x000000dc   Code   RO          121    .text               misc.o
@@ -674,52 +694,54 @@ Memory Map of the image
     0x08001a5a   0x00000002   PAD
     0x08001a5c   0x00000408   Code   RO          355    .text               stm32f10x_usart.o
     0x08001e64   0x00000128   Code   RO          379    .text               main.o
-    0x08001f8c   0x0000001a   Code   RO          443    .text               stm32f10x_it.o
-    0x08001fa6   0x000001a4   Code   RO          458    .text               lcd_display_chinese.o
+    0x08001f8c   0x0000001a   Code   RO          446    .text               stm32f10x_it.o
+    0x08001fa6   0x000001a4   Code   RO          461    .text               lcd_display_chinese.o
     0x0800214a   0x00000002   PAD
-    0x0800214c   0x00000110   Code   RO          476    .text               lcd_display_english.o
-    0x0800225c   0x00000168   Code   RO          491    .text               modbus_agreement.o
-    0x080023c4   0x00000488   Code   RO          510    .text               receive_rtu_data.o
-    0x0800284c   0x00000054   Code   RO          526    .text               system_init.o
-    0x080028a0   0x0000060c   Code   RO          538    .text               bsp_ili9341_lcd.o
-    0x08002eac   0x00000160   Code   RO          553    .text               bsp_usart1.o
-    0x0800300c   0x000000c4   Code   RO          572    .text               bsp_systick.o
-    0x080030d0   0x000000ac   Code   RO          588    .text               bsp_tim6.o
-    0x0800317c   0x00000180   Code   RO          606    .text               bsp_usart2.o
-    0x080032fc   0x00000144   Code   RO          625    .text               bsp_motor_control.o
-    0x08003440   0x000000a4   Code   RO          640    .text               photoelectric_sensor.o
-    0x080034e4   0x00000024   Code   RO          675    .text               mc_w.l(init.o)
-    0x08003508   0x0000005e   Code   RO          685    .text               mc_w.l(__dclz77c.o)
-    0x08003566   0x0000000e   Code   RO          679    i.__scatterload_copy  mc_w.l(handlers.o)
-    0x08003574   0x00000002   Code   RO          680    i.__scatterload_null  mc_w.l(handlers.o)
-    0x08003576   0x0000000e   Code   RO          681    i.__scatterload_zeroinit  mc_w.l(handlers.o)
-    0x08003584   0x00000020   Data   RO          677    Region$$Table       anon$$obj.o
+    0x0800214c   0x00000110   Code   RO          479    .text               lcd_display_english.o
+    0x0800225c   0x00000168   Code   RO          494    .text               modbus_agreement.o
+    0x080023c4   0x00000484   Code   RO          513    .text               receive_rtu_data.o
+    0x08002848   0x00000058   Code   RO          529    .text               system_init.o
+    0x080028a0   0x0000060c   Code   RO          541    .text               bsp_ili9341_lcd.o
+    0x08002eac   0x00000160   Code   RO          556    .text               bsp_usart1.o
+    0x0800300c   0x000000c4   Code   RO          575    .text               bsp_systick.o
+    0x080030d0   0x000000ac   Code   RO          591    .text               bsp_tim6.o
+    0x0800317c   0x00000180   Code   RO          609    .text               bsp_usart2.o
+    0x080032fc   0x00000144   Code   RO          628    .text               bsp_motor_control.o
+    0x08003440   0x000000a4   Code   RO          643    .text               photoelectric_sensor.o
+    0x080034e4   0x000000f4   Code   RO          661    .text               bsp_exti_key.o
+    0x080035d8   0x00000024   Code   RO          693    .text               mc_w.l(init.o)
+    0x080035fc   0x0000005e   Code   RO          703    .text               mc_w.l(__dclz77c.o)
+    0x0800365a   0x0000000e   Code   RO          697    i.__scatterload_copy  mc_w.l(handlers.o)
+    0x08003668   0x00000002   Code   RO          698    i.__scatterload_null  mc_w.l(handlers.o)
+    0x0800366a   0x0000000e   Code   RO          699    i.__scatterload_zeroinit  mc_w.l(handlers.o)
+    0x08003678   0x00000020   Data   RO          695    Region$$Table       anon$$obj.o
 
 
-    Execution Region RW_IRAM1 (Base: 0x20000000, Size: 0x00001b80, Max: 0x0000c000, ABSOLUTE, COMPRESSED[0x00000730])
+    Execution Region RW_IRAM1 (Base: 0x20000000, Size: 0x00001c60, Max: 0x0000c000, ABSOLUTE, COMPRESSED[0x0000076c])
 
     Base Addr    Size         Type   Attr      Idx    E Section Name        Object
 
     0x20000000   0x00000014   Data   RW           25    .data               system_stm32f10x.o
     0x20000014   0x00000014   Data   RW          306    .data               stm32f10x_rcc.o
     0x20000028   0x00000003   Data   RW          380    .data               main.o
-    0x2000002b   0x00001540   Data   RW          459    .data               lcd_display_chinese.o
-    0x2000156b   0x000001b0   Data   RW          477    .data               lcd_display_english.o
-    0x2000171b   0x00000002   Data   RW          493    .data               modbus_agreement.o
-    0x2000171d   0x00000001   Data   RW          511    .data               receive_rtu_data.o
-    0x2000171e   0x00000005   Data   RW          539    .data               bsp_ili9341_lcd.o
-    0x20001723   0x00000001   PAD
-    0x20001724   0x00000004   Data   RW          555    .data               bsp_usart1.o
-    0x20001728   0x00000004   Data   RW          589    .data               bsp_tim6.o
-    0x2000172c   0x00000004   Data   RW          608    .data               bsp_usart2.o
-    0x20001730   0x00000001   Data   RW          626    .data               bsp_motor_control.o
-    0x20001731   0x00000001   Data   RW          641    .data               photoelectric_sensor.o
-    0x20001732   0x00000002   PAD
-    0x20001734   0x00000032   Zero   RW          492    .bss                modbus_agreement.o
-    0x20001766   0x0000000a   Zero   RW          554    .bss                bsp_usart1.o
-    0x20001770   0x0000000a   Zero   RW          607    .bss                bsp_usart2.o
-    0x2000177a   0x00000006   PAD
-    0x20001780   0x00000400   Zero   RW            1    STACK               startup_stm32f10x_hd.o
+    0x2000002b   0x00001620   Data   RW          462    .data               lcd_display_chinese.o
+    0x2000164b   0x000001b0   Data   RW          480    .data               lcd_display_english.o
+    0x200017fb   0x00000002   Data   RW          496    .data               modbus_agreement.o
+    0x200017fd   0x00000001   Data   RW          514    .data               receive_rtu_data.o
+    0x200017fe   0x00000005   Data   RW          542    .data               bsp_ili9341_lcd.o
+    0x20001803   0x00000001   PAD
+    0x20001804   0x00000004   Data   RW          558    .data               bsp_usart1.o
+    0x20001808   0x00000004   Data   RW          592    .data               bsp_tim6.o
+    0x2000180c   0x00000004   Data   RW          611    .data               bsp_usart2.o
+    0x20001810   0x00000001   Data   RW          629    .data               bsp_motor_control.o
+    0x20001811   0x00000001   Data   RW          644    .data               photoelectric_sensor.o
+    0x20001812   0x00000001   Data   RW          662    .data               bsp_exti_key.o
+    0x20001813   0x00000001   PAD
+    0x20001814   0x00000032   Zero   RW          495    .bss                modbus_agreement.o
+    0x20001846   0x0000000a   Zero   RW          557    .bss                bsp_usart1.o
+    0x20001850   0x0000000a   Zero   RW          610    .bss                bsp_usart2.o
+    0x2000185a   0x00000006   PAD
+    0x20001860   0x00000400   Zero   RW            1    STACK               startup_stm32f10x_hd.o
 
 
 ==============================================================================
@@ -729,6 +751,7 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
+       244         12          0          1          0       1876   bsp_exti_key.o
       1548         32          0          5          0       4307   bsp_ili9341_lcd.o
        324          8          0          1          0       2295   bsp_motor_control.o
        196         12          0          0          0      16311   bsp_systick.o
@@ -736,13 +759,13 @@ Image component sizes
        352         24          0          4         10       2132   bsp_usart1.o
        384         26          0          4         10       2350   bsp_usart2.o
          0          0          0          0          0       4504   core_cm3.o
-       420          0          0       5440          0       3798   lcd_display_chinese.o
+       420          0          0       5664          0       3875   lcd_display_chinese.o
        272          6          0        432          0       1990   lcd_display_english.o
        296         22          0          3          0       2861   main.o
        220         22          0          0          0       1969   misc.o
        360         10          0          2         50       2565   modbus_agreement.o
        164         10          0          1          0       1919   photoelectric_sensor.o
-      1160         98          0          1          0       2981   receive_rtu_data.o
+      1156         98          0          1          0       2977   receive_rtu_data.o
         36          8        304          0       1024        936   startup_stm32f10x_hd.o
        284         10          0          0          0       2403   stm32f10x_exti.o
        860         38          0          0          0       5809   stm32f10x_gpio.o
@@ -750,13 +773,13 @@ Image component sizes
        932         36          0         20          0       9060   stm32f10x_rcc.o
       3610         88          0          0          0      22300   stm32f10x_tim.o
       1032         22          0          0          0       8540   stm32f10x_usart.o
-        84          8          0          0          0        578   system_init.o
+        88          8          0          0          0        582   system_init.o
        480         38          0         20          0     253231   system_stm32f10x.o
 
     ----------------------------------------------------------------------
-     13216        526        336       5940       1100     355923   Object Totals
+     13460        538        336       6164       1100     357876   Object Totals
          0          0         32          0          0          0   (incl. Generated)
-         4          0          0          3          6          0   (incl. Padding)
+         4          0          0          2          6          0   (incl. Padding)
 
     ----------------------------------------------------------------------
 
@@ -794,15 +817,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-     13396        542        336       5940       1100     354767   Grand Totals
-     13396        542        336       1840       1100     354767   ELF Image Totals (compressed)
-     13396        542        336       1840          0          0   ROM Totals
+     13640        554        336       6164       1100     356668   Grand Totals
+     13640        554        336       1900       1100     356668   ELF Image Totals (compressed)
+     13640        554        336       1900          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                13732 (  13.41kB)
-    Total RW  Size (RW Data + ZI Data)              7040 (   6.88kB)
-    Total ROM Size (Code + RO Data + RW Data)      15572 (  15.21kB)
+    Total RO  Size (Code + RO Data)                13976 (  13.65kB)
+    Total RW  Size (RW Data + ZI Data)              7264 (   7.09kB)
+    Total ROM Size (Code + RO Data + RW Data)      15876 (  15.50kB)
 
 ==============================================================================
 

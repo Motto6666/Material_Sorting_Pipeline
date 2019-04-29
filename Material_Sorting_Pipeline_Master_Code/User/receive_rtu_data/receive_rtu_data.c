@@ -271,7 +271,6 @@ void Receive_Openmv_Recognize_Data(void)
 				Clean_Screen(7);//清除第七行里面的字符
 				Display_Chinese_String( Chinese_Character_10 ,12 ,7 ,1 ,RED);//显示“与视觉模块第三次通信超时”
 				Display_Rectangle();
-				while(1);
 			}
 			RTU_Pack_Data(OPENMV_ADD, OPENMV_RECOGNIZE, 0, Data_Stirngs, USART1_DEVICE);
 			

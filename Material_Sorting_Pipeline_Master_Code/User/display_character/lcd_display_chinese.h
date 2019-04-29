@@ -22,6 +22,7 @@ extern uint8_t Chinese_Character_14[15][32];
 extern uint8_t Chinese_Character_15[5][32];
 extern uint8_t Chinese_Character_16[6][32];
 extern uint8_t Chinese_Character_17[13][32];
+extern uint8_t Chinese_Character_18[7][32];
 
 void Display_Chinese(uint8_t * Character ,uint8_t Row_Num ,uint8_t Column_Num ,uint16_t Color);
 void Clean_Screen(uint8_t Row_Num);

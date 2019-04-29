@@ -257,3 +257,5 @@
 [2019-04-29 15:19:Program Success:49FF72067789505621241367 F:\上传到GitHub文件\Material_Sorting_Pipeline\Material_Sorting_Pipeline\Machine_Hand_Control_Code\Output\32_duoji.hex
 [2019-04-29 15:30:Program Success:49FF72067789505621241367 F:\上传到GitHub文件\Material_Sorting_Pipeline\Material_Sorting_Pipeline\Machine_Hand_Control_Code\Output\32_duoji.hex
 [2019-04-29 15:58:Program Success:49FF72067789505621241367 F:\上传到GitHub文件\Material_Sorting_Pipeline\Material_Sorting_Pipeline\Machine_Hand_Control_Code\Output\32_duoji.hex
+[2019-04-29 21:46:Program Success:49FF72067789505621241367 F:\上传到GitHub文件\Material_Sorting_Pipeline\Material_Sorting_Pipeline\Machine_Hand_Control_Code\Output\32_duoji.hex
+[2019-04-29 22:20:Program Success:49FF72067789505621241367 F:\上传到GitHub文件\Material_Sorting_Pipeline\Material_Sorting_Pipeline\Machine_Hand_Control_Code\Output\32_duoji.hex

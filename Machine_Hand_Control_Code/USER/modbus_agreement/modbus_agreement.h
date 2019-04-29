@@ -6,20 +6,21 @@
 #include "bsp_usart2.h"
 #include "string.h"
   
-#define IRON_HAND_ADD		 			0x32
-#define IRON_HAND_CHACK  			0x43
-#define IRON_HAND_EXECUTE 		0x44
-#define IRON_HAND_EXECUTE_END 0x45
+#define IRON_HAND_ADD		 				0x32
+#define IRON_HAND_CHACK  				0x43
+#define IRON_HAND_EXECUTE 			0x44
+#define IRON_HAND_EXECUTE_END 	0x45
+#define IRON_HAND_EXECUTE_STOP	0x22
 
-#define DATA_RED         			0x52 
-#define DATA_GREEN       			0x47
-#define DATA_LEN	         		0x01
-#define DATA_NONE         		0x4E
+#define DATA_RED         				0x52 
+#define DATA_GREEN       				0x47
+#define DATA_LEN	         			0x01
+#define DATA_NONE         			0x4E
 
-#define OK										0x04
+#define OK											0x04
 
-#define CHECK_SUCCESS 		 		1
-#define CHECK_FAILED			 		0	
+#define CHECK_SUCCESS 		 			1
+#define CHECK_FAILED			 			0	
 
 
 extern uint8_t Strings[50];

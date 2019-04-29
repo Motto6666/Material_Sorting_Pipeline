@@ -49,7 +49,7 @@ void TIM2_Init(void)
 	/*开启计数器中断*/
 	TIM_ITConfig(TIM2,TIM_IT_Update,ENABLE );  
 	/*使能 TIM2*/
-	TIM_Cmd(TIM2, ENABLE);  
+	TIM2_ENABLE;  
 }
 
  /**

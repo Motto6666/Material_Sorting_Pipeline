@@ -39,3 +39,7 @@
 ..\..\output\system_init.o: ..\..\BSP\tim6\bsp_tim6.h
 ..\..\output\system_init.o: ..\..\BSP\motor_control\bsp_motor_control.h
 ..\..\output\system_init.o: ..\..\BSP\photoelectric_sensor\photoelectric_sensor.h
+..\..\output\system_init.o: ..\..\BSP\key\bsp_exti_key.h
+..\..\output\system_init.o: ..\..\User\system_init\system_init.h
+..\..\output\system_init.o: ..\..\User\modbus_agreement\modbus_agreement.h
+..\..\output\system_init.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h

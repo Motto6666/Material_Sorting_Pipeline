@@ -10,6 +10,7 @@
 #include "bsp_tim6.h"
 #include "bsp_motor_control.h"
 #include "photoelectric_sensor.h"
+#include "bsp_exti_key.h"
 
 void System_Init(void);
 

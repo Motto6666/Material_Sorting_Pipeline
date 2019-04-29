@@ -35,7 +35,7 @@ H:\Keil4\ARM\RV31\LIB\RTX_CM3.LIB --strict --scatter "..\Output\32_duoji.sct"
 ### ADS-LD Output File: '..\Output\32_duoji.axf'
 ### ADS-LD Command File: '..\Output\32_duoji.lnp'
 ### Checking for dirty Components...
-### Creating CmdFile '..\Output\32_duoji.lnp', Handle=0x00000B04
+### Creating CmdFile '..\Output\32_duoji.lnp', Handle=0x000007C0
 ### Writing '.lnp' file
 ### ADS-LD Command file '..\Output\32_duoji.lnp' is ready.
 ### ADS-LD: About to start ADS-LD Thread.
