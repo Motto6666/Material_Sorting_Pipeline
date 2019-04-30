@@ -365,7 +365,7 @@
               <MiscControls></MiscControls>
               <Define>STM32F10X_HD, USE_STDPERIPH_DRIVER</Define>
               <Undefine></Undefine>
-              <IncludePath>..\..\Libraries\CMSIS;..\..\User;..\..\Libraries\FWlib\inc;..\..\BSP\usart;..\..\BSP\lcd;..\..\User\display_character;..\..\User\modbus_agreement;..\..\BSP\systick;..\..\BSP\tim6;..\..\BSP\tim7;..\..\User\receive_rtu_data;..\..\User\system_init;..\..\BSP\motor_control;..\..\BSP\photoelectric_sensor;..\..\BSP\key</IncludePath>
+              <IncludePath>..\..\Libraries\CMSIS;..\..\User;..\..\Libraries\FWlib\inc;..\..\BSP\usart;..\..\BSP\lcd;..\..\User\display_character;..\..\User\modbus_agreement;..\..\BSP\systick;..\..\BSP\tim6;..\..\BSP\tim7;..\..\User\receive_rtu_data;..\..\User\system_init;..\..\BSP\motor_control;..\..\BSP\photoelectric_sensor;..\..\BSP\key;..\..\BSP\buzzer</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -712,6 +712,16 @@
               <FileName>bsp_exti_key.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\..\BSP\key\bsp_exti_key.h</FilePath>
+            </File>
+            <File>
+              <FileName>bsp_buzzer.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\BSP\buzzer\bsp_buzzer.c</FilePath>
+            </File>
+            <File>
+              <FileName>bsp_buzzer.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\BSP\buzzer\bsp_buzzer.h</FilePath>
             </File>
           </Files>
         </Group>

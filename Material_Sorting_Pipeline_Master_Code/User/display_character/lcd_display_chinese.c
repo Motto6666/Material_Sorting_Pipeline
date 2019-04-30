@@ -753,12 +753,14 @@ void Display_Chinese_String( uint8_t (*Chinese_String)[32] ,uint8_t Word_Num ,ui
 
 /**
 	* @brief  显示闪烁的矩形，蜂鸣器响起，起到警示作用
+						当STM32主控板与模块间通信超时或按下急停按
+						钮K1时，使用该函数
 	* @retval 无
 	*/
 
 void Display_Rectangle(void)
 {
-	while(1)//当STM32主控板与模块间通信超时时，使用该函数
+	while(1)
 	{
 		ILI9341_Draw_Rect(220,300,20, 20,RED);
 		BUZZER_NO;

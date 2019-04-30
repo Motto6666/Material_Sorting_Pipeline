@@ -33,7 +33,7 @@
 extern uint8_t Strings[50];
 extern uint8_t Check_Code[2];
 
-void RTU_Pack_Data(uint8_t Address, uint8_t Funtion, uint8_t Data_Len, uint8_t *Data, uint8_t Send_Device );
+void Send_RTU_Data(uint8_t Address, uint8_t Funtion, uint8_t Data_Len, uint8_t *Data, uint8_t Send_Device );
 void CRC_16(uint8_t *Str,uint8_t Len);
 void Data_Clean(uint8_t *Str);
 uint8_t RTU_Data_Analysis(uint8_t * RTU_Data);

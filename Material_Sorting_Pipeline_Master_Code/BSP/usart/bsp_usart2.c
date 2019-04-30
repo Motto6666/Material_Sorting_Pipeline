@@ -127,7 +127,7 @@ int fputc(int ch, FILE *f)
   * @param  需要发送出去的字符串的指针
   * @retval 无
   */
-uint8_t USART2_RX_Pack[10];//将USART2串口接收到的数据存放到该数组里
+uint8_t USART2_RX_Pack[10];//将USART2串口接收到机械手控制模块发送的数据存放到该数组里
 volatile uint16_t USART2_RX_Count = 0;//USART2接收到的8位数据个数
 uint8_t Free_Read_Rst_2 = 0;//读DR清除空闲中断
 volatile uint8_t USART2_RX_Over = 0;//用于判断数据USART2是否收接收完毕，取值范围位0或1
@@ -141,9 +141,10 @@ void DEBUG_USART2_IRQHandler(void)
 		USART2_RX_Pack[USART2_RX_Count] = USART_ReceiveData(DEBUG_USART2);
     USART2_RX_Count++;
 	}
-	else if(USART_GetITStatus(DEBUG_USART2,USART_IT_IDLE) !=RESET)//传输完一条完整的数据就会进入这个
+	
+	else if(USART_GetITStatus(DEBUG_USART2,USART_IT_IDLE) !=RESET)//接收数据完毕后进入串口空闲中断函数
 	{
-		Free_Read_Rst_2 = DEBUG_USART2->DR; //读取USART2数据寄存器，达到清USART2_IT_IDLE标志目的
+		Free_Read_Rst_2 = DEBUG_USART2->DR; //读取USART数据寄存器DR，达到清串口空闲中断USART_IT_IDLE标志目的
 		USART2_RX_Over = 1;//接收到一条完整的数据
 		USART2_RX_Count = 0;//清零接收的个数
   } 

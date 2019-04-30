@@ -1,7 +1,7 @@
 #include "modbus_agreement.h"
 
 /**
-  * @brief  打包Modbus协议的RTU模式数据帧
+  * @brief  打包发送Modbus协议的RTU模式数据帧
   * @param  Address 				地址码
 	* @param  Funtion 				功能码
 	* @param  Data_Len				数据长度
@@ -12,7 +12,7 @@
 
 uint8_t Strings[50];//将打包好的RTU数据帧存放在该数组里
 
-void RTU_Pack_Data(uint8_t Address, uint8_t Funtion, uint8_t Data_Len, uint8_t *Data, uint8_t Send_Device )
+void Send_RTU_Data(uint8_t Address, uint8_t Funtion, uint8_t Data_Len, uint8_t *Data, uint8_t Send_Device )
 { 
 	uint8_t i;
 	Strings[0] = Address;
@@ -34,7 +34,7 @@ void RTU_Pack_Data(uint8_t Address, uint8_t Funtion, uint8_t Data_Len, uint8_t *
 	}
 	CRC_16(Strings,Data_Len+3);//生成CRC码
 	Strings[Data_Len+3] = Check_Code[1]; 
-	Strings[Data_Len+4] = Check_Code[0];
+	Strings[Data_Len+4] = Check_Code[0];//合成完整的RTU数据帧
 	
 	switch(Send_Device)
 	{
@@ -130,8 +130,6 @@ uint8_t RTU_Data_Analysis(uint8_t * RTU_Data)
 	Data_Clean(Check_Code);//清Check_Code字符串中的数据，保证执行时数据不出错
 	
 	CRC_16(RTU_Data,Str_Num-2);
-	
-	
 	
 	if(Temp_Array[0] == Check_Code[0] && Temp_Array[1] == Check_Code[1])
 	{

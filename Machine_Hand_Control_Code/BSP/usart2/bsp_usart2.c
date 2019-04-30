@@ -121,7 +121,7 @@ void Send_Data_to_Master(uint8_t *Str)
   */
 uint8_t Receive_Master_Data[10];
 volatile uint16_t USART2_RX_Count = 0;//记录USART2接收到8位数据的个数
-uint8_t Free_Read_Rst = 0;//读DR清除空闲中断
+uint8_t Free_Read_Rst = 0;//读DR寄存器清除空闲中断
 volatile uint8_t USART_RX_Over = 0;//用于判断数据USART2是否收接收完毕，取值范围位0或1
 
 void DEBUG_USART2_IRQHandler(void)
@@ -132,10 +132,11 @@ void DEBUG_USART2_IRQHandler(void)
 		USART_ClearITPendingBit(DEBUG_USART2,USART_IT_ORE); //清除中断标志
 		Receive_Master_Data[USART2_RX_Count] = USART_ReceiveData(DEBUG_USART2);
     USART2_RX_Count++;
-	}	
-	else if(USART_GetITStatus(DEBUG_USART2,USART_IT_IDLE) !=RESET)//传输完一条完整的数据就会进入这个
+	}
+	
+	else if(USART_GetITStatus(DEBUG_USART2,USART_IT_IDLE) !=RESET)//接收数据完毕后进入串口空闲中断函数
 	{
-		Free_Read_Rst = DEBUG_USART2->DR; //读取USART数据寄存器，达到清USART_IT_IDLE标志目的
+		Free_Read_Rst = DEBUG_USART2->DR; //读取USART数据寄存器DR，达到清串口空闲中断USART_IT_IDLE标志目的
 		USART_RX_Over = 1;//接收到一条完整的数据
 		USART2_RX_Count = 0;//清零接收的个数
 		Check_Stop_Data(Receive_Master_Data);//检查接收到的数据是否为停止数据
@@ -175,6 +176,5 @@ void Check_Stop_Data(uint8_t *Str)
 	if(Str[1] == IRON_HAND_EXECUTE_STOP)//判断RTU数据帧的功能码是否为机械手停止运行码
 	{
 		TIM2_DISABLE;//关闭控制舵机运行的定时器TIM2，机械手停止运作
-		while(1);
 	}
 }

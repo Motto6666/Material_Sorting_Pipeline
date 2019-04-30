@@ -48,7 +48,7 @@ void Right_Place_Action(void)
 
 
 /**
-	* @brief  根据接收到主机的数据执行对应的动作组并返回数据到主机
+	* @brief  根据接收到主机的数据执行对应的动作组并将接收到的数据返回数据到主机
 	* @param  接收到主机的数据
 	* @retval 无
 	*/

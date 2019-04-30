@@ -1,6 +1,5 @@
 #include "analyze_action_group.h"
 #include "bsp_systick.h"
-#include "bsp_usart1.h"//调试使用，调试完毕删除
 
 extern Servo_Struct  Servo[SERVO_NUM];
 
@@ -96,14 +95,18 @@ uint8_t Right_Place_3[5][15] = //机械手右放3:
 	{"#005P1050T0100!"},
 };
 
+
 /**
-	* @brief  解析动作组，类似处理 “#001P1500T1000!”的字符串
+	* @brief  解析动作组，类似处理 “#001P1500T1000!”的字符串。
+						解析分为三步，第一步解析舵机标号（如001），第二步
+						解析舵机的脉冲宽度目标值（如1500），第三步解析舵机
+						执行时间（如1000）
 	* @retval 无
 	*/
 void Analyze_Action_Group( uint8_t (*Action_Group)[15])
 {
 	uint8_t Servo_Num;
-	uint16_t PWM, Time,i = 0,j = 0;
+	uint16_t PWM, Time, i = 0, j = 0;
 		
 	while(Action_Group[i][j])
 	{
@@ -118,7 +121,8 @@ void Analyze_Action_Group( uint8_t (*Action_Group)[15])
 					Servo_Num = Servo_Num*10 + Action_Group[i][j]-'0';//计算舵机标号
 					j++;
 				}
-			} 
+			}
+			
 			else if(Action_Group[i][j] == 'P') 
 			{
 				PWM = 0;
@@ -128,7 +132,8 @@ void Analyze_Action_Group( uint8_t (*Action_Group)[15])
 					PWM = PWM*10 + Action_Group[i][j]-'0';//计算PWM值
 					j++;
 				}
-			} 
+			}
+			
 			else if(Action_Group[i][j] == 'T') 
 			{
 				Time = 0;
@@ -147,10 +152,11 @@ void Analyze_Action_Group( uint8_t (*Action_Group)[15])
 					}
 					Servo[Servo_Num].Aim_PWM = PWM;
 					Servo[Servo_Num].Time = Time;
-					Servo[Servo_Num].Increment_PWM = (Servo[Servo_Num].Aim_PWM - Servo[Servo_Num].Current_PWM) / (Servo[Servo_Num].Time / 20.000);
-					
+					Servo[Servo_Num].Increment_PWM = (Servo[Servo_Num].Aim_PWM - Servo[Servo_Num].Current_PWM)
+					/ (Servo[Servo_Num].Time / 20.000);			
 				}
-			} 
+			}
+			
 			else 
 			{
 				j++;

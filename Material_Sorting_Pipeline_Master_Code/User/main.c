@@ -14,13 +14,13 @@ int main(void)
 { 		
 	System_Init();
 	
-	RTU_Pack_Data(OPENMV_ADD, OPENMV_CHACK, 0, Data_Stirng, USART1_DEVICE);//打包RTU数据并发送到指定设备
+	Send_RTU_Data(OPENMV_ADD, OPENMV_CHACK, 0, Data_Stirng, USART1_DEVICE);
 			
 	Receive_Openmv_Data(OPENMV_ADD, OPENMV_CHACK);
 	
 	SysTick_Delay_ms(2000);
 	
-	RTU_Pack_Data(IRON_HAND_ADD, IRON_HAND_CHACK, 0, Data_Stirng, USART2_DEVICE);
+	Send_RTU_Data(IRON_HAND_ADD, IRON_HAND_CHACK, 0, Data_Stirng, USART2_DEVICE);
 	
 	Receive_Iron_Hand_Data(IRON_HAND_ADD, IRON_HAND_CHACK);
 	
@@ -41,7 +41,7 @@ int main(void)
 					
 		MOTOR_STOP;
 		
-		RTU_Pack_Data(OPENMV_ADD, OPENMV_RECOGNIZE, 0, Data_Stirng, USART1_DEVICE);
+		Send_RTU_Data(OPENMV_ADD, OPENMV_RECOGNIZE, 0, Data_Stirng, USART1_DEVICE);
 		
 		Receive_Openmv_Data(OPENMV_ADD, OPENMV_RECOGNIZE);
 		
@@ -51,14 +51,15 @@ int main(void)
 		
 		SysTick_Delay_ms(1000);
 		
-		RTU_Pack_Data(IRON_HAND_ADD, IRON_HAND_EXECUTE, 1, Data_Stirng, USART2_DEVICE);
+		Send_RTU_Data(IRON_HAND_ADD, IRON_HAND_EXECUTE, 1, Data_Stirng, USART2_DEVICE);
 		            
 		Receive_Iron_Hand_Data(IRON_HAND_ADD,IRON_HAND_EXECUTE);
 		
-		USART_Buffer_Clean(USART1_RX_Pack);
-		Data_Clean(Data_Stirng);
-		
 		Receive_Iron_Hand_Data(IRON_HAND_ADD,IRON_HAND_EXECUTE_END);
+		
+		USART_Buffer_Clean(USART1_RX_Pack);
+		
+		Data_Clean(Data_Stirng);
 				
 	}
 		

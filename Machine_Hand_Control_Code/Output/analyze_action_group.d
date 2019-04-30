@@ -19,4 +19,3 @@
 ..\Output\analyze_action_group.o: ..\USER\servo_control\servo_control.h
 ..\Output\analyze_action_group.o: ..\BSP\servo_gpio\bsp_servo_gpio.h
 ..\Output\analyze_action_group.o: ..\BSP\systick\bsp_systick.h
-..\Output\analyze_action_group.o: ..\BSP\usart1\bsp_usart1.h

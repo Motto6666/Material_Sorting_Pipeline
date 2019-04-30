@@ -128,8 +128,6 @@ uint8_t RTU_Data_Analysis(uint8_t * RTU_Data)
 	
 	CRC_16(RTU_Data,Str_Num-2);
 	
-	
-	
 	if(Temp_Array[0] == Check_Code[0] && Temp_Array[1] == Check_Code[1])
 	{
 		Data_Clean(Check_Code);//清Check_Code字符串中的数据，保证下一次执行时数据不出错

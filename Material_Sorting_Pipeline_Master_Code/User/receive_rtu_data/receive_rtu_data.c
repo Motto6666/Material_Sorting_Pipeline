@@ -57,7 +57,7 @@ void Receive_Openmv_Data(uint8_t Address, uint8_t Funtion)
 				while(1);
 			}
 			
-			RTU_Pack_Data(Address, Funtion, 0, Data_Stirngs, USART1_DEVICE);//重新打包RTU数据并发送到指定设备
+			Send_RTU_Data(Address, Funtion, 0, Data_Stirngs, USART1_DEVICE);//重新打包RTU数据并发送到指定设备
 			
 			USART1_Send_Count++;
 			
@@ -130,12 +130,12 @@ void Receive_Iron_Hand_Data(uint8_t Address, uint8_t Funtion)
 			switch(Funtion)
 			{
 				case IRON_HAND_CHACK:
-							RTU_Pack_Data(Address, Funtion, 0, Data_Stirngs, USART2_DEVICE);//重新打包RTU数据并发送到指定设备
+							Send_RTU_Data(Address, Funtion, 0, Data_Stirngs, USART2_DEVICE);//重新打包RTU数据并发送到指定设备
 							break;
 				
 				case IRON_HAND_EXECUTE:
 							Data_Stirngs[0] = USART1_RX_Pack[3];////将识别到的颜色数据存放到Data_Stirngs数组里
-							RTU_Pack_Data(Address, Funtion, 1, Data_Stirngs, USART2_DEVICE);//重新打包RTU数据并发送到指定设备
+							Send_RTU_Data(Address, Funtion, 1, Data_Stirngs, USART2_DEVICE);//重新打包RTU数据并发送到指定设备
 							Data_Clean(Data_Stirngs);
 							break;
 				
@@ -228,7 +228,7 @@ void Receive_Openmv_Recognize_Data(void)
 				
 				Data_Stirngs[0] = OK;
 				
-				RTU_Pack_Data(OPENMV_ADD, OPENMV_RECOGNIZE, 1, Data_Stirngs, USART1_DEVICE);//发送ok帧到Openmv
+				Send_RTU_Data(OPENMV_ADD, OPENMV_RECOGNIZE, 1, Data_Stirngs, USART1_DEVICE);//发送ok帧到Openmv
 				
 				Data_Clean(Data_Stirngs);
 				
@@ -272,7 +272,7 @@ void Receive_Openmv_Recognize_Data(void)
 				Display_Chinese_String( Chinese_Character_10 ,12 ,7 ,1 ,RED);//显示“与视觉模块第三次通信超时”
 				Display_Rectangle();
 			}
-			RTU_Pack_Data(OPENMV_ADD, OPENMV_RECOGNIZE, 0, Data_Stirngs, USART1_DEVICE);
+			Send_RTU_Data(OPENMV_ADD, OPENMV_RECOGNIZE, 0, Data_Stirngs, USART1_DEVICE);
 			
 			USART1_Send_Count++;
 			
@@ -296,7 +296,6 @@ void USART_Buffer_Clean(uint8_t *Buffer)
 		
 		case IRON_HAND_ADD :
 					Data_Clean(Buffer);
-					//USART2_RX_Count = 0;
 					break;
 		
 		default : break;

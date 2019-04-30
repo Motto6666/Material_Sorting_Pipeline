@@ -67,7 +67,7 @@ uint8_t Data_Stirng2[1];
 void System_Stop(void)
 {
 	MOTOR_STOP;
-	RTU_Pack_Data(IRON_HAND_ADD, IRON_HAND_EXECUTE_STOP, 0, Data_Stirng2, USART2_DEVICE);
+	Send_RTU_Data(IRON_HAND_ADD, IRON_HAND_EXECUTE_STOP, 0, Data_Stirng2, USART2_DEVICE);
 	Clean_Screen(7);//清除第七行里面的字符
 	Display_Chinese_String( Chinese_Character_18  ,7  ,7 ,1 ,RED);//显示“系统停止运行！”
 	Display_Rectangle();

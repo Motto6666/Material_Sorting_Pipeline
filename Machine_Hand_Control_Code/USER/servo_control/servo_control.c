@@ -54,7 +54,7 @@ void Servo_Pin_Set(GPIO_TypeDef* GPIOx, uint16_t Pin, uint8_t Level)
 
 
 /**
-	* @brief  舵机脉冲宽度控制 ，运用定时器控制舵机引脚高低电平的时间，
+	* @brief  舵机脉冲宽度控制，运用定时器控制舵机引脚高低电平的时间，
 						让舵机引脚产生具有脉冲宽度的方波，达到控制舵机转动的目的
 	* @retval 无
 	*/
@@ -71,12 +71,12 @@ void Servo_Pulse_Width_Control(void)
 		{
 			Servo_Pulse_Width_Increment_Apply(Servo_Num);
 			TIM2_INTERRUPT_TIME = ( (uint32_t)Servo[Servo_Num].Current_PWM );//设定TIM2定时中断时间，单位为us
-			Servo_IO_Set(Servo_Num, HIGH);		 
+			Servo_IO_Set(Servo_Num, HIGH);//保持TIM2_INTERRUPT_TIME高电平时间
 		}
 		else 
 	  {
 			TIM2_INTERRUPT_TIME = 2500 - ((uint32_t)Servo[Servo_Num].Current_PWM);//设定TIM2定时中断时间，单位为us
-			Servo_IO_Set(Servo_Num, LOW);
+			Servo_IO_Set(Servo_Num, LOW);//保持TIM2_INTERRUPT_TIME低电平时间
 			Servo_Num ++;
 		}
 }
