@@ -417,7 +417,7 @@ I (..\Libraries\inc\misc.h)(0x4EE57D14)
 I (..\USER\servo_control\servo_control.h)(0x5CABF8A8)
 I (..\BSP\servo_gpio\bsp_servo_gpio.h)(0x5CABF8A8)
 F (..\BSP\tim2\bsp_tim2.h)(0x5CC6FD98)()
-F (..\BSP\usart2\bsp_usart2.c)(0x5CC707EA)(-c --cpu Cortex-M3 -D__RTX -g -O0 --apcs=interwork -I..\USER -I..\Libraries\src -I..\Libraries\inc -I..\Startup -I..\CMSIS\CM3\CoreSupport -I..\CMSIS\CM3\DeviceSupport\ST\STM32F10x -I..\BSP\servo_gpio -I..\USER\servo_control -I..\BSP\systick -I..\BSP\usart1 -I..\BSP\tim2 -I..\USER\analyze_action_group -I..\USER\execute_action_group -I..\BSP\usart2 -I..\BSP\tim3 -I..\USER\modbus_agreement -I..\USER\system_init -I H:\Keil4\ARM\RV31\INC -I H:\Keil4\ARM\CMSIS\Include -I H:\Keil4\ARM\Inc\ST\STM32F10x -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD -o "..\Output\bsp_usart2.o" --omf_browse "..\Output\bsp_usart2.crf" --depend "..\Output\bsp_usart2.d")
+F (..\BSP\usart2\bsp_usart2.c)(0x5CC7A6CA)(-c --cpu Cortex-M3 -D__RTX -g -O0 --apcs=interwork -I..\USER -I..\Libraries\src -I..\Libraries\inc -I..\Startup -I..\CMSIS\CM3\CoreSupport -I..\CMSIS\CM3\DeviceSupport\ST\STM32F10x -I..\BSP\servo_gpio -I..\USER\servo_control -I..\BSP\systick -I..\BSP\usart1 -I..\BSP\tim2 -I..\USER\analyze_action_group -I..\USER\execute_action_group -I..\BSP\usart2 -I..\BSP\tim3 -I..\USER\modbus_agreement -I..\USER\system_init -I H:\Keil4\ARM\RV31\INC -I H:\Keil4\ARM\CMSIS\Include -I H:\Keil4\ARM\Inc\ST\STM32F10x -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD -o "..\Output\bsp_usart2.o" --omf_browse "..\Output\bsp_usart2.crf" --depend "..\Output\bsp_usart2.d")
 I (..\BSP\usart2\bsp_usart2.h)(0x5CC707EA)
 I (..\CMSIS\CM3\DeviceSupport\ST\STM32F10x\stm32f10x.h)(0x5CA1ED0C)
 I (..\CMSIS\CM3\CoreSupport\core_cm3.h)(0x4EE57D14)

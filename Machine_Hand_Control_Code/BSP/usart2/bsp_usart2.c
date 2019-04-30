@@ -117,7 +117,6 @@ void Send_Data_to_Master(uint8_t *Str)
 
  /**
   * @brief  USART2串口接收中断服务函数
-  * @param  需要发送出去的字符串的指针
   * @retval 无
   */
 uint8_t Receive_Master_Data[10];
