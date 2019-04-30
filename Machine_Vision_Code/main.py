@@ -47,14 +47,12 @@ while(1):
         if(target_blob):
             if target_blob.code() == red_code:
                 send_rtu_data(red_color)
-                print("识别到红色")
 
             elif target_blob.code() == green_code:
                 send_rtu_data(green_color)
-                print("识别到绿色")
+
         else:
             send_rtu_data(no_color)
-            print("该物体不在识别范围内")
 
         while(1):
             data = data_receive(openmv_add,recognize)

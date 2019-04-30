@@ -679,7 +679,7 @@ I (..\..\BSP\usart\bsp_usart2.h)(0x5CC6CB2A)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5475F300)
 I (..\..\BSP\lcd\bsp_ili9341_lcd.h)(0x5CB99B56)
 I (..\..\User\display_character\lcd_display_english.h)(0x5CA1B56D)
-I (..\..\User\display_character\lcd_display_chinese.h)(0x5CC791C6)
+I (..\..\User\display_character\lcd_display_chinese.h)(0x5CC84D1D)
 I (..\..\BSP\buzzer\bsp_buzzer.h)(0x5CC79043)
 I (..\..\BSP\tim6\bsp_tim6.h)(0x5CBC5C4D)
 I (..\..\BSP\motor_control\bsp_motor_control.h)(0x5CC19426)
@@ -718,8 +718,8 @@ I (..\..\Libraries\FWlib\inc\stm32f10x_tim.h)(0x57C78855)
 I (..\..\Libraries\FWlib\inc\stm32f10x_usart.h)(0x57C78855)
 I (..\..\Libraries\FWlib\inc\stm32f10x_wwdg.h)(0x57C78855)
 I (..\..\Libraries\FWlib\inc\misc.h)(0x57C78855)
-F (..\..\User\display_character\lcd_display_chinese.c)(0x5CC823DB)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\..\Libraries\CMSIS -I..\..\User -I..\..\Libraries\FWlib\inc -I..\..\BSP\usart -I..\..\BSP\lcd -I..\..\User\display_character -I..\..\User\modbus_agreement -I..\..\BSP\systick -I..\..\BSP\tim6 -I..\..\BSP\tim7 -I..\..\User\receive_rtu_data -I..\..\User\system_init -I..\..\BSP\motor_control -I..\..\BSP\photoelectric_sensor -I..\..\BSP\key -I..\..\BSP\buzzer-I F:\上传到GitHub文件\Material_Sorting_Pipeline\Material_Sorting_Pipeline\Material_Sorting_Pipeline_Master_Code\Project\RVMDK（uv5）\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0-I C:\Keil_v5\ARM\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0\Device\Include-D__UVISION_VERSION="514" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\lcd_display_chinese.o --omf_browse ..\..\output\lcd_display_chinese.crf --depend ..\..\output\lcd_display_chinese.d)
-I (..\..\User\display_character\lcd_display_chinese.h)(0x5CC791C6)
+F (..\..\User\display_character\lcd_display_chinese.c)(0x5CC84D1D)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\..\Libraries\CMSIS -I..\..\User -I..\..\Libraries\FWlib\inc -I..\..\BSP\usart -I..\..\BSP\lcd -I..\..\User\display_character -I..\..\User\modbus_agreement -I..\..\BSP\systick -I..\..\BSP\tim6 -I..\..\BSP\tim7 -I..\..\User\receive_rtu_data -I..\..\User\system_init -I..\..\BSP\motor_control -I..\..\BSP\photoelectric_sensor -I..\..\BSP\key -I..\..\BSP\buzzer-I F:\上传到GitHub文件\Material_Sorting_Pipeline\Material_Sorting_Pipeline\Material_Sorting_Pipeline_Master_Code\Project\RVMDK（uv5）\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0-I C:\Keil_v5\ARM\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0\Device\Include-D__UVISION_VERSION="514" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\lcd_display_chinese.o --omf_browse ..\..\output\lcd_display_chinese.crf --depend ..\..\output\lcd_display_chinese.d)
+I (..\..\User\display_character\lcd_display_chinese.h)(0x5CC84D1D)
 I (..\..\Libraries\CMSIS\stm32f10x.h)(0x57C78855)
 I (..\..\Libraries\CMSIS\core_cm3.h)(0x57C78855)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5475F300)
@@ -752,7 +752,7 @@ I (..\..\BSP\lcd\bsp_ili9341_lcd.h)(0x5CB99B56)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5475F300)
 I (..\..\BSP\systick\bsp_systick.h)(0x5CBF0250)
 I (..\..\BSP\buzzer\bsp_buzzer.h)(0x5CC79043)
-F (..\..\User\display_character\lcd_display_chinese.h)(0x5CC791C6)()
+F (..\..\User\display_character\lcd_display_chinese.h)(0x5CC84D1D)()
 F (..\..\User\display_character\lcd_display_english.c)(0x5CA06A9F)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\..\Libraries\CMSIS -I..\..\User -I..\..\Libraries\FWlib\inc -I..\..\BSP\usart -I..\..\BSP\lcd -I..\..\User\display_character -I..\..\User\modbus_agreement -I..\..\BSP\systick -I..\..\BSP\tim6 -I..\..\BSP\tim7 -I..\..\User\receive_rtu_data -I..\..\User\system_init -I..\..\BSP\motor_control -I..\..\BSP\photoelectric_sensor -I..\..\BSP\key -I..\..\BSP\buzzer-I F:\上传到GitHub文件\Material_Sorting_Pipeline\Material_Sorting_Pipeline\Material_Sorting_Pipeline_Master_Code\Project\RVMDK（uv5）\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0-I C:\Keil_v5\ARM\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0\Device\Include-D__UVISION_VERSION="514" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\lcd_display_english.o --omf_browse ..\..\output\lcd_display_english.crf --depend ..\..\output\lcd_display_english.d)
 I (..\..\User\display_character\lcd_display_english.h)(0x5CA1B56D)
 I (..\..\Libraries\CMSIS\stm32f10x.h)(0x57C78855)
@@ -822,7 +822,7 @@ I (..\..\BSP\systick\bsp_systick.h)(0x5CBF0250)
 I (..\..\BSP\usart\bsp_usart2.h)(0x5CC6CB2A)
 I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5475F300)
 F (..\..\User\modbus_agreement\modbus_agreement.h)(0x5CC80CEA)()
-F (..\..\User\receive_rtu_data\receive_rtu_data.c)(0x5CC824E5)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\..\Libraries\CMSIS -I..\..\User -I..\..\Libraries\FWlib\inc -I..\..\BSP\usart -I..\..\BSP\lcd -I..\..\User\display_character -I..\..\User\modbus_agreement -I..\..\BSP\systick -I..\..\BSP\tim6 -I..\..\BSP\tim7 -I..\..\User\receive_rtu_data -I..\..\User\system_init -I..\..\BSP\motor_control -I..\..\BSP\photoelectric_sensor -I..\..\BSP\key -I..\..\BSP\buzzer-I F:\上传到GitHub文件\Material_Sorting_Pipeline\Material_Sorting_Pipeline\Material_Sorting_Pipeline_Master_Code\Project\RVMDK（uv5）\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0-I C:\Keil_v5\ARM\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0\Device\Include-D__UVISION_VERSION="514" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\receive_rtu_data.o --omf_browse ..\..\output\receive_rtu_data.crf --depend ..\..\output\receive_rtu_data.d)
+F (..\..\User\receive_rtu_data\receive_rtu_data.c)(0x5CC84D1D)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\..\Libraries\CMSIS -I..\..\User -I..\..\Libraries\FWlib\inc -I..\..\BSP\usart -I..\..\BSP\lcd -I..\..\User\display_character -I..\..\User\modbus_agreement -I..\..\BSP\systick -I..\..\BSP\tim6 -I..\..\BSP\tim7 -I..\..\User\receive_rtu_data -I..\..\User\system_init -I..\..\BSP\motor_control -I..\..\BSP\photoelectric_sensor -I..\..\BSP\key -I..\..\BSP\buzzer-I F:\上传到GitHub文件\Material_Sorting_Pipeline\Material_Sorting_Pipeline\Material_Sorting_Pipeline_Master_Code\Project\RVMDK（uv5）\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0-I C:\Keil_v5\ARM\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0\Device\Include-D__UVISION_VERSION="514" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\receive_rtu_data.o --omf_browse ..\..\output\receive_rtu_data.crf --depend ..\..\output\receive_rtu_data.d)
 I (..\..\User\receive_rtu_data\receive_rtu_data.h)(0x5CC6C7E4)
 I (..\..\Libraries\CMSIS\stm32f10x.h)(0x57C78855)
 I (..\..\Libraries\CMSIS\core_cm3.h)(0x57C78855)
@@ -861,7 +861,7 @@ I (..\..\User\modbus_agreement\modbus_agreement.h)(0x5CC80CEA)
 I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5475F300)
 I (..\..\BSP\lcd\bsp_ili9341_lcd.h)(0x5CB99B56)
 I (..\..\User\display_character\lcd_display_english.h)(0x5CA1B56D)
-I (..\..\User\display_character\lcd_display_chinese.h)(0x5CC791C6)
+I (..\..\User\display_character\lcd_display_chinese.h)(0x5CC84D1D)
 I (..\..\BSP\buzzer\bsp_buzzer.h)(0x5CC79043)
 F (..\..\User\receive_rtu_data\receive_rtu_data.h)(0x5CC6C7E4)()
 F (..\..\User\system_init\system_init.c)(0x5CC790FB)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\..\Libraries\CMSIS -I..\..\User -I..\..\Libraries\FWlib\inc -I..\..\BSP\usart -I..\..\BSP\lcd -I..\..\User\display_character -I..\..\User\modbus_agreement -I..\..\BSP\systick -I..\..\BSP\tim6 -I..\..\BSP\tim7 -I..\..\User\receive_rtu_data -I..\..\User\system_init -I..\..\BSP\motor_control -I..\..\BSP\photoelectric_sensor -I..\..\BSP\key -I..\..\BSP\buzzer-I F:\上传到GitHub文件\Material_Sorting_Pipeline\Material_Sorting_Pipeline\Material_Sorting_Pipeline_Master_Code\Project\RVMDK（uv5）\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0-I C:\Keil_v5\ARM\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0\Device\Include-D__UVISION_VERSION="514" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\system_init.o --omf_browse ..\..\output\system_init.crf --depend ..\..\output\system_init.d)
@@ -900,7 +900,7 @@ I (..\..\BSP\usart\bsp_usart2.h)(0x5CC6CB2A)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5475F300)
 I (..\..\BSP\lcd\bsp_ili9341_lcd.h)(0x5CB99B56)
 I (..\..\User\display_character\lcd_display_english.h)(0x5CA1B56D)
-I (..\..\User\display_character\lcd_display_chinese.h)(0x5CC791C6)
+I (..\..\User\display_character\lcd_display_chinese.h)(0x5CC84D1D)
 I (..\..\BSP\buzzer\bsp_buzzer.h)(0x5CC79043)
 I (..\..\BSP\tim6\bsp_tim6.h)(0x5CBC5C4D)
 I (..\..\BSP\motor_control\bsp_motor_control.h)(0x5CC19426)
@@ -1168,7 +1168,7 @@ I (..\..\BSP\usart\bsp_usart2.h)(0x5CC6CB2A)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5475F300)
 I (..\..\BSP\lcd\bsp_ili9341_lcd.h)(0x5CB99B56)
 I (..\..\User\display_character\lcd_display_english.h)(0x5CA1B56D)
-I (..\..\User\display_character\lcd_display_chinese.h)(0x5CC791C6)
+I (..\..\User\display_character\lcd_display_chinese.h)(0x5CC84D1D)
 I (..\..\BSP\buzzer\bsp_buzzer.h)(0x5CC79043)
 I (..\..\BSP\tim6\bsp_tim6.h)(0x5CBC5C4D)
 I (..\..\BSP\motor_control\bsp_motor_control.h)(0x5CC19426)

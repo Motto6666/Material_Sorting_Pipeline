@@ -42,13 +42,13 @@ void Receive_Openmv_Data(uint8_t Address, uint8_t Funtion)
 				{
 					case OPENMV_CHACK:
 								Clean_Screen(7);//清除第七行里面的字符
-								Display_Chinese_String( Chinese_Character_4  ,12 ,7 ,1 ,RED);//显示“与视觉模块第一次通信超时”
+								Display_Chinese_String( Chinese_Character_4  ,13 ,7 ,1 ,RED);//显示“向视觉模块发送检测指令超时”
 								Display_Rectangle();
 								break;
 					
 					case OPENMV_RECOGNIZE:
 								Clean_Screen(7);//清除第七行里面的字符
-								Display_Chinese_String( Chinese_Character_8  ,12 ,7 ,1 ,RED);//显示“与视觉模块第二次通信超时”
+								Display_Chinese_String( Chinese_Character_8  ,13 ,7 ,1 ,RED);//显示“向视觉模块发送识别指令超时”
 								Display_Rectangle();
 								break;
 					
@@ -106,19 +106,19 @@ void Receive_Iron_Hand_Data(uint8_t Address, uint8_t Funtion)
 				{
 					case IRON_HAND_CHACK:
 								Clean_Screen(7);//清除第七行里面的字符
-								Display_Chinese_String( Chinese_Character_6  ,15 ,7 ,1 ,RED);//显示“与机械手控制模块第一次通信超时”
+								Display_Chinese_String( Chinese_Character_6  ,12 ,7 ,1 ,RED);//显示“向机械手发送检测指令超时”
 								Display_Rectangle();
 								break;
 					
 					case IRON_HAND_EXECUTE:
 								Clean_Screen(7);//清除第七行里面的字符
-								Display_Chinese_String( Chinese_Character_12 ,15 ,7 ,1 ,RED);//显示“与机械手控制模块第二次通信超时”
+								Display_Chinese_String( Chinese_Character_12 ,12 ,7 ,1 ,RED);//显示“向机械手发送执行指令超时”
 								Display_Rectangle();
 								break;
 					
 					case IRON_HAND_EXECUTE_END:
 								Clean_Screen(7);//清除第七行里面的字符
-								Display_Chinese_String( Chinese_Character_14 ,15 ,7 ,1 ,RED);//显示“与机械手控制模块第三次通信超时”
+								Display_Chinese_String( Chinese_Character_14 ,11 ,7 ,1 ,RED);//显示“接收机械手执行数据超时”
 								Display_Rectangle();
 								break;
 					
@@ -269,7 +269,7 @@ void Receive_Openmv_Recognize_Data(void)
 			{
 				TIM6_Shut_Down();
 				Clean_Screen(7);//清除第七行里面的字符
-				Display_Chinese_String( Chinese_Character_10 ,12 ,7 ,1 ,RED);//显示“与视觉模块第三次通信超时”
+				Display_Chinese_String( Chinese_Character_10 ,12 ,7 ,1 ,RED);//显示“接收视觉模块识别数据超时”
 				Display_Rectangle();
 			}
 			Send_RTU_Data(OPENMV_ADD, OPENMV_RECOGNIZE, 0, Data_Stirngs, USART1_DEVICE);
