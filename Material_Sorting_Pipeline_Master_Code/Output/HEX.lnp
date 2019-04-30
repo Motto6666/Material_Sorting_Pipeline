@@ -38,6 +38,7 @@
 "..\..\output\bsp_motor_control.o"
 "..\..\output\photoelectric_sensor.o"
 "..\..\output\bsp_exti_key.o"
+"..\..\output\bsp_buzzer.o"
 --library_type=microlib --strict --scatter "..\..\Output\HEX.sct"
 --summary_stderr --info summarysizes --map --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers

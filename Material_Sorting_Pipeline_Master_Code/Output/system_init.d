@@ -36,6 +36,7 @@
 ..\..\output\system_init.o: ..\..\BSP\lcd\bsp_ili9341_lcd.h
 ..\..\output\system_init.o: ..\..\User\display_character\lcd_display_english.h
 ..\..\output\system_init.o: ..\..\User\display_character\lcd_display_chinese.h
+..\..\output\system_init.o: ..\..\BSP\buzzer\bsp_buzzer.h
 ..\..\output\system_init.o: ..\..\BSP\tim6\bsp_tim6.h
 ..\..\output\system_init.o: ..\..\BSP\motor_control\bsp_motor_control.h
 ..\..\output\system_init.o: ..\..\BSP\photoelectric_sensor\photoelectric_sensor.h

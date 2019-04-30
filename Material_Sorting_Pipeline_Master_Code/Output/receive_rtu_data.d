@@ -39,3 +39,4 @@
 ..\..\output\receive_rtu_data.o: ..\..\BSP\lcd\bsp_ili9341_lcd.h
 ..\..\output\receive_rtu_data.o: ..\..\User\display_character\lcd_display_english.h
 ..\..\output\receive_rtu_data.o: ..\..\User\display_character\lcd_display_chinese.h
+..\..\output\receive_rtu_data.o: ..\..\BSP\buzzer\bsp_buzzer.h

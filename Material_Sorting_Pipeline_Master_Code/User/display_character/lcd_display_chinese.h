@@ -4,6 +4,7 @@
 #include "stm32f10x.h"
 #include "bsp_ili9341_lcd.h"
 #include "bsp_systick.h"
+#include "bsp_buzzer.h"
 
 extern uint8_t Chinese_Character_1[9][32];
 extern uint8_t Chinese_Character_2[7][32];

@@ -586,16 +586,6 @@
               <FileType>5</FileType>
               <FilePath>..\BSP\usart2\bsp_usart2.h</FilePath>
             </File>
-            <File>
-              <FileName>bsp_tim3.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\BSP\tim3\bsp_tim3.c</FilePath>
-            </File>
-            <File>
-              <FileName>bsp_tim3.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\BSP\tim3\bsp_tim3.h</FilePath>
-            </File>
           </Files>
         </Group>
       </Groups>

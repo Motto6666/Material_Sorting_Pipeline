@@ -11,6 +11,7 @@
 #include "bsp_motor_control.h"
 #include "photoelectric_sensor.h"
 #include "bsp_exti_key.h"
+#include "bsp_buzzer.h"
 
 void System_Init(void);
 
