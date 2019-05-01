@@ -37,7 +37,6 @@ void Receive_Openmv_Data(uint8_t Address, uint8_t Funtion)
 			TIM6_Shut_Down();
 			if(USART1_Send_Count == 5)
 			{
-				TIM6_Shut_Down();
 				switch(Funtion)
 				{
 					case OPENMV_CHACK:
@@ -96,12 +95,11 @@ void Receive_Iron_Hand_Data(uint8_t Address, uint8_t Funtion)
 			}			
 		}
 		
-		if( (TIM6_Count == FIVE_SECONDS) && (USART2_Send_Count<=5) )//计时时间为10秒
+		if( (TIM6_Count == FIVE_SECONDS) && (USART2_Send_Count<=5) )//计时时间为5秒
 		{
 			TIM6_Shut_Down();
 			if(USART2_Send_Count == 5)
 			{
-				TIM6_Shut_Down();
 				switch(Funtion)
 				{
 					case IRON_HAND_CHACK:
@@ -267,7 +265,6 @@ void Receive_Openmv_Recognize_Data(void)
 			TIM6_Shut_Down();
 			if(USART1_Send_Count == 5)
 			{
-				TIM6_Shut_Down();
 				Clean_Screen(7);//清除第七行里面的字符
 				Display_Chinese_String( Chinese_Character_10 ,12 ,7 ,1 ,RED);//显示“接收视觉模块识别数据超时”
 				Display_Rectangle();

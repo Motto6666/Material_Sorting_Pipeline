@@ -38,7 +38,7 @@ while(1):
             break
 
     data = []#清除data数组里的内容，避免数据出错
-    time.sleep(500)#等待500ms，确保STM32主控板已进入到接收数据的状态
+    time.sleep(500)#等待500ms，确保STM32主控板已进入到接收数据的状态，可作修改，提高系统性能
 
     while(1):
         img = sensor.snapshot().binary([white_thresholds], invert=False, zero=True) #获取一帧图片，并将图片上的白色强光去除
