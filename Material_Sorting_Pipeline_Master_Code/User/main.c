@@ -18,13 +18,13 @@ int main(void)
 			
 	Receive_Openmv_Data(OPENMV_ADD, OPENMV_CHACK);
 	
-	SysTick_Delay_ms(2000);
+	SysTick_Delay_ms(1000);
 	
 	Send_RTU_Data(IRON_HAND_ADD, IRON_HAND_CHACK, 0, Data_Stirng, USART2_DEVICE);
 	
 	Receive_Iron_Hand_Data(IRON_HAND_ADD, IRON_HAND_CHACK);
 	
-	SysTick_Delay_ms(2000);
+	SysTick_Delay_ms(1000);
 	
 	while(1)
 	{
@@ -48,9 +48,7 @@ int main(void)
 		Receive_Openmv_Recognize_Data();
 
 		Data_Stirng[0] = USART1_RX_Pack[3];//将识别到的颜色数据存放到Data_Stirng数组里
-		
-		SysTick_Delay_ms(1000);
-		
+			
 		Send_RTU_Data(IRON_HAND_ADD, IRON_HAND_EXECUTE, 1, Data_Stirng, USART2_DEVICE);
 		            
 		Receive_Iron_Hand_Data(IRON_HAND_ADD,IRON_HAND_EXECUTE);
