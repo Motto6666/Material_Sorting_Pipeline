@@ -4,11 +4,7 @@
 #include "modbus_agreement.h"
 #include "receive_rtu_data.h"
 
-
-volatile uint8_t USART1_Send_Count = 0;//USART1发送RTU数据包次数（仍然存在疑问）
-volatile uint8_t USART2_Send_Count = 0;//USART2发送RTU数据包次数（仍然存在疑问）
 uint8_t Data_Stirng[1];//若识别到颜色数据，则把识别到的数据存放到该数组里
-
 
 int main(void)
 { 		
@@ -37,7 +33,7 @@ int main(void)
 		
 		PHOTOELECTRIC_SENSOR_DISABLE;
 			
-		SysTick_Delay_ms(450);
+		SysTick_Delay_ms(450);//等待450ms，让物料到达机器视觉可识别的范围
 					
 		MOTOR_STOP;
 		
