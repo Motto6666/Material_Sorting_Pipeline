@@ -3,7 +3,7 @@
 <title>Static Call Graph - [..\Output\32_duoji.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image ..\Output\32_duoji.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5.02 [Build 28]: Last Updated: Wed May 01 15:08:09 2019
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5.02 [Build 28]: Last Updated: Tue May 07 19:35:44 2019
 <BR><P>
 <H3>Maximum Stack Usage =        112 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -369,7 +369,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Execute_Action
 </UL>
 
-<P><STRONG><a name="[5c]"></a>Execute_Action</STRONG> (Thumb, 130 bytes, Stack size 8 bytes, execute_action_group.o(.text))
+<P><STRONG><a name="[5c]"></a>Execute_Action</STRONG> (Thumb, 106 bytes, Stack size 8 bytes, execute_action_group.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 112<LI>Call Chain = Execute_Action &rArr; Right_Place_Action &rArr; Analyze_Action_Group &rArr; __aeabi_ddiv
 </UL>
 <BR>[Calls]<UL><LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Send_Data_to_Master
@@ -377,7 +377,6 @@ Global Symbols
 <LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Left_Place_Action
 <LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Grab_Material_Action
 <LI><a href="#[73]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Curl_Up_Action
-<LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SysTick_Delay_ms
 <LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Clean_Data
 </UL>
 <BR>[Called By]<UL><LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
@@ -1126,7 +1125,6 @@ Global Symbols
 </UL>
 <BR>[Called By]<UL><LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Analyze_Action_Group
 <LI><a href="#[5a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;System_Init
-<LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Execute_Action
 </UL>
 
 <P><STRONG><a name="[7d]"></a>USART1_Config</STRONG> (Thumb, 136 bytes, Stack size 24 bytes, bsp_usart1.o(.text))

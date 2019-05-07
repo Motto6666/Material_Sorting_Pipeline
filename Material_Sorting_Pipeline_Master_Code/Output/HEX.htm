@@ -3,7 +3,7 @@
 <title>Static Call Graph - [..\..\Output\HEX.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image ..\..\Output\HEX.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5050106: Last Updated: Fri May 03 09:39:41 2019
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5050106: Last Updated: Tue May 07 19:25:58 2019
 <BR><P>
 <H3>Maximum Stack Usage =        152 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -856,20 +856,20 @@ Global Symbols
 <LI><a href="#[2f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART1_IRQHandler
 </UL>
 
-<P><STRONG><a name="[46]"></a>main</STRONG> (Thumb, 266 bytes, Stack size 8 bytes, main.o(.text))
+<P><STRONG><a name="[46]"></a>main</STRONG> (Thumb, 290 bytes, Stack size 8 bytes, main.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 152<LI>Call Chain = main &rArr; Receive_Openmv_Data &rArr; LCD_Display_State &rArr; Display_Chinese_String &rArr; Display_Chinese &rArr; ILI9341_Draw_Point &rArr; ILI9341_Open_Window &rArr; ILI9341_Write_Data
 </UL>
 <BR>[Calls]<UL><LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_Cmd
 <LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_ResetBits
 <LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_SetBits
-<LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Buffer_Clean
+<LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Buffer_Clean
 <LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;System_Init
 <LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SysTick_Delay_ms
 <LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Send_RTU_Data
 <LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Receive_Openmv_Recognize_Data
 <LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Receive_Openmv_Data
 <LI><a href="#[6b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Receive_Iron_Hand_Data
-<LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Data_Clean
+<LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Data_Clean
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> entry9a.o(.ARM.Collect$$$$0000000B)
 </UL>
@@ -963,9 +963,9 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;System_Init
 </UL>
 
-<P><STRONG><a name="[71]"></a>Data_Clean</STRONG> (Thumb, 34 bytes, Stack size 0 bytes, modbus_agreement.o(.text))
+<P><STRONG><a name="[70]"></a>Data_Clean</STRONG> (Thumb, 34 bytes, Stack size 0 bytes, modbus_agreement.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RTU_Data_Analysis
-<LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Buffer_Clean
+<LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Buffer_Clean
 <LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Send_RTU_Data
 <LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Receive_Openmv_Recognize_Data
 <LI><a href="#[6b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Receive_Iron_Hand_Data
@@ -985,7 +985,7 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART2_Printf
 <LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART1_Printf
 <LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CRC_16
-<LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Data_Clean
+<LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Data_Clean
 </UL>
 <BR>[Called By]<UL><LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;System_Stop
 <LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Receive_Openmv_Recognize_Data
@@ -998,15 +998,15 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 36<LI>Call Chain = RTU_Data_Analysis &rArr; CRC_16
 </UL>
 <BR>[Calls]<UL><LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CRC_16
-<LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Data_Clean
+<LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Data_Clean
 </UL>
 <BR>[Called By]<UL><LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Receive_Openmv_Recognize_Data
 </UL>
 
-<P><STRONG><a name="[70]"></a>USART_Buffer_Clean</STRONG> (Thumb, 38 bytes, Stack size 8 bytes, receive_rtu_data.o(.text))
+<P><STRONG><a name="[71]"></a>USART_Buffer_Clean</STRONG> (Thumb, 38 bytes, Stack size 8 bytes, receive_rtu_data.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = USART_Buffer_Clean
 </UL>
-<BR>[Calls]<UL><LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Data_Clean
+<BR>[Calls]<UL><LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Data_Clean
 </UL>
 <BR>[Called By]<UL><LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_Display_State
 <LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Receive_Openmv_Recognize_Data
@@ -1020,7 +1020,7 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Display_Chinese_String
 <LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Clean_Screen
-<LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Buffer_Clean
+<LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Buffer_Clean
 </UL>
 <BR>[Called By]<UL><LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Receive_Openmv_Data
 <LI><a href="#[6b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Receive_Iron_Hand_Data
@@ -1035,7 +1035,7 @@ Global Symbols
 <LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Display_Rectangle
 <LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Display_Chinese_String
 <LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Clean_Screen
-<LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Buffer_Clean
+<LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Buffer_Clean
 <LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Send_RTU_Data
 </UL>
 <BR>[Called By]<UL><LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
@@ -1050,9 +1050,9 @@ Global Symbols
 <LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Display_Rectangle
 <LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Display_Chinese_String
 <LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Clean_Screen
-<LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Buffer_Clean
+<LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Buffer_Clean
 <LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Send_RTU_Data
-<LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Data_Clean
+<LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Data_Clean
 </UL>
 <BR>[Called By]<UL><LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
@@ -1066,9 +1066,9 @@ Global Symbols
 <LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Display_Rectangle
 <LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Display_Chinese_String
 <LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Clean_Screen
-<LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Buffer_Clean
+<LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Buffer_Clean
 <LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Send_RTU_Data
-<LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Data_Clean
+<LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Data_Clean
 </UL>
 <BR>[Called By]<UL><LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
@@ -1366,7 +1366,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;System_Init
 </UL>
 
-<P><STRONG><a name="[b0]"></a>TB6612_PWM_Pin_Control</STRONG> (Thumb, 44 bytes, Stack size 8 bytes, bsp_motor_control.o(.text))
+<P><STRONG><a name="[b0]"></a>TB6612_PWM_Pin_Control</STRONG> (Thumb, 42 bytes, Stack size 8 bytes, bsp_motor_control.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = TB6612_PWM_Pin_Control
 </UL>
 <BR>[Calls]<UL><LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_ResetBits

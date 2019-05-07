@@ -82,13 +82,6 @@ void Execute_Action(uint8_t *Receive__Master__Data)
 						Send_Data_to_Master(Receive__Master__Data);
 					}
 					
-					if(Receive__Master__Data[3] == DATA_NONE)
-					{
-						SysTick_Delay_ms(1000);//等待1000ms，保证主机进入接收数据状态
-						Receive__Master__Data[1] = IRON_HAND_EXECUTE_END;
-						Send_Data_to_Master(Receive__Master__Data);
-					}
-					
 					Clean_Data(Receive__Master__Data);
 					break;
 		

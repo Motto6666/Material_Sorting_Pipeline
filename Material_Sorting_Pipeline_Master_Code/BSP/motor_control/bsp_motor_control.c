@@ -134,12 +134,12 @@ void TB6612_PWM_Pin_Control(void)
 {
 	if(!Flag) 
 		{
-			MOTOR_TIM_INTERRUPT_TIME = 3;//设定TIM2定时中断时间为3us，即高电平持续时间为3us
+			MOTOR_TIM_INTERRUPT_TIME = 4;//设定TIM2定时中断时间为4us，即高电平持续时间为4us
 			PWMA_ON;		 
 		}
 		else 
 		{
-			MOTOR_TIM_INTERRUPT_TIME = 7;//设定TIM2定时中断时间为7us，即高电平持续时间为7us
+			MOTOR_TIM_INTERRUPT_TIME = 6;//设定TIM2定时中断时间为6us，即高电平持续时间为6us
 			PWMA_OFF;
 		}
 }

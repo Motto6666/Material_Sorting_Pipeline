@@ -1,7 +1,7 @@
 #include "receive_rtu_data.h"
 
-volatile uint8_t USART1_Send_Count ;//USART1发送RTU数据包次数
-volatile uint8_t USART2_Send_Count ;//USART2发送RTU数据包次数
+extern volatile uint8_t USART1_Send_Count ;//USART1发送RTU数据包次数
+extern volatile uint8_t USART2_Send_Count ;//USART2发送RTU数据包次数
 uint8_t Data_Stirngs[1];
 
 
