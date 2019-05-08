@@ -683,7 +683,7 @@ I (..\..\User\display_character\lcd_display_chinese.h)(0x5CC84D1D)
 I (..\..\BSP\buzzer\bsp_buzzer.h)(0x5CC79043)
 I (..\..\BSP\tim6\bsp_tim6.h)(0x5CBC5C4D)
 I (..\..\BSP\motor_control\bsp_motor_control.h)(0x5CC19426)
-I (..\..\BSP\photoelectric_sensor\photoelectric_sensor.h)(0x5CC78D62)
+I (..\..\BSP\photoelectric_sensor\photoelectric_sensor.h)(0x5CD29A09)
 I (..\..\BSP\key\bsp_exti_key.h)(0x5CC6F30F)
 I (..\..\User\modbus_agreement\modbus_agreement.h)(0x5CC80CEA)
 I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5475F300)
@@ -904,7 +904,7 @@ I (..\..\User\display_character\lcd_display_chinese.h)(0x5CC84D1D)
 I (..\..\BSP\buzzer\bsp_buzzer.h)(0x5CC79043)
 I (..\..\BSP\tim6\bsp_tim6.h)(0x5CBC5C4D)
 I (..\..\BSP\motor_control\bsp_motor_control.h)(0x5CC19426)
-I (..\..\BSP\photoelectric_sensor\photoelectric_sensor.h)(0x5CC78D62)
+I (..\..\BSP\photoelectric_sensor\photoelectric_sensor.h)(0x5CD29A09)
 I (..\..\BSP\key\bsp_exti_key.h)(0x5CC6F30F)
 I (..\..\User\modbus_agreement\modbus_agreement.h)(0x5CC80CEA)
 I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5475F300)
@@ -1101,7 +1101,7 @@ I (..\..\Libraries\FWlib\inc\stm32f10x_wwdg.h)(0x57C78855)
 I (..\..\Libraries\FWlib\inc\misc.h)(0x57C78855)
 F (..\..\BSP\motor_control\bsp_motor_control.h)(0x5CC19426)()
 F (..\..\BSP\photoelectric_sensor\photoelectric_sensor.c)(0x5CC78D62)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\..\Libraries\CMSIS -I..\..\User -I..\..\Libraries\FWlib\inc -I..\..\BSP\usart -I..\..\BSP\lcd -I..\..\User\display_character -I..\..\User\modbus_agreement -I..\..\BSP\systick -I..\..\BSP\tim6 -I..\..\BSP\tim7 -I..\..\User\receive_rtu_data -I..\..\User\system_init -I..\..\BSP\motor_control -I..\..\BSP\photoelectric_sensor -I..\..\BSP\key -I..\..\BSP\buzzer-I F:\上传到GitHub文件\Material_Sorting_Pipeline\Material_Sorting_Pipeline\Material_Sorting_Pipeline_Master_Code\Project\RVMDK（uv5）\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0-I C:\Keil_v5\ARM\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0\Device\Include-D__UVISION_VERSION="514" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\photoelectric_sensor.o --omf_browse ..\..\output\photoelectric_sensor.crf --depend ..\..\output\photoelectric_sensor.d)
-I (..\..\BSP\photoelectric_sensor\photoelectric_sensor.h)(0x5CC78D62)
+I (..\..\BSP\photoelectric_sensor\photoelectric_sensor.h)(0x5CD29A09)
 I (..\..\Libraries\CMSIS\stm32f10x.h)(0x57C78855)
 I (..\..\Libraries\CMSIS\core_cm3.h)(0x57C78855)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5475F300)
@@ -1130,7 +1130,7 @@ I (..\..\Libraries\FWlib\inc\stm32f10x_tim.h)(0x57C78855)
 I (..\..\Libraries\FWlib\inc\stm32f10x_usart.h)(0x57C78855)
 I (..\..\Libraries\FWlib\inc\stm32f10x_wwdg.h)(0x57C78855)
 I (..\..\Libraries\FWlib\inc\misc.h)(0x57C78855)
-F (..\..\BSP\photoelectric_sensor\photoelectric_sensor.h)(0x5CC78D62)()
+F (..\..\BSP\photoelectric_sensor\photoelectric_sensor.h)(0x5CD29A09)()
 F (..\..\BSP\key\bsp_exti_key.c)(0x5CC80CEA)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\..\Libraries\CMSIS -I..\..\User -I..\..\Libraries\FWlib\inc -I..\..\BSP\usart -I..\..\BSP\lcd -I..\..\User\display_character -I..\..\User\modbus_agreement -I..\..\BSP\systick -I..\..\BSP\tim6 -I..\..\BSP\tim7 -I..\..\User\receive_rtu_data -I..\..\User\system_init -I..\..\BSP\motor_control -I..\..\BSP\photoelectric_sensor -I..\..\BSP\key -I..\..\BSP\buzzer-I F:\上传到GitHub文件\Material_Sorting_Pipeline\Material_Sorting_Pipeline\Material_Sorting_Pipeline_Master_Code\Project\RVMDK（uv5）\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0-I C:\Keil_v5\ARM\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0\Device\Include-D__UVISION_VERSION="514" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\bsp_exti_key.o --omf_browse ..\..\output\bsp_exti_key.crf --depend ..\..\output\bsp_exti_key.d)
 I (..\..\BSP\key\bsp_exti_key.h)(0x5CC6F30F)
 I (..\..\Libraries\CMSIS\stm32f10x.h)(0x57C78855)
@@ -1172,7 +1172,7 @@ I (..\..\User\display_character\lcd_display_chinese.h)(0x5CC84D1D)
 I (..\..\BSP\buzzer\bsp_buzzer.h)(0x5CC79043)
 I (..\..\BSP\tim6\bsp_tim6.h)(0x5CBC5C4D)
 I (..\..\BSP\motor_control\bsp_motor_control.h)(0x5CC19426)
-I (..\..\BSP\photoelectric_sensor\photoelectric_sensor.h)(0x5CC78D62)
+I (..\..\BSP\photoelectric_sensor\photoelectric_sensor.h)(0x5CD29A09)
 I (..\..\User\modbus_agreement\modbus_agreement.h)(0x5CC80CEA)
 I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5475F300)
 F (..\..\BSP\key\bsp_exti_key.h)(0x5CC6F30F)()
